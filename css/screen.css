@@ -165,7 +165,7 @@ ul.posts {
  #post pre {
    overflow:auto;
    font-size: 80%;
-   background-color: #eef;
+   background-color: white;
    padding: 1em 1em;
    border-top:1px dashed #939393;
    border-left:1px dashed #939393;
@@ -175,7 +175,7 @@ ul.posts {
   
   #post code {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: white;
     font-size: 95%;
     padding: 0 .2em;
   }
