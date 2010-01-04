@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 2.1.0 RC Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1.0 RC released. Major features include upgrade of Lucene version to 2.4 (make sure to update the lucene jar files) and usage of Lucene 2.4 features, better cache management of Lucene Readers/Searches, pluggable Lucene similarity, and many bug fixes and minor improvements. Hoperfuly, this will be the only release before GA, which is planned to be released in a couple of weeks.  Check out the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10136">release notes</a>. Enjoy!.

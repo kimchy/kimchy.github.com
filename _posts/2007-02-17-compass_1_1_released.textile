@@ -1,0 +1,32 @@
+---
+layout: post
+title: Compass 1.1 Released
+---
+
+p. <a href="http://www.opensymphony.com/compass">Compass</a> version <a href="http://opensymphony.com/compass/download.action">1.1</a> is out. The release has some very exciting features, main ones include:
+
+
+
+p. <ul>
+   <li>Support for polymorphic relationships when using OSEM.</li>
+   <li>File system based transactional log for long running transactions.</li>
+   <li>Sub index hashing allowing to map a single class into several different sub indexes.</li>
+    <li>JPA support with specialized extensions for Hibernate, TopLink Essentials and OpenJPA.</li>
+    <li>XA transaction support (without resume).</li>
+    <li>Parallel indexing process when indexing database based on ORM integration.</li>
+    <li>Cascading OSEM definition between different relationships.</li>
+    <li>Dynamic Meta Data OSEM mapping using different scripting languages including OGNL, Velocity, EL, JEXL and Groovy.</li>
+    <li>Support for no unmarshalling mode when using OSEM allowing for better performance, reduced index size and reduced memory footprint.</li>
+    <li>Simplified transaction context operations automatically joining existing transactions.</li>
+    <li>Many more features and bug fixes.</li>
+</ul>
+
+
+
+p. The main focus of Compass 1.2 is going to revolve around the up coming Lucene 2.1 release. Other minor features and user driven requirements will also find their way into Compass (as usual).
+
+
+
+p. Compass is really taking off, with an ever expanding user base and very active community on the forum. Thanks for everybody who helped make 1.1 happen (and this include helping on the forum, which frees me to implement new features :) ).
+
+

@@ -1,0 +1,22 @@
+---
+layout: post
+title: Compass 1.1 M3 Released
+---
+
+p. The Compass team is pleased to announce to release of version 1.1 M3. This is the third milestone release of version 1.1, major features include:
+
+
+
+p. 
+  <ul>
+    <li>**Support for polymorphic relationships**: Compass now supports polymorphic relationships when using OSEM. Poly relationships are automatically identified by Compass, and all the relevant mappings are detected and added. In case of one to one mappings or one to many using generics, the mappings are detected based on the class name. One to many relationship without generics can use a single reference alias mapping, with the rest of the derived mappings automatically used. There is still an option to explicitly list all the aliases using comma delimited list in the ref-alias.</li>
+    <li>**Better cyclic mappings support:** Compass now handles cyclic relationships much better, especially for component mappings. Note, since most times cyclic relationships are simply same objects referencing each other, max-depth value changed to 1 (from 5). In case of tree based cyclic relationship, max depth should probably be set to a higher value.</li>
+    <li>**FS Transactional Log**: Read committed transactions can now store most of the transaction log on the file system. This allows for bigger transactions to be executed under read committed on expense of performance. Current memory based transaction log is also supported (and is the default).</li>
+    <li>**Runtime Settings**: Certain settings can now be set on the session level, changing part of Compass behavior on a per session resolution. First runtime settings supported are the transaction log used for the current session.</li>
+    <li>**JdbcDirectory support Oracle 9**: Jdbc directory and storing the index in the database now support Oracle 9i.</li>
+    <li>**Initial XA Support**: Compass can now join an XA transaction by enlisting itself as an XA resource within a JTA transaction manager including participation in two phase commit. Resume crashed transactions is not supported.</li>
+    <li>**Performance Improvement**: Better concurrency support in Compass index cache support.</li>
+    <li>Several bug fixes and minor features. Full release notes are available <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10070">here</a>.</li>
+  </ul>
+
+

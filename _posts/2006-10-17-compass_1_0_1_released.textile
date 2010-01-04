@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 1.0.1 Released
+---
+
+p. The Compass team is pleased to announce the <a href="http://www.opensymphony.com/compass/download.action">release</a> of version <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10061">1.0.1</a>. This is a minor release fixing major bugs and supporting Hibernate 3.2 GA and Spring 2.0 Final.
+

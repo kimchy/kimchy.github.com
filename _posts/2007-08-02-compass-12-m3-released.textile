@@ -1,0 +1,82 @@
+---
+layout: post
+title: Compass 1.2 M3 Released
+---
+
+p. I am pleased to announce the release of <a href="http://opensymphony.com/compass/download.action">Compass 1.2 M3</a>. Compass 1.2 M3 includes several major features and considered to be a major and last milestone within the 1.2 release lifecycle (RC is next). Some of the major features include:
+
+
+
+h3. Embedded Searchable OpenJPA
+
+
+
+p. A "native" integration with <a href="http://openjpa.apache.org">OpenJPA</a> allowing to configure Compass within a persistence unit and have OpenJPA start Compass up and expose both mirroring (changes made through OpenJPA are mirrored to the search engine though Compass) and indexing (the ability to execute parallel index operation to reindex the whole database based on Compass and OpenJPA mappings). See <a href="http://www.opensymphony.com/compass/versions/1.2M3/html/gps-embeddedopenjpa.html">here</a> for more details.
+
+
+
+h3. Improved Query Support
+
+
+
+p. Compass now supports polymorphic queries, allowing to execute queries that match a concrete alias/class and all its sub classes / extended aliases.
+
+
+
+p. Compass also has improved range and exact queries when using numbers and dates (actually, on any custom converter as well). Executing queries such as: "age:1" or "age:[1-90]" will automatically work (with proper padding format within the mapping). See <a href="http://www.opensymphony.com/compass/versions/1.2M3/html/core-workingwithobjects.html#Range%20Queries%20Extensions">here</a> for more details.
+
+
+
+p. Dates now support a relative now format, allowing to execute queries such as: "publishDate:now-10days". See <a href="http://www.opensymphony.com/compass/versions/1.2M3/html/core-workingwithobjects.html#Range%20Queries%20Extensions">here</a> for more details.
+
+
+
+h3. Improved Lucene 2.2 Support
+
+
+
+p. Compass comes with better support for Lucene 2.2, including pluggable Index deletion policy (allows for storing history of commit points) including built in support for several index deletion policies. See <a href="http://www.opensymphony.com/compass/versions/1.2M3/html/core-searchengine.html#core-searchengine-indexdeletionpolicy">here</a> for more information.p. 
+
+h3. More Like This
+
+
+
+p. Compass now exposes Lucene "more like this" query capabilities in very simple API. A simple compassSesion.queryBuilder().moreLikeThis("a", "1").toQuery().hits() can be executed to perform a more like this on the "all" property (remember to have term vector set to yes on the all property) that will match things like the Resource identified by alias "a" with id "1".
+
+
+
+h3. Local Cache Support
+
+
+
+p. Compass now supports the ability to define a local cache per sub index. This allows to configure certain sub indexes to be stored in memory for faster searching, or have a local file system cache when working with Jdbc. The new local cache mechanism fully supports several clients connecting to the same index storage location. See <a href="http://www.opensymphony.com/compass/versions/1.2M3/html/core-connection.html#core-connection-localcache">here</a> here for more details.
+
+
+
+h3. Improved JPA Device
+
+
+
+p. An improved JPA device allowing to configure custom indexers with default implementation including specific ones for OpenJPA and Hibernate for better performance (still trying to figure out how to do that in Toplink and being too lazy too look at the source code :), see <a href="http://forums.oracle.com/forums/thread.jspa?forumID=48&threadID=536007">this Toplink forum thread</a> ).
+
+
+
+h3. New Hibernate Gps Device
+
+
+
+p. A complete new Hibernate Gps Device allowing for several custom simpler extension points such as indexer, custom query provider, ... . Compass comes with two default indexer implementations including pagination and scrollable (better performance, though latest Hibernate has a memory leak that will be fixed in the next minor version - 3.2.5). See <a href="http://www.opensymphony.com/compass/versions/1.2M3/html/gps-hibernate.html">here</a> for more details.
+
+
+
+p. Deprecated Hibernate2GpsDevice and Hibernate3GpsDevice still exists within Compass codebase, thought they have been refactored into a different package (org.compass.gps.device.hibernate.dep).
+
+
+
+h3. Last
+
+
+
+p. A lot of this features are major features with Compass. I will blog more about each one in separate posts. I am really excited about the more native integration with OpenJPA, and would like to thank <a href="http://www.jroller.com/pcl/">Patrick Linskey</a> for doing an amazing job in the integration effort. Suggestion or enhancements to OpenJPA to allow for such an integration were done faster then I could ask for them, amazing!.
+
+

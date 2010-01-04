@@ -1,0 +1,31 @@
+---
+layout: post
+title: Compass and Support Unmarshall
+---
+
+p. In the past, what I have been trying to do was release a version, and then blog on its new features. I've found out that it does not really work :), so what I am going to do now is try and blog on the new features as soon the last file has been committed, and the JIRA issue was closed. For the **supportUnmarshall** feature it won't get any closer, since I just committed it ;).
+
+
+
+p. The new feature was asked by several Compass users (hi lexi) and boils down to have Compass only perform OSEM marshalling (the process of persisting a domain model into the search engine). Unmarshalling (the process of reading the actual domain model from the search engine) will be disabled.
+
+
+
+p. First, people might wonder how can Compass be used for read/search operations if un-marshalling data from the search engine into your domain model is not enabled. The way OSEM work is by marshalling the mapped domain model into a Resource (Compass low level search engine data holder, for Lucene users - a Document) and unmarshalling the domain model from a Resource loaded from the search engine. The benefit of using Resources is by having a single API for displaying search results (think of a result as a Map) regardless of the type of Object saved. By using a consistent semantic model (i.e. always mapping certain properties to the same meta-data value), the application can iterate through the search result and display a "title" meta data for example. This allows an application to only worry about persisting the domain model into the search engine, but use Resources for displaying search results. If the application is only going to use Compass for persisting domain model into the search engine, Compass can perform several major performance improvements.
+
+
+
+p. The first major performance improvement that Compass performs when working under supportUnamrshall set to false is the amount of extra information stored in the search engine. For duplicate meta data values mapped by different properties Compass must create internal meta-data ids (managed ids) in order to be able to perform the un-marshalling correctly. It must also store Collection/Array size and possible null values holders. All of this extra data is not stored in the search engine if Compass knows that it does not need to support un-marshlling.
+
+
+
+p. Another performance improvement when using supportUnmarshall set to false is memory consumption. In order for Compass to be able to create the internal meta data ids, and because of performance considerations, it must create static bindings of mappings. This is the reason for example that we have max-depth set on component mappings for cyclic relationships (Compass expands the relationships). When Compass knows that it does not need to support unmarshalling, there is no need to perform this static mapping bindings, resulting in a much lower memory consumption. This also enables another major feature which is support for any level of cyclic relationship without limiting it using the max-depth attribute.
+
+
+
+p. After we explained a bit about why the feature is beneficial, here is how to apply it. Compass by default will work with support for un-marshlling enabled. The compass.osem.supportUnmarhsall global setting or the osem tag within the xsd configuration allows for changing the default behavior. A class mapping (or @Searchable annotation) allows to set it on a class mapping level as well.
+
+
+
+p. This feature is available from the latest 1.1 M2 SNAPSHOT. If your application can benefit from it, give it a go and tell me how it works for you.
+

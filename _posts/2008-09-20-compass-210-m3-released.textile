@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 2.1.0 M3 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1.0 M3 released. Major features include improved polymorphic queries, improved performance, lazy loading of reference collections, support enum classes as components, support for "prefix" mapping for components, "collection no processed" exception fixed when using Hibernate, improved support for JPA within Glassfish, and many others. Check out the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10140">release notes</a>. Enjoy!.

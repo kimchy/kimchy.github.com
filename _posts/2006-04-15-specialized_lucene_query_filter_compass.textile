@@ -1,0 +1,22 @@
+---
+layout: post
+title: Specialized Lucene Query/Filter & Compass
+---
+
+p. There is an interesting <a href="http://forums.opensymphony.com/thread.jspa?threadID=26009">post</a> in Compass user forums, basically asking how to use external or specialized Lucene Query implementation. When building Compass, one of my aims was (and is) to allow Lucene users not to loose any of Lucene functionality. This includes specialized Lucene Query and Filter implementation.
+
+
+
+p. Compass comes with query builders and query filter builders, allowing for a simplified programming model when constructing queries or query filters. If you have your own implementation of Lucene Query or Filter, you can construct CompassQuery or CompassQueryFilter implementation that wraps the actual Lucene implementation. Here is a code snippet that wraps a Lucene Query:
+<pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="color:#000000;background-color:#ffffff;">Query query = </span><span style="color:#808080;background-color:#ffffff;font-style:italic;">//build lucene query
+</span><span style="color:#000000;background-color:#ffffff;">InternalCompassSession internalCompassSession = (InternalCompassSession) session;
+SearchEngineQuery searchEngineQuery =
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="color:#000000;background-color:#ffffff;"> LuceneSearchEngineQuery((LuceneSearchEngine) internalCompassSession.getSearchEngine(), query);
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">return</span><span style="color:#000000;background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="color:#000000;background-color:#ffffff;"> DefaultCompassQuery(searchEngineQuery, internalCompassSession);
+</span></pre>
+
+
+
+
+p. In the upcoming Compass version (0.9), Compass now comes with LuceneHelper class under the org.compass.core.lucene.util package, allowing to wrap Lucene query and filter more easily than using the above code.
+

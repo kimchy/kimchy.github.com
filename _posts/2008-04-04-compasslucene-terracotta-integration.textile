@@ -1,0 +1,25 @@
+---
+layout: post
+title: Compass/Lucene Terracotta Integration
+---
+
+<img src="http://www.kimchy.org/wp-content/uploads/2008/12/terracotta.png" alt="terracotta" title="terracotta" width="220" height="27" class="alignleft size-full wp-image-316" /> I am happy to announce that <a href="http://www.compass-project.org">Compass</a> now supports integration with <a href="http://www.terracotta.org">Terracotta</a>. This integration allows for applications that use Compass or pure Lucene to store the index in an optimized, memory based storage, that uses Terracotta as a "network attached memory".
+
+p. The latest <a href="http://build.compass-project.org/browse/CMPTRK-NIGHTLY/latest">nightly build</a> supports it. The Artifacts tab allows to download the nightly build as well as view the terracotta integration documentation.
+
+
+
+p. In a nutshell, Compass jar is now a Terracotta Integration Module (TIM), which allows to drop it into the terracotta installation and enable it simply within the application tc-config.xml file. Compass can be configured to store the index in a Terracotta based connection using a one line change in the configuration and easily distribute your Lucene index.
+
+
+
+p. A common question that might be raised (for people who are not familiar with Terracota) is how does a large index will be stored in memory. The answer is that Terracotta takes care of this by fetching and evicting data on demand from the server to the different clients. The TerracottaDirectory (an implementation of Lucene Directory) is built in a way that breaks the file content into one or more byte arrays (their size is configured) which allows Terracotta to easily fetch parts of the file and evict other parts based on certain policies (LRU, LFU, ...).
+
+
+
+p. Another question, which is answered in the reference docs, is what will be the Terracotta "root". When using pure Lucene, the root will need to be defined and configured. When using Compass, the root is already defined (as Compass holds the directories) within the TIM configuration (as well as the locks), and there is no need to configure special Compass terracotta configuration except for listing the Compass module within the application tc-config.xml.
+
+
+
+p. Enjoy!
+

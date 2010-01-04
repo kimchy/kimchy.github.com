@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass & Grails
+---
+
+Maurice Nicholson has published a really nice <a href="http://docs.codehaus.org/display/GRAILS/Compass+and+Grails+how+to">tutorial</a> of how Grails and Compass can integrate with code attached. Enjoy!
+

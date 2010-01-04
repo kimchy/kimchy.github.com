@@ -1,0 +1,84 @@
+---
+layout: post
+title: Bubble 3.0 and Java 7.0
+---
+
+p. Just came across this video which cranked me silly:
+
+
+
+p. <object width="425" height="373"><param name="movie" value="http://www.youtube.com/v/dr3qPRAAnOg&rel=1&border=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/dr3qPRAAnOg&rel=1&border=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="373"></embed></object>
+
+
+
+p. And usually, it got me started thinking about software development and especially Java next version. For example, press play and sing the following lyrics:
+
+
+
+p. bq. 
+<a href="https://jdk7.dev.java.net/">Java 7</a> coming out
+exciting times, maybe not
+
+Still working on version 5
+OSX sucks
+
+Thought I use the perfect language
+JSR make me anguish
+
+learned about <a href="http://www.javac.info/consensus-closures-jsr.html">closures</a>
+to find out its a <a href="http://docs.google.com/View?docid=k73_1ggr36h">worthless</a> <a href="http://docs.google.com/View?docid=ddhp95vd_0f7mcns">pile</a> <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=182412">of</a> <a href="http://www.javac.info/">crap</a>
+
+suffered through the ruby craze
+to find out its <a href="http://headius.blogspot.com/2006/09/jruby-steps-into-sun.html">not a phase</a>
+
+<a href="http://www.jcp.org/en/jsr/detail?id=291">OSGi</a>, <a href="http://jcp.org/en/jsr/detail?id=277">Java modules</a>,
+would you like to place a bet?
+
+old JSRs are here again,
+<a href="http://jcp.org/en/jsr/detail?id=107">JCACHE</a>, <a href="http://www.javalobby.org/java/forums/t61406.html">XML</a>
+
+time to write a Java book,
+it will be 1500 pages long!
+
+here comes another version,
+
+its a shameless copy 
+of .NET and ruby
+
+first you need a <a href="http://docs.google.com/View?docid=ddhp95vd_0f7mcns">closure</a>,
+then a <a href="http://docs.google.com/View?docid=k73_1ggr36h">second</a> and a <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=182412">third</a>
+
+take at least three shots
+at getting generics right
+
+find yourself a task to do
+<a href="http://www.infoq.com/news/2007/07/concurrency-java-se-7">fork it out, join it back</a>
+
+just a pretty way to say
+map reduce all the way
+
+need a cool feature list
+must be simple, backward compatible
+
+something cool like
+<a href="http://jcp.org/en/jsr/detail?id=292">invokedynamic</a>, BigDecimal, <a href="http://www.javac.info/Multicatch.html">multicach</a>, and <a href="http://www.javac.info/Rethrown.html">rethrown</a>
+
+write yourself a simple switch
+code it up just with <a href="http://yost.com/computers/java/string-switch/index.html">strings</a>
+
+add some setters to your bean
+<a href="http://docs.google.com/View?docid=dg8rbgp8_0gnjwr2">chain them</a> up, sexy beast
+
+here comes another version
+
+SUN is rocking,
+so don't come a knocking
+
+fight fight fight it out
+fight it if its big or small
+
+
+
+
+p. Anybody care to continue? :)
+

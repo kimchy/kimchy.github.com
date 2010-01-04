@@ -1,0 +1,8 @@
+---
+layout: post
+title: Namaste Steve
+---
+
+Well, <a href="http://fakesteve.blogspot.com">FSJ</a> went ahead and <a href="http://fakesteve.blogspot.com/2007/06/java-nerds-imitating-fsj.html">called me</a> a nerd. I guess he can call me a fool as well for using his operating system and still waiting for Java 6. Namaste Steve.
+
+p.s. Didn't your company <a href="http://www.kimchy.org/apple_buys_gigaspaces/">buy</a> my company?

@@ -1,0 +1,26 @@
+---
+layout: post
+title: Terracotta Transaction Processor
+---
+
+In my <a href="http://www.kimchy.org/compass-22-transaction-processors/">previous post</a> I talked about the new Compass transaction processors in upcoming 2.2, and explained some of the default ones. I also said that there are more transaction processors to come, and here is the first one, a <a href="http://www.terracotta.org/">Terracotta</a> based transaction processor.
+
+p. The Terracotta transaction processor allows to process Compass transactions in a master worker like fashion. Clients keep using the same Compass API and transaction management, but transactions are not applied to the index directly. Instead, they are written to a shared queue (one queue per sub index) with workers picking up transactions (in Compass lingo they are called TranasctionJobs) and applying them to the index.
+
+
+
+p. This means that transactions are not immediately reflected in the index, but after a cache invalidation interval (configurable). The nice thing is that since Compass 2.1, cache invalidation occurs in the background without affecting current search operations.
+
+
+
+p. By default, a client (submits transactions) is also a transaction processor worker and one can start as many as needed. The workers will automatically manage ordering and pick jobs (on a per sub index level) as they can. A client can be configured to be just a client, without any processing of transactions, and worker nodes can be started to work either on all or specific sub indexes.
+
+
+
+p. Of course, this type of transaction processing requires a shared index between several nodes, which can be achieved easily by storing the index itself using Terracotta as well :).
+
+
+
+p. There are more configuration tweaks and tricks, all explained in the reference docs. Enjoy!.
+
+

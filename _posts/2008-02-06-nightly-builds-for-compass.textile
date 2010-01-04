@@ -1,0 +1,8 @@
+---
+layout: post
+title: Nightly Builds for Compass
+---
+
+p. After the move to a new site, and thanks to <a href="http://www.atlassian.com/software/bamboo/">Atlassian Bamboo</a>, Compass now has a much enhanced CI builds as well as nightly builds.
+
+p. So, if you are looking for the latest and greatest of Compass, head over to <a href="http://build.compass-project.org/">Compass Build Server</a>. For example for the trunk version (which is currently the 2.0 M2 upcoming version), head over <a href="http://build.compass-project.org/browse/CMPTRK-NIGHTLY">here</a>, pick one of the builds, for example, <a href="http://build.compass-project.org/browse/CMPTRK-NIGHTLY-14">this latest one</a>. Then, head over to the Artifacts tab, and you will see the artifacts of the nightly builds including releases, reference documentation, and javadoc.

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Moving On
+---
+
+<img src="http://www.kimchy.org/wp-content/uploads/2008/04/new-road.jpeg" alt="new-road" title="new-road" width="135" height="90" class="alignleft size-full wp-image-448" /> Well, its time for me to move on. I am leaving <a href="http://www.gigaspaces.com">GigaSpaces</a> and joining <a href="http://www.delver.com">Delver</a> to help in creating the best socially connected search engine out there.
+
+p. This has not been a simple decision, and I think my "leaving GigaSpaces email" describes it best:
+
+bq. I am sad to say that I am leaving GigaSpaces. After almost 2 years with GigaSpaces, its time for me to move on. As someone who strongly believes in GigaSpaces, this has not been a simple decision, especially since I am sure that GigaSpaces is going to succeed. But, a chance to go and work on my primordial love, which is search, in a very young startup, is not something that I thought that I can allow myself to pass on. It has been great working with all of you, the DNA pool of GigaSpaces is one of the best one can wish to find in a workplace.
+
+
+

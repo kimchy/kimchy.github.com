@@ -1,0 +1,19 @@
+---
+layout: post
+title: Compass 1.1 RC1 Released
+---
+
+p. The Compass team is pleased to announce the release of version 1.1 RC1. This is the first release candidate (and hopefully the only one) before 1.1 GA release. Major features include:
+
+
+
+p. 
+	<ul>
+		<li>**Parallel Gps Index Operation**: Most Gps devices (Hibernate, JPA, ...) now support automatic parallel index execution within the same JVM. More information can be found <a href="http://jroller.com/page/kimchy?entry=parallel_indexing_in_compass">here</a>.</li>
+		<li>**Cascading Support**: Compass support cascading operation on component and reference mappings. More information can be found <a href="http://jroller.com/page/kimchy?entry=cascades_and_compass">here</a>.</li>
+		<li>**Terms list of Properties**: Compass now allows to get a list of all the terms for a property name including its frequencies within the index. This feature allow to simplify the implementation of "popular tag listing" as can be seen in different blogs and tagging sites.</li>
+		<li>**Initial OpenJPA support**: Tighter integration with OpenJPA JPA implementation within the Compass JPA Gps device allowing to automatically inject Compass mirror listeners into OpenJPA.</li>
+		<li>Many more bug fixes and minor features listed <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10081">here</a>.</li>
+	</ul>
+
+

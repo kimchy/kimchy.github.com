@@ -1,0 +1,91 @@
+---
+layout: post
+title: Javaland needs some "fakesteves"
+---
+
+I have been reading <a href="http://fakesteve.blogspot.com/">fakesteve</a> for quite some time now. This blog is hilarious, and I have been thinking that people should start "fakesteves" for Javaland figures (or at least until <a href="http://www.bileblog.org">Hani</a> gets back to blogging more often).
+
+So, to get things moving, here are some of my suggestions for "fakesteves" (all in good spirit mates!). There are many others but I will leave it to another post. If you have any other suggestions, please leave them as comments, I will post another blog with the best ones.
+
+<div>
+
+<div style="float:right; padding: 5px"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/rodj.jpg' title='Rod Johnson'><img src='http://www.kimchy.org/wp-content/uploads/2007/06/rodj.thumbnail.jpg' alt='Rod Johnson' /></a></div>
+
+h2. <a href="http://blog.interface21.com/main/author/rodj/">fakerod</a> (Rod Johnson) 
+
+
+
+**Dude, I invented frigging Spring. Have you heard of it?**
+
+__I love POJOs, hell, I invented them!. I hate people who say Spring == XML. Spring Portfolio.__
+
+</div>
+
+h3. We want to serve you better
+
+
+
+Now, with the recent <a href="http://www.interface21.com/news-home/2007/benchmarkseriesa">$10M investment</a> in Interface21 (and Spring), we can serve you, the user, better!. We have been doing extremely well for the past few years, but not enough to make us filthy rich. The investment will not change anything with Spring and Interface21, in fact, we actually managed to be the only company with VC investment that is not pressured by VC. Larry and Sergey, eat your hat.
+
+h3. We now have a portfolio!
+
+
+
+I have been saying for ages that we are not just Spring, and now I can prove it!. Enter, Spring Portfolio. With such stars such as Spring OSGi (yea, I know nobody use OSGi, but we have the power now to hype anything!), <a href="http://static.springframework.org/spring-ws/site/">Spring WS</a> (we can make web services simple!, oh wait, maybe not), <a href="http://www.acegisecurity.org/">Acegi Security</a> - soon to be rename Spring Security (very secure in making your security configuration so cryptic nobody would want to mess with it), and a good sense of humor. Ohh, and we are not going down the same path as evil <a href="http://www.jboss.org">JBoss</a>, honest!.
+
+
+<div>
+
+<div style="float:right; padding: 5px"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/king.jpg' title='Gavin King' rel="lightbox"><img src='http://www.kimchy.org/wp-content/uploads/2007/06/king.thumbnail.jpg' alt='Gavin King' /></a></div>
+
+h2. <a href="http://blog.hibernate.org/">fakegavin</a> (Gavin King)
+
+
+
+**Dude, I invented frigging ORM (ahem, Hibernate). Have you heard of it?**
+
+__I love RDBMS. I love to map things to them. I hate stupid people posting on my forum.__
+</div>
+
+h3. Great new screensaver!
+
+
+
+I just saw this picture and simply had to revise it! My colleagues at Jboss suggested that any application that uses Hibernate should display it by default. I couldn't agree more.
+
+<a href='http://www.kimchy.org/wp-content/uploads/2007/06/baby_seal_1024.jpg' title='Toplink Seal' rel="lightbox"><img src='http://www.kimchy.org/wp-content/uploads/2007/06/baby_seal_1024.jpg' alt='Toplink Seal' /></a> (Click Me!)
+
+h3. I hate Mike
+
+
+
+Just read <a href="http://blogs.atlassian.com/rebelutionary/archives/000670.html">this</a> at Jira Mike. I already posted a response, but the most important part of it is this:
+
+bq. Yes, some guys at JBoss are arrogant, me included. Speaking only for myself, one of the things that made me so arrogant was having to put up with years of this kind of sniping and lecturing from people I had counted as friends. Every time I read a blog like this one, I get more arrogant. But y'know what - I ain't goin' nowhere, and it doesn't seem like the JBoss hataz are going to get any quieter, so therefore you guys are just going to have to learn to deal with arrogance. Sad but true.
+
+I sure as hell know how to kick ass!
+
+<div>
+<div style="float:right; padding: 5px"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/mattraible.jpg' title='Matt Raible' rel="lightbox"><img src='http://www.kimchy.org/wp-content/uploads/2007/06/mattraible.thumbnail.jpg' alt='Matt Raible' /></a></div>
+
+h2. <a href="http://raibledesigns.com/">fakeraible</a> (Matt Raible)
+
+
+
+**Dude, I invented frigging Appfuse. Have you heard of it?**
+
+__I love shinny software, I get distracted by them. I hate, ammm, I hate..., nothing!.__
+</div>
+
+h3. Coding six days straight, no sleep
+
+
+
+I have been coding for the last 6 days straight. It started with a very simply feature adding another logging statement in Appfuse. I then got distracted and thought maybe we should change the usage of commons logging so I went ahead and searched for other logging frameworks finding out there was slf4j but almost nobody uses it I then thought maybe we should allow users to change the logging level using web services and searched for best web services implementation I looked at xfire axis and many more resulting in the understanding that I need to upgrade to a newer JEE spec searched for best implementation to start working on but after several hours remembered that most appfuse users still run on the previous version tried to integrate the WS solution into maven but found out that the installation is now 1.5G and is bigger than vista then thought that I need to try another operating system so installed Ubuntu spent a few hours fixing the wifi in order to be able to download all the maven jars and build appfuse. managed to do it. Now, what did I started with ...
+
+h3. Compare X and Y java libraries
+
+
+
+I spent the past few days trying to compare X and Y java libraries. X is really nice and has a small installation and passed my 0.3 milliseconds install rule, Y was also really nice and passed my install rule. X has a really nice feature allowing you to simplify your development and a very active mailing list and Y has a really nice feature as well with very active forum. The developer behind X is amazing and gives very good talks and I had really good time drinking beer with Y developer. Now, which one should you choose? You thought I will give you a hint, no way hose!
+

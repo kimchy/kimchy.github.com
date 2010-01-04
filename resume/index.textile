@@ -1,0 +1,6 @@
+---
+layout: page
+title: Resume / CV
+---
+
+p. I should really put something here, I did do something with my life, no?

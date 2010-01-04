@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 2.1.0 M2 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1.0 M2 released. No major features, but several minor important ones. Check out the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10135">release notes</a>. Enjoy!.

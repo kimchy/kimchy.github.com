@@ -1,0 +1,33 @@
+---
+layout: post
+title: Time to rewrite DBMS, says Ingres founder
+---
+
+p. In a <a href="http://www.vldb.org/conf/2007/papers/industrial/p1150-stonebraker.pdf">paper</a> titled __The end of an architectural era (It's time for a complete rewrite)__, <a href="http://s2k-ftp.cs.berkeley.edu:8000/nasa_e2e/mike.html">Mike Stonebraker</a>, Ingres founder and a Postgres architect, with a group of academics said that modern use of computers renders many features of mainstream DBMS obsolete.
+
+
+
+p. They have argued that DBMS designs such as Oracle and SQL Server come from an age when online transaction processing (OLTP) dominated and required techniques such as multi threading and transaction locking. They said that modern transactions - entered via web pages - do not need these expensive processing overheads and DBMS should, therefore, be re-designed without them. Persistent storage such as disks are also seen as unnecessary and could be replaced by geographically dispersed RAM storage.
+
+
+
+p. Stonebraker and his group also advocate abandoning SQL because they see no need for a separate data manipulation language. Data manipulation, they said, can be performed with other tasks using languages such as Ruby. They describe a prototype DBMS called H-Store that embodies these ideas.
+
+
+
+p. This paper is a very interesting read, and basically acknowledge the hard work that DataGrid providers such as <a href="http://www.gigaspaces.com">GigaSpaces</a> and <a href="http://www.tangosol.com/">Tangosol</a> have been advocating for a long time. One thing that I do have to comment regarding the article is the fact that Mr. Stonebraker and the rest of the group fail to take this architecture to the next level of integrating such a solution into the "application tier". I guess this is mainly due to the fact of the "remote database" concept that is inherit when working with databases.
+
+
+
+p. What do I mean by that? Very simple. Once we have our data stored in memory, we can bring it "into" our application tier. This means that operations that we perform will actually be done in memory without even leaving our "vm". Naturally, the next question that is asked then is what do you do with partitioning? Well, the idea is to have the processing of data redirected into the partition that will hold most (if not all) the relevant data that is required for its processing (the one that is not can still be accessed in a remote "clustered" manner).
+
+
+
+p. Another interesting point is the replacement of SQL with better ways to query for data. For one, the simplest thing can be to define our queries based on the objects we work on. For example, create a "template" of an Order where its processed flag is set to false. Advance queries can be based on dynamic languages such as ruby and groovy, which is exactly what I have been hacking around in GigaSpaces for our upcoming version (more information can be found <a href="http://uri-cohen.blogspot.com/2008/01/openspaces-scripting-support.html">here</a>).
+
+
+
+p. Its great to see this movement starting to happen within the database world.
+
+
+

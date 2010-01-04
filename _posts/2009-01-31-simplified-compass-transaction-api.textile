@@ -1,0 +1,54 @@
+---
+layout: post
+title: Simplified Compass Transaction API
+---
+
+Compass main API has been pretty much the same since its initial version way back of 0.4. The core API was inspired by ORM frameworks such as Hibernate and TopLink in order to simplify Compass usage. The API consisted of a thread safe, usually single instance, __Compass__. The __Compass__ instance is used to open __CompassSession__ which are more lightweight, non thread safe, instances allowing to operate against the search engine. Last, a __CompassTransaction__ was retrieved from a __CompassSession__ in order to control compass transactions (either local, or JTA / Spring / ORM integration).
+
+Here is an example of how it looks like:
+
+<pre lang="java" line="1">
+CompassConfiguration conf =
+    new CompassConfiguration().configure().addClass(Author.class);
+Compass compass = conf.buildCompass();
+CompassSession session = compass.openSession();
+CompassTransaction tx = null;
+try {
+    tx = session.beginTransaction();
+    ...
+    session.save(author);
+    CompassHits hits = session.find("jack london");
+    Author a = (Author) hits.data(0);
+    Resource r = hits.resource(0);
+    ...
+    tx.commit();
+} catch (CompassException ce) {
+    if (tx != null) tx.rollback();
+} finally {
+    session.close();
+}
+</pre>
+
+This, of course, is a bit of too much "noise" in terms of Compass API to use (remember, similar to how ORM were used back them). Since then, the usage has simplified. The __CompassTemplate__ was introduced. Automatic bounding of session to managed transaction was also introduced, allowing to use a __CompassSession__ without explicit __CompassTransaction__ when there is an on-going transaction. Still, the above code sample nagged me for a long time, and finally, I managed to simplify it. So, the above code can now be written as follows (in upcoming 2.2 M2):
+
+<pre lang="java" line="1">
+CompassConfiguration conf =
+    new CompassConfiguration().configure().addClass(Author.class);
+Compass compass = conf.buildCompass();
+CompassSession session = compass.openSession();
+try {
+    ...
+    session.save(author);
+    CompassHits hits = session.find("jack london");
+    Author a = (Author) hits.data(0);
+    Resource r = hits.resource(0);
+    ...
+    session.commit();
+} catch (CompassException ce) {
+    session.rollback();
+}
+</pre>
+
+Much simpler, no? The above example no longer uses the __CompassTransaction__, and it is automatically used by Compass Session. Explicit usage of __CompassTransaction__ is still allowed, so existing code will still work (that was the more interesting part to implement). Of course, couple that with external transaction managers (like Spring, JTA, or embedded ORM), and there is no need to even commit or rollback the session, just open the session, and let the automatic Compass synchronization with the external transaction manager to take care of the rest.
+
+Enjoy!.

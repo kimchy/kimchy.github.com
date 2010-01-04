@@ -1,0 +1,7 @@
+---
+layout: post
+title: Interseting Blog Post
+---
+
+p. Just stumbled upon this <a href="http://www.ifountain.com/blog/persistence+mechanism+trials+and+compass+framework+revolution">blog post</a> about Compass and Grails Searchable Plugin.
+

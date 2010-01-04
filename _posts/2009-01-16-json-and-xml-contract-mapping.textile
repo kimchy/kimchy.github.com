@@ -1,0 +1,41 @@
+---
+layout: post
+title: Json and Xml Contract Mapping
+---
+
+Both Compass RSEM and OSEM supported contract based mappings (as well as poly mappings with OSEM) since Compass 1.x. Xml and Json mappings now have support for contract mappings as well. Contract mappings are very handy if several mappings definitions share the same mappings. Here is a JSEM example:
+
+p. <pre lang="xml" line="1">
+<compass-core-mapping>
+
+    <json-contract alias="contract1">
+        <json-id name="id" />
+        <json-property name="name" />
+    </json-contract>
+
+    <json-contract alias="contract2">
+        <json-property name="age" />
+    </json-contract>
+
+    <root-json-object alias="a" extends="contract1, contract2">
+    </root-json-object>
+
+    <root-json-object alias="b" extends="contract1">
+    </root-json-object>
+    
+</compass-core-mapping>
+</pre>
+
+
+
+p. Here, we define two contract mappings, and have the "a" mapping extend them. The "b" mapping extends only the "contract1" mapping.
+
+
+
+p. Aside from easily sharing mappings and practicing DRY, contract mappings is very handy when using polymorphic queries as well. For example, we can execute a query that states "a.name:test", and this will *only* match "a" mappings with name "test". But, we can also search for "contract1.name:test", which will match all mappings that extend the "contract1" mapping definition, which means, in our case, we will get hits for both "a" and "b" mappings.
+
+
+
+p. As a side note, I noted that contract mapping is supported for OSEM and RSEM, but with OSEM, the polymorphic queries also work with extending and Searchable classes and implementing Searchable interfaces.
+
+

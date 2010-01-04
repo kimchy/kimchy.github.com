@@ -1,0 +1,6 @@
+---
+layout: post
+title: Glassfish, JPA, and Compass
+---
+
+Here is a <a href="http://tapestryofthoughts.blogspot.com/2007/05/glassfish-compass.html">very interesting blog</a> about integration of Compass, JPA and Glassfish.

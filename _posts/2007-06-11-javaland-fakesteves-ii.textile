@@ -1,0 +1,99 @@
+---
+layout: post
+title: Javaland "fakesteves" II
+---
+
+Here are more Javaland fakesteves. I decided to try and post a few of this entries now and then (due to user demand :) ). I added a "fakesteve" caption contest this time, so give it a shot and I will post the best ones.
+
+<div>
+
+<div style="float:right; padding: 5px"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/james-strachan.jpg' title='James Strachan'><img src='http://www.kimchy.org/wp-content/uploads/2007/06/james-strachan.jpg' alt='James Strachan' /></a></div>
+
+h2. <a href="http://macstrac.blogspot.com/">fakestrac</a> (James Strachan) 
+
+
+
+**Dude, I invented <span id="percent">43.41</span>% of OS Java. Have you heard of it?**
+
+<script type="text/javascript" src="http://www.kimchy.org/wp-content/uploads/2007/06/percent.js">
+</script>
+
+__I love the word 'Active', I love using it. I hate the word 'jelly'.__
+
+</div>
+
+h3. Announcing ActiveActive
+
+
+
+After several years of development I am announcing a new Open Source project called ActiveActive (code named OpenSorcerer). ActiveActive is a Java library that when executed creates a new Open Source Java project. It requires no parameters, no configuration, just execute and use it. The project has gone through many tests over the past years on the unsuspected Java crowd and I finally managed to nail down most of the <a href="http://jakarta.apache.org/commons/jelly/">bugs</a>. One of the latest features of ActiveActive is when run it will automatically add the project to <a href="http://incubator.apache.org/">Apache Incubator</a> and add myself as its mentor. It even has a tagline: __ActiveActive, a project so nice, they named it twice.__
+
+h3. Caption contest
+
+
+
+p. <div style="text-align: center;"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/nutterstrachan.jpg' title='James Strachan and Charles Nutter'><img src='http://www.kimchy.org/wp-content/uploads/2007/06/nutterstrachan.jpg' alt='James Strachan and Charles Nutter' /></a></div>
+
+
+
+Okay, this one is myself and <a href="http://headius.blogspot.com/">Charles Nutter</a> going at it. Have at it and I will post the best ones.
+
+p.s. There is no doubt that I win hands down on being original, he <a href="http://jruby.codehaus.org/">just added a J</a> while I invented the <a href="http://groovy.codehaus.org/">coolest Java open source name</a>. 
+
+<div>
+
+<div style="float:right; padding: 5px"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/marcfleury.jpg' title='Marc Fleury'><img src='http://www.kimchy.org/wp-content/uploads/2007/06/marcfleury.jpg' alt='Marc Fleury' /></a></a></div>
+
+h2. <a href="http://marcf.blogspot.com/">fakefleury</a> (Marc Fleury) 
+
+
+
+**Dude, I invented JBoss. Have you heard of it?**
+
+__I love getting rich on other people backs. I hate to share.__
+
+</div>
+
+h3. Hidden footage from Oracle talks
+
+
+
+I have a friend (french, what else?) that works at Oracle security. He sent me some pictures from Larry Ellison office room during the JBoss acquisition talks:
+
+p. <div style="text-align: center;"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/larryellison.jpg' title='Larry Ellison'><img src='http://www.kimchy.org/wp-content/uploads/2007/06/larryellison.jpg' alt='Larry Ellison' width="300px"/></a></div>
+
+
+
+I don't remember Larry doing that face, in fact, I don't remember Larry even being in the room. Do you think it has to do with this picture of myself (taken at the exact same moment)?
+
+p. <div style="text-align: center;"><a href='http://www.kimchy.org/wp-content/uploads/2007/06/drevil.jpg' title='Marc Fluery Dr Evil'><img src='http://www.kimchy.org/wp-content/uploads/2007/06/drevil.jpg' alt='Dr Evil' /></a></div>
+
+
+
+Had my Dr Evil costume that day, still my favorite one that I use almost each day now.
+
+h3. JBoss employees hate me, I hate you more!
+
+
+
+Just read <a href="http://www.itnews.com.au/newsstory.aspx?CIaNID=52054">this</a>. Money quote:
+
+bq. "Marc was a lightning rod," Shaun Connolly ... "People may have been hesitant to approach us in the past because of that, who have been absolutely reaching out to us now to figure out how we can work more closely," he said.
+
+I wonder if it has to do with the fact that I got all the money out of the Red Hat deal. In your face <a href="http://blogs.jboss.com/blog/sconnolly/">Shaun</a> and <a href="http://www.jroller.com/page/rickard">Rickard</a> (I could not resist myself).
+
+h3. Cameron annoys me
+
+
+
+Well, Cameron <a href="http://www.jroller.com/page/cpurdy?entry=so_what_would_mark_fleury">responded</a> to my witty and excellent <a href="http://marcf.blogspot.com/2007/05/do-you-believe-in-life-after-love.html">post</a> on my other blog. Money quote:
+
+bq. So mon père, if I survive a couple months, will you start to wonder if I was on to something?
+
+Well, first Cameron, you don't have to impress me by speaking my language. Second, I am not angry with you for closing a deal with OraLarry that I failed to close. With OraLarry I simply chose not to bend over. You will need a lot of lubricants to survive there a couple of months.
+
+h3. I give such great talks
+
+
+
+I gave <a href="http://www.bejug.org/confluenceBeJUG/display/PARLEYS/Professional+Open+Source">this</a> talk not so long ago. I really don't understand why this presentation didn't make it to <a href="http://www.presentationzen.com/">Presentation Zen</a>. I nailed it with the costume and nobody even noticed that I came unprepared and hammered. I sure as hell know how to put up a show.

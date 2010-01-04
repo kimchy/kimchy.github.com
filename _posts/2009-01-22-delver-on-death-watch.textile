@@ -1,0 +1,6 @@
+---
+layout: post
+title: Delver on Death Watch
+---
+
+Well, it seems like <a href="http://www.techcrunch.com/2009/01/22/social-search-engine-delver-on-death-watch/"> Delver is on a death watch</a>. If you remember, I <a href="http://www.kimchy.org/moving-on/">left GigaSpaces</a> briefly to join <a href="http://www.delver.com">Delver</a>. After two weeks, I <a href="http://www.kimchy.org/moving-back/">moved back</a> to GigaSpaces. Both my leaving and joining back happened before the current economic crisis, so there was no way I could have predicted this will happen. In any case, there are great people in Delver (some of the best coders I got a chance to briefly know, though it does not take too much to identify talent), and a very interesting and innovative idea. Good luck to you all.

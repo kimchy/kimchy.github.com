@@ -1,0 +1,11 @@
+---
+layout: post
+title: Compass 0.9 Released
+---
+
+p. <a href="http://www.opensymphony.com">OpenSymphony</a> and the <a href="http://www.opensymphony.com/compass">Compass</a> (a Java Search Engine Framework) team are proud to announce the major release of version 0.9. Major features include <a href="http://www.opensymphony.com/compass/versions/0.9.0/html/core-osem-annotations.html">searchable Java 5 annotations</a>, <a href="http://www.opensymphony.com/compass/versions/0.9.0/html/gps-jpa.html">EJB3 JPA</a> integration, and simplified xml schema based <a href="http://www.opensymphony.com/compass/versions/0.9.0/html/core-configuration.html">configuration</a> (includes integration with new Spring 2 configuration).
+
+
+
+p. Now we are ready to start moving towards version 1.0 . I plan to let version 0.9 stabilize, add must have features (please shout if you find yours missing) like Oracle 9i Jdbc directory support and simpler usage of the highlighter. In the next few posts I will delve into some of 0.9 features, starting with how to upgrade to 0.9 from previous versions.
+

@@ -1,0 +1,27 @@
+---
+layout: post
+title: Spring 2, a breakthrough for scripting
+---
+
+p. <a href="http://www.springframework.org">Spring Framework</a> is one of the most successful Java open source project, shadowing most of other open source projects in terms of adoption. Spring did not break any new grounds, or introduced new aspects (pun intended), but it does an amazing job in integrating existing concepts, solutions and usage of other libraries into an easy to use framework. The ease of use and simplified programming model convinced even the most strict companies to use it.
+
+
+
+p. One of the problems with Spring 1.x was the simple way of walking into the trap of <a href="http://www.martinfowler.com/bliki/AnemicDomainModel.html">Anemic Domain Model</a>. It did not help when Spring came with samples the explicitly "used it" (petclinic), and that the most famous starter app (<a href="https://appfuse.dev.java.net/">AppFuse</a>) basically encourages you to write your code that way. Hopefully, this will change with Spring 2.x, allowing for injecting services/dao into your domain model using <a href="http://www.eclipse.org/aspectj/">AspectJ</a>, and contrary to <a href="http://blogs.opensymphony.com/plightbo/2006/01/anemic_domain_model_solved_wit_1.html">Patrick</a>, I do think that it is a clean and simple solution.
+
+
+
+p. What I am trying to show, is the power of Spring in terms of setting the architecture of future applications (if you want to make a good movie, take two green field projects based on Spring 1.x, give each a half heart chain, and after a few years when they join it up it will make for a soggy moment), which brings me to the topic of the blog. Spring 2.x comes with support for scripting languages that use the JVM (<a href="http://jruby.sourceforge.net/">JRuby</a>, <a href="http://groovy.codehaus.org/">Groovy</a> to name a few). If you think that it is there simply to support exotic applications that are going to be written using scripting, I believe the Spring guys put it there as a solution for everyday app.
+
+
+
+p. If your new Spring 2.x based application is going to have a rich domain model using pure Java, it means that your service layer is going to be a pretty thin wrapper that aims to provide some orchestration between domain model objects, and the usual AOP services (like transactions, security and .... logging). Here, I believe, is where scripting languages are going to make the biggest breakthrough into mainstream Java application (forget about <a href="http://www.rubyonrails.org/">Rails</a> on JRuby and so on). With the power and influence of Spring, and the good track record for providing solid ideas and concepts, introducing scripting languages into projects is going to be much simpler. The fact that sample applications are going to use it (which I believe is going to happen), will make the argument of "this is the recommended architecture by Spring" a winning argument when trying to convince your peers/managers to use it (the same goes for introducing AspectJ).
+
+
+
+p. Once this will happen, we will start to see scripting languages introduced into other aspects of your application. The C in MVC is a good place (and allowing for existing web frameworks to allow for it with minor or no changes), remote services (REST, web services), and so on.
+
+
+
+p. It only takes a small crack to open the dam, and the Spring guys are on their way to bring it down.
+

@@ -1,0 +1,32 @@
+---
+layout: post
+title: Apple iPhone SDK - The Hype
+---
+
+p. Just watched the <a href="http://www.apple.com/quicktime/qtv/iphoneroadmap/">iPhone SDK event</a>. Looks really nice, but the parts where Scott Forstall (VP iPhone) talked about the development experience cranked me silly. Here are some quotes:
+
+
+
+p. bq. We started with Xcode, and then we enhanced it to support the iphone. [...] the great thing is that Xcode knows all about the iPhone SDK [...] so when you are writing applications, it will code complete to the APIs in the SDK.
+
+
+
+
+p. Oh my God!. Apple, I am humbled by your radical and amazing approach to IDEs.
+
+
+
+p. bq. Project Management [..] it deals with all your files for you. Your source file, header files, ... . It also integrates with your source control management system. So be it subversion, perforce, CVS, it integrates directly [...]. You can check files in and out, you can merge files, ... .
+
+
+
+p. Mmm, how I wish I had this features in <a href="http://www.jetbrains.com/idea/">my crappy development environment</a>. Apple sure as hell push the limit.
+
+
+
+p. And there are so many more wonderful tidbits like this. "It integrates with the iPhone documentation", "has a debugger". The debugger part is amazing, the way it is presented (hard to put in into words) goes like this: It has a debugger. But [wait for it] it has a great **remote** debugger. Amazing. The limits that Apple are pushing the development experience.
+
+
+
+p. Apple are doing amazing things. But come on, are you joking?
+

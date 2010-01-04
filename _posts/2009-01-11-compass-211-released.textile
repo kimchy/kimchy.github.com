@@ -1,0 +1,10 @@
+---
+layout: post
+title: Compass 2.1.1 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1.1 released. Mainly includes bug fixes. Full release notes can be found <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10161">here</a>.
+
+p. Enjoy!.
+
+

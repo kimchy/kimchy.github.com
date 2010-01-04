@@ -1,0 +1,14 @@
+---
+layout: post
+title: Compass 1.1 M2 Released
+---
+
+p. OpenSymphony and the Compass team are pleased to announce the <a href="http://www.opensymphony.com/compass/download.action">release</a> of version 1.1 M2. This is the second milestone release of version 1.1, major features include:
+<ul>
+  <li><a href="http://jroller.com/page/kimchy?entry=compass_and_support_unmarshall">Support Unmarshall</a>: Allowing to disable Compass support for unmarshalling objects from the search engine. This feature enable Compass not to store extra information in the index, and use much less memory.</li>
+  <li><a href="http://jroller.com/page/kimchy?entry=dynamic_meta_data_in_compass">Dynamic Meta Data</a>: Allows to define syntactic indexable content using scripting/expression languages like ognl, groovy, velocity, commons-el and commons-jexl.</li>
+  <li>Simplified API usage when working within a transaction, including @CompassContext support in Spring. This feature is explained <a href="http://jroller.com/page/kimchy?entry=compass_in_managed_transactions_environments">here</a>, <a href="http://jroller.com/page/kimchy?entry=compasscontext_and_spring">here</a>, and <a href="http://jroller.com/page/kimchy?entry=more_on_compass_and_spring">here</a>.</li>
+  <li>Support for the latest Hibernate and Spring versions.</li>
+</ul>
+
+

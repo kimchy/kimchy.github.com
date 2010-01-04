@@ -1,0 +1,9 @@
+---
+layout: post
+title: Compass moves back form Google Group
+---
+
+Seems like several Compass users did not like the move to Google groups (can't access it from work and so on), so we are back to the old <a href="http://forum.compass-project.org">forums</a>. Sorry for the trouble...
+
+Cheers,
+Shay

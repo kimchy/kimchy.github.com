@@ -1,0 +1,25 @@
+---
+layout: post
+title: Improved Terracotta Performance with Compass/Lucene
+---
+
+Good news for people that use Terracotta with Compass, in the upcoming 2.2 M1, performance will see a boost of at least 3 times over :).
+
+p. How was it done? It all revolves around how Terracotta works. The existing TerracottaDirectory used an internal ConcurrentHashMap in order to store the files that represent a Lucene Directory. There was already a performance improvement with discrete files where a file would obtain a lock when it performed changes to its content, with a flushing option (unlock and lock again) for very large files. Still, with Lucene, and how it works (especially 2.4), there are a lot of calls to the CHM, such as containsKey and so on. Each one of these need to obtain a read lock.
+
+
+
+p. In order to improve the performance, an optimized ManagedTerracottaDirectory was created. The managed directory accepts an external ReadWriteLock which will be used as the basis for "transaction" against the directory. Any operations performed against the index (and the Directory, or several directories since the RWL can be shared) should be performed under read lock (the directory will automatically upgrade to write lock and downgrade to read lock when needed). When used in such a manner, the Map that stores the files can now be a plain old HashMap, and not a CHM. By making the locks more coarse grained, it means less locking with terracotta, and much faster operations.
+
+
+
+p. With Compass, the managed directory is easily used since Compass already has the concept of transactions, and the RWL read lock can be obtained when the transaction starts, and unlocked when it commits/rollsback. It is actually the default directory used by Compass now (can be reverted back using a simple setting).
+
+
+
+p. This will work really nicely with the new Terracotta Transaction Processor, since one can easily create only search nodes that also submit transactions to be processed, and other nodes that will be the worker nodes that process the transactions. It basically means that the search nodes will only work in read only mode for directory based operations!.
+
+
+
+p. Enjoy!
+

@@ -1,0 +1,16 @@
+---
+layout: post
+title: A question of usability
+---
+
+p. I have been a mac user for a few years now (not for long though, but that is a different blog post) and have installed windows using <a href="http://www.apple.com/macosx/bootcamp/">BootCamp</a> on my MacBook Pro. I am also using the Leopard WWDC build (which I hoped will have Java 6...). 
+
+p. The first thing that I was surprised about was the fact that once you installed windows, it defaults to start up **into windows** and not OS X. Somebody is going to pay for this in apple :).
+
+p. The second thing is the fact that since now, by default, windows starts up, I find myself using the shutdown button more often. If I am not fast enough to hit the option button, it starts up into windows, and I press shutdown since I don't want to wait till windows starts up.
+
+p. Now for the difference between windows and OS X. If windows detects an improper shutdown, it will tell you next time that there was one in a very scary, text oriented window, and ask you what to do. 99.999% of the time, you will simply tell windows to continue and startup immediately. With OS X, this is not the case. OS X, when it crashes, or when I shut it down because it is stuck (yea, it happens with OS X as well), simply boots back without asking questions.
+
+p. So, if most of the time people will simply boot into windows in case of an improper shutdown, and, people who wish to boot in safe mode will probably know the key binding to do so, why scare the typical user so much? Personally, I have not seen a difference between OS X and windows in being able to recover from such a shutdown. 
+
+p. So, with very small decisions like this, OS X is perceived to be much more stable than windows. And this manages to fool the best of us. This lesson is one that all of us should follow when developing applications.

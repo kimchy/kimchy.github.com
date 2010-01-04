@@ -1,0 +1,8 @@
+---
+layout: post
+title: Compass 2.2.0 RC1 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.2.0 RC1 released. Main features include <a href="http://www.kimchy.org/compass-index-and-search-session/">simplified index and search session</a>, <a href="http://www.kimchy.org/compass-mt-transaction-processor/">mt transaction processor</a>, and <a href="http://www.kimchy.org/compass-dynamic-properties/">dynamic properties</a>. Full release notes can be found <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10172">here</a>.
+
+Enjoy!

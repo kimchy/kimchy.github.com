@@ -1,0 +1,12 @@
+---
+layout: post
+title: Search on Apple Site
+---
+
+Apple has <a href="http://www.apple.com">redesigned their site</a> and one of the nice new features provided there is the site search functionality. If you go to the site and type in a search term you will see auto-complete result suggestions (beautiful ones if I might add) and the search results page is redesigned into categories and a bit more usable. All in all, people who own a mac will be familiar with the Spotlight like search support, and people who do not own one can roughly map it to Google Desktop.
+
+The site really shows how search can change the way people use a web site. For one thing, I will never use the navigation bar anymore. If I wish to see the latest 'iMac', I will simple load apple site, hit tab (the search box should have initial focus in my opinion), type in imac, use the keyboard to navigate to the first hit, and hit enter. Much nicer than going through the same navigation process each time.
+
+Another interesting part the new search reveals is the fact that when using free text search you can basically search on anything. The domain model translates into a semantic model or searchable model, and then search becomes a snap. Usually the searchable model also holds similar "viewed" properties (such as name, type, url to go to, ...) which means that the actual search result handler can treat all results in a similar manner. In the apple case, 'iMac', has a Product hit, several StoreItem hits, and SupportItem hits. All three are different domain model entities, with different properties, but when mapped to a search engine, all can have the same semantic/searchable model. You would still want to have the indexed properties be as complete as possible (i.e. index the model number as well, which does not apply to SupportItem, but does apply to ProductItem) so it can be searchable when you type it in, but not necessarily viewable in the search result.
+
+This is a very interesting topic, one which I have been involved in heavily by creating <a href="http://www.opensymphony.com/compass/">Compass</a> which answers all this different requirements very easily. If you are heading to <a href="http://www.springone.com/display/SpringOne07">SpringOne</a> I will be <a href="http://www.springone.com/display/SpringOne07/Compass%2C+Building+Search+with+Spring">showing exactly</a> what I have been talking about by taking Spring petclinic example and making it searchable in a similar manner to what Apple provides on their site. Hope to see you there...

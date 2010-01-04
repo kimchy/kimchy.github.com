@@ -1,0 +1,6 @@
+---
+layout: post
+title: Keyword driven search for Safari
+---
+
+p. Just came across this little gem called <a href="http://purefiction.net/keywurl/">Keywurl</a>. I use keyword based navigation on Firefox all the time, its nice to have it on Safari as well (as I like Safari a bit better... ).

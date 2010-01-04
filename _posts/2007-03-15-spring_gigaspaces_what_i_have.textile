@@ -1,0 +1,20 @@
+---
+layout: post
+title: Spring & GigaSpaces (what I have been up to)
+---
+
+p. I have been a bit silent for the past two months or so but it does not mean that I have not been busy :). I have been spear heading the development of an exciting new project here at <a href="http://www.gigaspaces.com">GigaSapces</a> called OpenSpaces.
+
+
+
+p. The project at its core takes the concepts of GigaSpaces SBA and Processing Unit and makes them real. If you are not familiar with this concepts, <a href="http://www.gigaspaces.com/os_papers.html">here</a> you can find an excellent white paper describing them called: "The Scalability Revolution - From Dead End to Open Road". It has been a real challenge getting this abstract concepts and making them a reality and I must say, this work, on top of GigaSpaces current product, is going to change the way we work (and of course, I am not biased at all).
+
+
+
+p. There is no formal release of OpenSpaces yet, but I can tell you that it is heavily based on <a href="http://www.springframework.org">Spring</a> and basically simplify writing and deploying a Grid based Spring application using the power of JavaSpaces. I am sure that our many customers that already use Spring and GigaSpaces are going to love it ;).
+
+
+
+p. We are starting to get the word out. <a href="http://www.jroller.com/page/gnirpaz">Guy Nirpaz</a>, our VP R&D is going to talk about this at his session at <a href="http://qcon.infoq.com/qcon/speakers/show_speaker.jsp?oid=202">QCon</a>. Myself and Nati (our CTO) are going to be at <a href="http://javasymposium.techtarget.com/lasvegas/index.html">TSS</a> and talk about it a bit more. If you are attending one of this conferences, stop by our booth and attend the session, I assure you, this is really exciting stuff.
+
+

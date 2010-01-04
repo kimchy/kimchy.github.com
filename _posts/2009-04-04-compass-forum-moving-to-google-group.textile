@@ -1,0 +1,13 @@
+---
+layout: post
+title: Compass Forum Moving to Google Group
+---
+
+Compass forums have moved to Google Groups, the group name is *compass-project-user*, and the link is <a href="http://groups.google.com/group/compass-project-user">http://groups.google.com/group/compass-project-user</a>.
+
+Why? Well, basically, Jive is no more, and it seems like Clear Space or something like that is the new way for the company to go. Also, no more open source license. So, I thought it was a good time to move to Google groups. 
+
+I managed to migrate most of the forum posts to Google groups, but, if you want to be sure that I will answer a question, please repost a question you have again. Sorry for the inconvenience.
+
+Cheers,
+Shay

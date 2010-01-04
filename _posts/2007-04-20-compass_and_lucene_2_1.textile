@@ -1,0 +1,15 @@
+---
+layout: post
+title: Compass and Lucene 2.1
+---
+
+p. The latest Compass 1.2 M1 snapshot now has support for Lucene 2.1. The main feature enabled by moving to Lucene 2.1 is lockless commits, which required some changes especially in Compass support for transactions.
+
+
+
+p. Other features, such as pluggable LockFactory, will have their own Jira issues and implemented separately. What would you like to see out of the list of features Lucene 2.1 has and should be simplified to use with Compass? What is the top feature on your list? Basically, based on user requests, the features will be implemented.
+
+
+
+p. This upgrade will require a full reindex of the data. Make sure that the lucene jars used are updated as well. Since this is a major change, it would be great if early feedback could be provided by you, Compass users. If you have time, take 1.2 M1 snapshot for a spin and see if it behaves ...
+

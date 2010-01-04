@@ -1,0 +1,55 @@
+---
+layout: post
+title: Embedded TopLink Essentials (Glassfish)
+---
+
+p. Compass 2.0 M1 supports an embedded mode when working with <a href="https://glassfish.dev.java.net/javaee5/persistence/">TopLink Essentials</a> (which its development is part of the <a href="http://glassfish.org/">Glassfish</a> project).
+
+
+
+p. Here are the simple steps needed to enable Compass with TopLink Essentials:
+
+
+
+p. First, add the following to your persistence xml file:
+
+
+
+p. <pre lang="xml" line="1">
+<persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+  <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+  <properties>    
+    <!-- ... (other properties) -->
+    <property name="toplink.session.customizer" 
+         value="org.compass.gps.device.jpa.embedded.toplink.CompassSessionCustomizer" />
+  </properties>
+</persistence-unit>
+</pre>
+
+
+
+p. This will enable Compass within TopLink Essentials, basically going over all the mapped JPA classes and adding them to Compass automatically if they have the @Searchable annotation.
+
+
+
+p. Now, if we want to completely index the database based on the mappings, we can execute the following code:
+
+
+
+p. <pre lang="java" line="1">
+TopLinkHelper.getCompassGps(emf).index();
+</pre>
+
+
+
+p. Last, if we want to perform a search, we can simply obtain the Compass instance and perform it. Here is the code:
+
+
+
+p.  <pre lang="java" line="1">
+Compass compass = TopLinkHelper.getCompass(emf);
+</pre>
+
+
+
+p. That is it. Simple no? Now, Compass comes with support for embedded OpenJPA, Hibernate, and TopLink (as well as EclipseLink, which is very similar to TopLink). More information on the integration can be found in the <a href="http://www.compass-project.org/docs/2.0M1/reference/html/gps-embeddedtoplink.html">reference manual</a>.

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Collocated Indexing and Distributed Search with GigaSpaces
+---
+
+p. Compass 2.0 already comes with an integration between GigaSpaces and Lucene/Compass. The integration allows to store the Lucene index (using Lucene Directory) abstraction on top of GigaSpaces. It also allows to use GigaSpaces mirror services allowing to automatically index the content of the data grid (Space) in an asynchronous reliable manner.
+
+
+
+p. The current integration provides great value for both Lucene and Compass users, and it is already used by several users. But, there is still something missing. A big part of GigaSpaces data grid solution is the ability to run collocated services within cluster members, and query them in a distributed manner. This type of integration fits very nicely to the indexing and search requirements by Compass users. Here is a diagram of how this should work:
+
+
+
+p. <a href='http://www.kimchy.org/wp-content/uploads/2008/06/needle-gigaspaces-service.png' title='GigaSpaces Compass Service Integration'><img src='http://www.kimchy.org/wp-content/uploads/2008/06/needle-gigaspaces-service.png' alt='GigaSpaces Compass Service Integration' /></a>
+
+
+
+p. Lets explain how the integration works by following the flow of operations. The first operation is writing POJOs to the Space (data grid):
+<ol>
+<li>A POJO is written to the Space using a clustered proxy of the Space.</li>
+<li>The POJO is directed to one of the partitions (automatically by GigaSpaces).</li>
+<li>The POJO is written to the collocated cluster member.</li>
+<li>The indexing service is notified that something changed in the Space (based on POJO templates).</li>
+<li>The indexing services applies the changes (assuming they have Compass mappings) using Compass API.</li>
+<li>Compass applies the change (save/delete). The Compass instance stores the Luceen index on the collocated Space (the partition, which might or might not have a backup).</li>
+</ol>
+
+
+
+
+p. The search operation works as follows:
+<ol>
+<li>Using a simple POJO search service (__CompassSearchService__) the search is performed on the clietn side.</li>
+<li>The search is automatically broadcast to all active partitions and executed on each in an embedded manner.</li>
+<li>Results that match the query are returned to the client from each partition.</li>
+<li>The internal client implementation automatically reorders and reduce the results and returns them to the client.</li>
+</ol>
+
+
+
+
+p. This type of integration takes collocation of indexing and searching to a new level. Indexing and Search operations are performed in a collocated manner **in memory** making them extremely fast. Scalability is easily handled by adding more partitions, and high availability is provided by adding backups to each partition.
+
+
+
+p. The integration itself can be used both by Compass users and GigaSpaces users. Compass users can use the integration to scale their search integration (use GigaSpace API to store/delete the domain model, and the search API to search). GigaSpaces users can, seamlessly, add google like search support to their current integration with GigaSpaces.
+
+
+
+p. More information can be found in the reference docs (<a href="http://build.compass-project.org/download/CMPTRK-NIGHTLY/artifacts/build-169/Reference-Docs/html/needle-gigaspaces.html">here</a> is a link to the nightly build docs) and this feature is available from tonight nightly builds. The feature in Compass Jira is <a href="http://issues.compass-project.org/browse/CMP-666">CMP-666</a>, muhahaha :).
+

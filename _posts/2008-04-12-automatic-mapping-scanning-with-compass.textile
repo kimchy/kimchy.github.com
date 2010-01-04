@@ -1,0 +1,24 @@
+---
+layout: post
+title: Automatic Mapping Scanning with Compass
+---
+
+p. Compass now supports (trunk) automatic scanning of different mappings definitions (a much requested feature). Here is a code example of how it can be used:
+
+
+
+
+p. <pre lang="java" line="1">
+Compass compass = new CompassConfiguration().setConnection("test-index")
+                 .addScan("com.mycompany", "**/model/**")
+                 .buildCompass();
+</pre>
+
+
+
+p. The above code will scan the package __com.mycompany__ and match any sub package that has __model__ in it (ant style pattern matching, can be null). The scanning process will scan for all the typical xml mapping definitions (ends with __.cpm.xml__), and will try and find classes with __@Searchable__ annotations using either ASM or Javassist (if found in the classpath).
+
+
+
+p. The scanner is supported both in the dtd based configuration and the schema based configuration. Enjoy!.
+

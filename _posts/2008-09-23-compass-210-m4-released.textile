@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 2.1.0 M4 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> version 2.1.0 M4 released. This is a critical bug fix release of the M3 released just a few days ago and is a recommended release for all 2.1.0 M3 users. Check out the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10151">release notes</a>. Enjoy!.
+

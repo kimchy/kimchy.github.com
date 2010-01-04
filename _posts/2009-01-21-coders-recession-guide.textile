@@ -1,0 +1,65 @@
+---
+layout: post
+title: Coders Recession Guide
+---
+
+Times are bad, lets be honest about it. Layoffs are happening all around us (see the <a href="http://www.techcrunch.com/layoffs/">TechCrunch Layoff Tracker</a>) and coders (even great coders) are loosing their job. Whenever I hear about it, it always brings me back to the time I moved to London, with no Job and a Wife learning at the Cordon Blue (expensive tuition). Moving to a country where the currency is 8 times your previous local currency, and the living expenses are one of the highest in the world, with no Job to back you up, can be a bit frightening ;).
+
+Personally, what I embarked at doing was getting myself as educated as I can about technology. While doing that, <a href="http://www.kimchy.org/the_birth_of_compass/">Compass was born as well</a>. While working, many times we don't have as much time as we want to stay updated with all the software changes occurring around us. The process of looking for a job is a great time for us to stay up to speed.
+
+So, here are my suggestions for the (currently) unemployed coder:
+
+h1. Learn a New Language
+
+
+
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/language.jpeg" alt="language" title="language" width="96" height="135" class="alignleft size-full wp-image-345" /> I can't emphasis how important this is. Learning a new software language expands a coders imagination and breaks him free from the constrain of just thinking in one language. 
+
+Some of the languages I would recommend include:
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a>: You did not expect that I would start with this one, right?. Its time to actually learn Javascript properly, its an amazing language and you will probably use it if you do web development.</a>
+<li><a href="http://groovy.codehaus.org/">Groovy</a>: If you do Java, Groovy should be at the top of list. All the power of Java, combined with all the power of dynamic languages (Closures, where have you been all my life?). </li>
+<li><a href="http://www.ruby-lang.org/en/">Ruby</a>: An amazing language, productive as hell, and <a href="http://jruby.codehaus.org/">runs on the JVM</a> better than on any other platform.</li>
+<li><a href="http://erlang.org/">Erlang</a>: Because of its amazing concurrency model.</li>
+<li><a href="http://www.scala-lang.org/">Scala</a>: Cause Erlang does not run on the JVM ;).</li>
+<li><a href="http://clojure.org/">Clojure</a>: Cause Lisp is the best language out there, and Clojure makes it even more attractive. It even has an STM.</li>
+<li><a href="http://research.microsoft.com/en-us/um/cambridge/projects/fsharp/">F#</a>: I am mainly a Java/JVM guy, and F# is the first language out of M$ that managed to really intrigue me.</li>
+</ul>
+
+h1. Learn and Read New Library/Framework
+
+
+
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/library.jpeg" alt="library" title="library" width="130" height="103" class="alignleft size-full wp-image-348" /> Now is the time to learn new libraries that you always wanted to learn but never had the time. When I was in London, it was time for me to learn <a href="http://springframework.org/">Spring</a>, <a href="http://www.hibernate.org">Hibernate</a>, and <a href="http://lucene.apache.org">Lucene</a>. I not only learned how to use them, but I also read their code. Great libraries have great coders behind them, and Open Source allows us to tap into their mind easily.
+
+Some of my recommendations are (coming from Java background):
+
+<ul>
+<li>Javascript library: Cause you should not do any web development without one of them: <a href="http://dojotoolkit.org/">dojo</a>, <a href="http://www.prototypejs.org/">Prototype</a>, and <a href="http://jquery.com/">jQuery</a>.</li>
+<li>RIA: Choose your favorite RIA and learn it, for example: <a href="http://code.google.com/webtoolkit/">GWT</a>, <a href="http://www.sun.com/software/javafx/">JavaFX</a>, <a href="http://www.adobe.com/products/flex/">Flex</a>.</li>
+<li><a href="http://grails.org/">Grails</a>: Cause Java web development should be easy, and we seem to have forgotten that... .</li>
+<li><a href="http://code.google.com/p/google-guice/">Guice</a>: Cause dependency injection should be easy as well (we seem to be learning that ;) ).</li>
+<li><a href="http://aws.amazon.com/">Amazon Web Services</a>: Cause cloud is hot (never mind that technology wise, nothing was invented), and playing with Amazon web services such as ec2, s3, will come in handy later on.</li>
+<li>Data Grid: Cause you will probably need it at one point or the other. From simple caching ones like memcached, up to <a href="http://www.oracle.com/technology/products/coherence/index.html">Coherence</a> and <a href="http://www.gigaspaces.com">GigaSpaces</a>. I would recommend the more advanced ones since they really change the way you think about architecture (collocate, and collocated often!).</li>
+<li><a href="http://www.terracotta.org">Terracotta</a>: Cause byte code manipulation to create network attached memory was never that sexy.</li>
+<li>Key based distributed storage: Try some projects that offer it and learn (for yourself) when it is useful. Examples include: <a href="http://couchdb.apache.org/">CouchDB</a>, <a href="http://project-voldemort.com/">Project Voldemort</>, <a href="http://hadoop.apache.org/hbase/">HBase</a>.</li>
+<li>Search: Cause you will probably need to add that elusive Google like search box to your web application. <a href="http://lucene.apache.org">Lucene</a>, <a href="http://www.compass-project.org">Compass</a>, <a href="http://search.hibernate.org/">Hibernate Search</a>, and <a href="http://lucene.apache.org/solr">Solr</a> all come to mind.</li>
+<li><a href="https://grizzly.dev.java.net/">Grizzly</a>: Cause NIO was never that sexy.</li>
+</ul>
+
+Of course there are many others, especially oldies like Spring, but the above list should keep you busy ;).
+
+h1. Read, Read, Read
+
+
+
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/books.jpeg" alt="books" title="books" width="104" height="121" class="alignleft size-full wp-image-354" /> Pick up a technology book of interest, or a business book that revolves around technology (we all want to start a startup one time, no?), and just read it. The list of books that I can recommend runs very long, and actually, it is quite hard to compile such a list, but I am sure that Amazon can help here, finding the book is not that difficult.
+
+**Just Read...**
+
+h1. Wildfire
+
+
+
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/forest-fire.jpeg" alt="forest-fire" title="forest-fire" width="140" height="86" class="alignleft size-full wp-image-355" /> Its funny how the technology world is similar to a forest. Every once in a while, a wildfire is required for the forest to rejuvenate itself so it can survive. The same things happen now, really bad coders are being weeded out (a company "must" do some layoffs, just to be on the safe side, no?), and current coders gets a chance to upgrade themselves. But don't worry, it will pass.

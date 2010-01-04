@@ -1,0 +1,11 @@
+---
+layout: post
+title: Searchable Cascading Mapping
+---
+
+p. Compass 2.0.0 M3 version includes a really nice feature which is called searchable cascading. Compass support the ability to cascade operations when using the component and reference mappings. What Compass users wanted was the ability to defined cascade definitions for properties that do not necessarily have a component/reference mappings.
+
+
+
+p. This feature is really handy when integrating with an ORM, which, because of a result of Account, the User object will be reindexed. More information can be found in the OSEM docs.
+

@@ -1,0 +1,7 @@
+---
+layout: post
+title: Overview Section on Compass Site
+---
+
+p. I have finally managed to put some content into the overview section on the new Compass site. I tried to nail down in a concise manner Compass main features and wanted to ask you Compass users what do you think about it. Is there something missing? Are things less important emphasized here? Thanks in advance!. <a href="http://www.compass-project.org/overview.html">Here is a direct link</a>.
+

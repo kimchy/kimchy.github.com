@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 2.0 and Java 5
+---
+
+p. Work has been started on Compass 2.0 and there is already some very good progress (currently it is called 1.3, but I will change it soon). While working on Compass 2.0, I am asking the community of Compass if there is a strong resistance in moving Compass to only work with Java 1.5. What say you?
+

@@ -1,0 +1,23 @@
+---
+layout: post
+title: More on Compass And Spring
+---
+
+p. After writing the previous blog entry about @CompassContext and the ability to inject a transactional aware CompassSession that works as is (without worrying about compass transaction management code or even closing the session) it struck me that it can and should be feature available for applications that do not use annotations (for various reasons, the prime one is Java 1.4).
+
+
+
+p. We now have another factory bean in Compass called LocalCompassSessionBean. It is a Spring FactoryBean that allows to inject a CompassSession directly into a Java bean with a CompassSession setter. The CompassSession injected would act the same as a @CompassContext injected session, and simplify the usage of Compass within managed transactions environments.
+
+
+
+p. It can be used either by explicitly declaring it using the usual Spring bean tag, or using Compass support for Spring 2 schema based configuration using: __<compass:session id="session" />__. Note, you can also set the Compass instance to use, but it is optional since LocalCompassSessionBean will automatically use a Compass instance configured within Spring application context if there is a single one.
+
+
+
+p. Another feature that bubbled out of the previous post is something Hani mentioned, and is the lack of the ability to programmatically add settings / mappings to the CompassConfiguration before a Compass instance is created when using schema based configuration. If using old bean style Spring configuration, one can extend LocalComapssBean and override newCompass method where it can be done, but with schema based configuration, there is no way to do so. LocalCompassBean now has the option to plug an implementation of LocalCompassBeanPostProcessor, where the generated CompassConfiguration can be programmatically processed. It can be configured as part of the compass tag: __<compass:compass postProcessor="myPost" ... />__
+
+
+
+p. Last, registering a Compass annotation bean post processor is now simpler with Spring 2 schema based support, and looks like: __<compass:context />__.
+

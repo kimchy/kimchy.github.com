@@ -1,0 +1,38 @@
+---
+layout: post
+title: Compass - mt Transaction Processor
+---
+
+One of the biggest improvements in Compass 2.2 is <a href="http://www.kimchy.org/compass-22-transaction-processors/">transaction processors</a>. The biggest news with the updated __read_committed__ and __lucene__ transaction processors is the fact that destructive transaction operations (create/delete/update) are performed in the background while still maintaining their respective transaction isolation behavior.
+
+The mentioned transaction processors (and the session that wraps them) are not supposed to be used using multiple threads. The ideas is that a single thread pushes all the changes using the session APIs, and they are processed in the background using a configurable amount of processor threads. 
+
+Yet, there is still a need for cases where multiple threads should perform dirty operations using a single "session". Of course, this can be easily achieved using a single processing thread that picks up jobs off a Queue, and apply them to a Session, while other threads simply pushes "jobs" to the queue. But sometimes this is problematic.
+
+For this reason, there is a new transaction processor in Compass now, the **mt** transaction processor. It allows to use a Compass session from multiple threads that perform the indexing operation. At the end of the indexing logical session, commit (or rollback) should be called on the session. For Lucene users, this is conceptually similar to using the IndexWriter directly.
+
+A prime scenario for this transaction processor is an indexing server, that accepts indexing requests and applies them to the index. In this case, multiple communication/seda threads will share the same session and apply the changes to the index. In order to make the changes visible to other search operation, the new flushCommit API can be used (with the downside that the operations up to the flushCommit operation will not be able to rollback).
+
+As a side note, driven by this new transaction processor, Compass now automatically tracks all the Lucene IndexWriter opened and automatically rolls back any opened index writer when it is closed.
+
+Here is an example of how this can be configured (by setting the mt transaction processor to be the default one):
+
+{% highlight xml %}
+<compass name="default">
+  <connection>
+      <file path="target/test-index" />
+  </connection>
+  <transaction processor="mt" />
+</compass>
+{% endhighlight %}
+
+And here is how it can be set in runtime:
+
+<pre lang="java" line="1">
+CompassSession session = compass.openSession();
+// The above can also use the index session
+session.getSettings().setSetting(LuceneEnvironment.Transaction.Processor.TYPE, 
+                                 LuceneEnvironment.Transaction.Processor.MT.NAME);
+</pre>
+
+Enjoy!

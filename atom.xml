@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Shay Banon</title>
+ <link href="http://kimchy.org/atom.xml" rel="self"/>
+ <link href="http://kimchy.org/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://kimchy.org/</id>
+ <author>
+   <name>Shay Banon</name>
+   <email>kimchy@gmail.com</email>
+ </author>
+
+ {% for post in site.posts limit:20 %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://kimchy.org{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://kimchy.org{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>

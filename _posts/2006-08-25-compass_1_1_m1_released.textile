@@ -1,0 +1,14 @@
+---
+layout: post
+title: Compass 1.1 M1 Released
+---
+
+p. <a href="http://www.opensymphony.com">OpenSymphony</a> and the <a href="http://www.opensymphony.com/compass">Compass</a> team are pleased to announce the release of version 1.1 M1. This is the first milestone release of version 1.1, major features include:
+<ul>
+	<li>**Sub Index Hashing:** Allows to partition mapped searchable content into different sub indexes. Previously, you could only map alias level mapping to a sub index (resource/osem/xsem), and different mappings could be mapped to the same sub index. Now, partitioning on the alias level mapping is possible, i.e. mapping different instances of the same class into different sub indexes (in OSEM). <a href="http://www.opensymphony.com/compass/versions/1.1M1/html/core-searchengine.html#core-searchengine-subindexhash">Here</a> is more information about it.</li>
+	<li>**Direct Lucene support:** <a href="http://www.opensymphony.com/compass/versions/1.1M1/html/core-searchengine.html#core-searchengine-directlucene">Direct</a> access to Lucene IndexReader and Seracher is supported.</li>
+	<li>**Lucene Directory Wrapper:** Support for custom <a href="http://www.opensymphony.com/compass/versions/1.1M1/html/core-connection.html#core-connection-directoryWrapper">Directory wrappers</a> and wrappers providers (think of them as Directory aspects), including two ram caches for single instance Compass installations.
+	<li>**Better Documentation:** Work has been started on upgrading the reference documentation. The first chapters have already been revised, with the rest of the chapters coming in the following milestone releases. Any feedback/corrections is more than welcomed.</li>
+</ul>
+
+

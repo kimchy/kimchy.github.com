@@ -1,0 +1,23 @@
+---
+layout: post
+title: Boost Batch Index Performance
+---
+
+p. Usually, using the batch insert transaction isolation is done when performing a complete reindexing of the application data. Batch indexing actually uses Lucene features directly, by opening an IndexWriter and adding documents until the transaction is committed. On transaction commit, the index is optimized.
+
+
+
+p. When using Compass Gps support, the indexing Compass instance (either directly configured with the DualCompassGps, or indirectly when using SingleCompassGps) usually uses batch index transaction isolation level.
+
+
+
+p. Two important settings in order to boost batch indexing performance (which are actually Lucene direct setting) are the maxBufferedDocs and mergeFactor settings. Both default to 10 (Lucene default values). maxBufferedDocs determines how much data will be stored in memory before it is flushed to the disk during the indexing process, and mergeFactor controls how often segments are merged during the indexing process (and since the index is optimized at the end, it can have much higher values).
+
+
+
+p. I performed some load testing in order to do some profiling with Hibernate Jpa device (<a href="http://jira.compassframework.org/browse/CMP-198">see jira issue</a>), and setting both settings to much higher values resulted in a big boost in performance. Of course, there is no free lunch here, since using higher values will result in more memory used, but setting them to more then 10 make sense in most cases. I used 1000 as the value for both of them, but it really depends on the application. Spending the time to test several values will mean that your indexing time can change dramatically.
+
+
+
+p. Since this two settings are only used for batch indexing (read committed uses different mechanism), I am thinking of raising the default values. What do you think? Compass has a very extensive configuration support, but most users simply resolve to the defaults (which make sense most of the cases), and for this case, I think that the defaults might be wrong.
+

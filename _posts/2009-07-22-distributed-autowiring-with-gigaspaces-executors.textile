@@ -1,0 +1,102 @@
+---
+layout: post
+title: Distributed Autowiring with GigaSpaces Executors
+---
+
+With the <a href="http://www.gigaspaces.com/newsletter/GigaSpaces-XAP-7.0-Released.html">7.0 release of GigaSpaces</a>, I thought I would write some blogs about the new and exciting new features that are part of the release. The first feature that I would like to talk about is <a href="http://www.gigaspaces.com/wiki/display/XAP7/Task+Execution+over+the+Space">GigaSpaces executors</a> support (which premiered in 6.6) and one of the cool things you can do with it.
+
+In essence, GigaSpaces executor support allows to define custom Tasks that will be executed within GigaSpaces in a collocated manner with data. Aside from collocation, one of the nice feature of it is the fact that the code does not have to be predefined within the GigaSpaces cluster, but instead it is loaded on demand. Here is an example of such a simple task:
+
+{% highlight java %}
+public static class TradeValueTask implements Task<Float> {
+
+    private long tradeId;
+
+    @TaskGigaSpace
+    private transient GigaSpace gigaSpace;
+
+    public TradeValueTask(long tradeId) {
+        this.tradeId = tradeId;
+    }
+
+    @SpaceRouting
+    public long getTradeId() {
+        return tradeId;
+    }
+
+    public Float execute() throws Exception {
+        Trade trade = gigaSpace.readById(Trade.class, tradeId);
+        return trade.getValue();
+    }
+}
+{% endhighlight %}
+
+The above task allows one to actually get *just* the trade value for a given trade id, instead of reading the whole trade and extracting the value from it on the client side.
+
+The execution will be directed to the same partition that trade exists on (assuming that the trade id is also the routing field for Trade) and executed there. This means that the *readByid* operation will be executed in a collocated manner with the space instance.
+
+Here is an example of how it can be executed:
+
+{% highlight java %}
+// gigaSpace here is a clustered proxy of the whole cluster
+AsyncFuture<Float> result = gigaSpace.execute(new TradeValueTask(1));
+float value = result.get();
+{% endhighlight %}
+
+Now, lets assume that calculating the trade value is complex and we already have a service that knows how to configure it in the Processing Unit descriptor file:
+
+{% highlight xml %}
+<bean id="traveValueCalulator" class="eg.TradeValueCalulator" />
+{% endhighlight %}
+
+We would love to be able to use it in order to calculate the trade value from within the processing unit. What we actually want to do is be able to get a handle to the TradeValueCalculator from within our class. There are several ways to do so, but one of the nicest is to actually use Spring autowiring capabilities to inject it, which we can easily do:
+
+{% highlight java %}
+@AutowiredTask
+public static class TradeValueTask implements Task<Float> {
+
+    private long tradeId;
+
+    @TaskGigaSpace
+    private transient GigaSpace gigaSpace;
+
+    @Autowired
+    private transient TradeValueCalulator tradeValueCalulator;
+
+    public TradeValueTask(long tradeId) {
+        this.tradeId = tradeId;
+    }
+
+    @SpaceRouting
+    public long getTradeId() {
+        return tradeId;
+    }
+
+    public Float execute() throws Exception {
+        Trade trade = gigaSpace.readById(Trade.class, tradeId);
+        return tradeValueCalculator.calculate(trade);
+    }
+}
+{% endhighlight %}
+
+By marking the class with the @AutowiredTask annotation, it will automatically get autowired with the beans defined within the processing unit. Pretty cool, no?
+
+(As a side note, of course, autowiring takes time, which might be of essence ;). Another option is just implement ApplicatiobnContextAware, and use the ApplicationContext to get the bean based on its id).
+
+So we can autowire beans into a Task executed using GigaSpaces. One last thing before we end this post, I would like to show another nifty feature of GigaSpaces executors, which is the executor builder.
+
+Lets assume that we now want to calculate the sum of several trades by their ids. We could have gone ahead and execute each task, wait on all the futures, and sum the results. But, why work hard when we (GigaSpaceians) can work hard for you (my personal motto):
+
+{% highlight java %}
+AsyncFuture<Float> result = 
+          gigaSpace.executorBuilder(new SumReducer<Float, Float>(Float.class))
+                                 .add(new TradeValueTask(1)) 
+                                 .add(new TradeValueTask(2)) 
+                                 .add(new TradeValueTask(3))
+                                 .execute(); 
+float value = result.get();
+{% endhighlight %}
+
+All three tasks will be executed in parallel, in a none blocking mode, each on its respective partition, and the results will be automatically reduced using our built in SumReducer.
+
+Enjoy!

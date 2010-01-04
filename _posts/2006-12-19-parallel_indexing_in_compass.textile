@@ -1,0 +1,15 @@
+---
+layout: post
+title: Parallel Indexing In Compass
+---
+
+p. Compass now supports parallel indexing for both the Hibernate and JPA devices. Parallel indexing is now the default mode for both devices.
+
+
+
+p. The parallel indexing process partitions the index entities according to their sub index assignment, creates N threads (based on the sub indexes partitions) and index them in parallel (fetches the content from the database and index them in Compass). This features works thanks to the fact that each sub index is a fully functional Lucene index and locking is performed on the sub index level. More information about it can be found <a href="http://www.opensymphony.com/compass/versions/1.1RC1-SNAPSHOT/html/gps-introduction.html#gps-paralleldevice">here</a>.
+
+
+
+p. The parallel indexing feature is part of Compass RC1 SNAPSHOT. I wonder how much performance gains this feature provides, so if you get the chance to try it out, it would be interesting to hear back comparisons (I did some internal testing, but I wonder how real life scenarios work). You can leave a comment with your results if you have the time to try it out. Naturally, there are other ways to improve the indexing process which I blogged about before.
+

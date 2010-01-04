@@ -1,0 +1,31 @@
+---
+layout: post
+title: Dynamic Ranking in Compass
+---
+
+p. I spent some time talking to a friend about Compass and the question of how one would go and do something like how Google ranks web pages with Compass. I described to him one very simple option for doing that which he was not aware of, and I though I would share it here for other Compass users as well:
+
+
+
+p. So, lets take for example a simple Account object which has many possible Customers. One possible ranking algorithm when searching for an Account can be the number of Customers it has. So, the question here is how do you realize this requirement with Compass? One way to do it is using a feature in Compass that allows to map a property which will control the boost "class" value. Here is a snippet of code that shows how to do it with Compass:
+
+
+
+p. 
+<pre lang="java" line="1">
+@Searchable
+public class Account {
+
+     @SearchableBoostProperty
+     public Integer getNumberOfCustomers() {
+          return customers.size();
+     }
+
+}
+</pre>
+
+
+
+
+p. Now, when searching for something that "hits" the Account object, its relevance will also be based on the number of customers it has. Also note that many times, especially if the number of customers can vary across a large number, mapping the values into a range of smaller values will be needed.
+

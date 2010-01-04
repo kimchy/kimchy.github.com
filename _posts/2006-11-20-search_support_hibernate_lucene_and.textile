@@ -1,0 +1,6 @@
+---
+layout: post
+title: Search support - Hibernate/Lucene and the Compass at Javalobby
+---
+
+Rick Ross <a href="http://www.javalobby.org/java/forums/t84656.html">started</a> a discussion regarding my <a href="http://jroller.com/page/kimchy?entry=hibernate_search_lucene">previous</a> blog post. It would be really nice to hear your thoughts about it there.

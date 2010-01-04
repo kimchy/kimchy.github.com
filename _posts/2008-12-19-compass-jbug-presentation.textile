@@ -1,0 +1,10 @@
+---
+layout: post
+title: Compass JBUG Presentation
+---
+
+p. Hi, here is a presentation I gave about Compass in JBUG:
+
+
+p. <div style="width:425px;text-align:left" id="__ss_851515"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/kimchy/compass-jbug-presentation-presentation?type=powerpoint" title="Compass - JBUG presentation">Compass - JBUG presentation</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=jbugcompass-1229466134913380-2&stripped_title=compass-jbug-presentation-presentation" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=jbugcompass-1229466134913380-2&stripped_title=compass-jbug-presentation-presentation" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View SlideShare <a style="text-decoration:underline;" href="http://www.slideshare.net/kimchy/compass-jbug-presentation-presentation?type=powerpoint" title="View Compass - JBUG presentation on SlideShare">presentation</a> or <a style="text-decoration:underline;" href="http://www.slideshare.net/upload?type=powerpoint">Upload</a> your own. (tags: <a style="text-decoration:underline;" href="http://slideshare.net/tag/compass">compass</a> <a style="text-decoration:underline;" href="http://slideshare.net/tag/jbug">jbug</a>)</div></div>
+

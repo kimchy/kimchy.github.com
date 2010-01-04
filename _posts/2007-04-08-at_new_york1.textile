@@ -1,0 +1,6 @@
+---
+layout: post
+title: At New York
+---
+
+I am going to be at New York (Manhattan) this week. If anybody wants to talk about Compass, GigaSpaces or anything technology just drop me an email at: kimchy AT gmail and we can arrange something.

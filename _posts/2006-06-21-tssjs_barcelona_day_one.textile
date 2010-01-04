@@ -1,0 +1,31 @@
+---
+layout: post
+title: TSSJS Barcelona Day One
+---
+
+p. Well, it is the end of the first day of <a href="http://javasymposium-europe.techtarget.com/">TSSJS Barcelona</a>, and I am sooo tired. I forgot already how hard it to keep awake in a full day of lectures, it really brought me back to my university days (at least the first semester ;)).
+
+
+
+p. The first keynote was by <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#JDavies">John Davis</a>, and he talked about the <a href="http://javasymposium-europe.techtarget.com/html/det_keynote.htm#JDaviesKeynote">investment banking technology stack</a>. Nothing exciting there, with all the usual suspects (Spring, Spring, Spring). Two things to note from his keynote, was the fact that several investments banks use Jini/JavaSpaces, which from my point of view, actually fits the it like a glove. It is notable since most of the time, investments banks are quite conservative, and the fact that they realize that Jini/JavaSpaces makes a lot of sense in terms of many aspects/applications of the investments bank industry, should give them a lot of credit. The other thing that I actually missed from the technology stack, was ESB (to its many forms, namely JBI, and NO, Tibco/MQ is not an ESB), which as in the case of Jini/JavaSpace, fits an investment bank like an Argentinean orchestrated goal.
+
+
+
+p. The second session that I attended was a session by <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#JWalker">Joe Walker</a> about <a href="http://javasymposium-europe.techtarget.com/html/det_descriptions.htm#JWalkerAdvanced">DWR</a>. DWR is a gem in-terms of open source AJAX framework, and it makes enabling you application for AJAX a snap. The next version will introduce reverse AJAX, which allows to execute Java Script code from the server side, and that is a remarkable feature. It is also nice that it comes already integrated within several Web Frameworks (WebWork, Struts Action, ...). I do wonder how it match Google latest offering, the Google Web Toolkit.
+
+
+
+p. The next session was held by <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#JBoner">Jonas Boner</a>, and it was about Terracota, and <a href="http://javasymposium-europe.techtarget.com/html/det_descriptions.htm#JBonerSpring">Terracota integration with Spring</a>, though they just called it Transparently Clustered Spring (I hate when companies do that). Terractora will transparently cluster your actual JVM, which is a neat feature. I still don't understand how you will go about and use it without it having transaction support though. Imagine taking money from one bank account, Terracota replicating it, and then crediting the other bank account with the same amount. What will happen if it fails just after the Bank took the money, and Terracota replicated it, but before you credited the other bank account. Isn't it why we have transactions?
+
+
+
+p. Another session was by <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#RMason">Ross Mason</a>, and it was about <a href="http://javasymposium-europe.techtarget.com/html/det_descriptions.htm#RMasonMule">Mule and ESB</a>. Mule looks really cool, and it gives commercial ESBs a run for their money. Ross seemed to give a very coherent presentation, and the nice thing about Mule, is that it is really open for extensions. The way I view ESB, is that 30% of the time (might be a bit more), you will use the ESB provider internal implementations, but a lot of the time, you are dealing with propriety transports, needs specialized transformers and so on (though this can be shared across your company, mainly Banks). So, the fact that you can easily implement your own goes a long way. This is also why Open Source ESB providers really shine, it is much more simpler to implement something against an Open Source code. Ohh, and their exception management support is a gem! it is going to save people so much time if they use it! Exception management in ESB type applications (not necessarily use ESB, might be an in house or per project implementation) is a bitch. Dead letter queues, transaction management, message consumptions, reties and so on is something that is easy to miss when you start a project, but is a crucial part of an application, and takes so much time and effort to test. Still, I wonder how it scores head to head against ServiceMix. I guess I need to give both of them a go and see.
+
+
+
+p. I started to get really tired after this, I half listened to Bela Ban talk about building a replicated hash map in 20 minutes using JGroups. It looks like JGroups is a really nice reliable multicast library, but implementing a proper replicated hash map takes much more then JGroups or 20 minutes :) - transactions, locking, ... . JBossCache is suppose to solve it, but I had so many problems with it in a past project, that I really hope that it advanced a long way since then in order to be usable. Anyhow, I think that clustering/scaling features is something that always make sense to buy an off the shelf product that does it, and does it well.
+
+
+
+p. There was another session after that, but I was knackered. I headed for some ZZZ, and then went to a really nice restaurant, drank a very good Rioja (Castillo de Sajazarra Reserva 2001), and ate a nice Sirloin. And don't get me started on the Crem Catalone (the local cream brule). The only bad thing is that I can not find a place that shows Argentina against Holland, which is the game that I most wanted to see in the world cup groups stage. I have to admit that seeing the world cup games with the spanish commentators is a real treat, they do put all their emotions into the game (even if it is not Spain playing).
+

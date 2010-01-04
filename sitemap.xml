@@ -1,0 +1,40 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>http://kimchy.org/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://kimchy.org/projects/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://kimchy.org/resume/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://kimchy.org/archives/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://kimchy.org/about/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://kimchy.org/articles/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://kimchy.org/talks/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+{% for post in site.posts %}
+   <url>
+      <loc>http://kimchy.org{{ post.url }}</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+{% endfor %}
+</urlset>

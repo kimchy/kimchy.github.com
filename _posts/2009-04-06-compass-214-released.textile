@@ -1,0 +1,8 @@
+---
+layout: post
+title: Compass 2.1.4 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1.4 released. The version fixes one major bug revolving around how Compass manages read committed transactions, it is highly recommended to upgrade to it.
+
+Enjoy!

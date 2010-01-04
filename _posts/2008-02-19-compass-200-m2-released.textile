@@ -1,0 +1,37 @@
+---
+layout: post
+title: Compass 2.0.0 M2 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> version 2.0.0 M2 has just been released. This is another great milestone in the 2.0 release train.
+
+
+
+p. Main feature in this release include support for Lucene 2.3 version. A lot of work has gone into integrating new Lucene features into Compass in the best, simple and performant way. This release should see some very nice performance improvements.
+
+
+
+p. The main enhancement in this release is in the area of transactions. Compass now makes use of Lucene transaction API, with a completely rewritten Read Committed transaction isolation support. Also, the batch insert transaction isolation level has been renamed to lucene transaction isolation level, and it now fully transactional as well as all the allowing all different operations (CRUD as well as search).
+
+
+
+p. The main difference now between the two transaction isolation levels is the visibility of changes done during an on going transaction to the on going transaction operations. With Read Committed, if for example something is deleted from the index, then within the same transaction it will no longer show up. With Lucene transaction isolation level, the deletion will still be visible to search operations done within the same transaction.
+
+
+
+p. In most cases, the lucene transaction isolation level is more than enough, but for systems that work with Compass as the main API (as oppose to working with ORM integration) the Lucene transaction can be easily used as well.
+
+
+
+p. There are new parameters that can control different aspects of the two transaction isolations, so I highly recommend reading <a href="http://www.compass-project.org/docs/2.0.0M2/reference/html/core-searchengine.html#core-searchengine-transaction">this section</a> again.
+
+
+
+p. I was debating with myself which transaction isolation should now be the default one. Currently, Compass still has the read committed isolation level as the default one (since it seems to yield slightly better performance), but the lucene transaction isolation level can certainly yield better performance under certain conditions. For long running transactions, lucene transaction isolation level is preferred. It would be great for people who try out the new version to give both of them a go and maybe post back some numbers?
+
+
+
+p. There are more features in this release, which can be found in the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10112">release notes</a>. Enjoy!.
+
+
+

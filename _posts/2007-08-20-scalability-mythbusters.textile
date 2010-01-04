@@ -1,0 +1,42 @@
+---
+layout: post
+title: Scalability Mythbusters
+---
+
+<img src="http://www.kimchy.org/wp-content/uploads/2007/08/mythbusters.jpeg" alt="mythbusters" title="mythbusters" width="130" height="130" class="alignleft size-full wp-image-305" />Just read an excellent article over at devx called <a href="http://www.devx.com/Java/Article/35087">Multi-core Mythbusters</a>. The article is very good at explaining in layman's terms the need for scalability. The article title is a bit misleading as it even talks about scaling out an application across machines (or for that purpose, JVM instances). What really hit the mark for me is this:
+
+p. bq. Although it is true that Java app servers provide a degree of concurrency, many Java developers are under the mistaken impression that the app server will simply take care of all of their scalability needs.
+
+
+
+p. bq. This is probably one of the most cherished viewpoints of the J2EE server space. As such, it is one of the most tenacious in the face of arguments to the contrary. Fortunately, it doesn't take a great deal of logical reasoning to see its inherent flaws. The belief begins with the basic assumption that when a particular J2EE application does not scale, it is due to the CPU not running fast enough. For most of today's applications, however, the CPU is not being kept busy. A large part of the application server execution time is spent transmitting data back and forth across components, taking out locks, or waiting for locks to be released. Spending some quality time with a profiler can show you just how much time your application spends on these tasks, which cannot benefit from a faster CPU.
+
+
+
+p. This is a great explanation of why application server mostly simply do not cut it. I have been talking for some time now about the need for some sort of a "Next Generation App Server". The next generation part in my case revolves around how to write scalable application in a simplified manner.
+
+
+
+p. One of the main problems with current application servers is the fact that there are many different moving parts such as JMS, EJB, and JPA without tight integration between them. Another main problem is the fact that JEE missed an important aspect for writing scalable application, which is the data grid.
+
+
+
+p. Now, lets assume we live in a perfect world. We would have all this moving/missing parts handled by the same library. We would have the ability to store our domain model within a data grid, be able to register and receive events due to changes of the domain model within the data grid (allowing us to have an EDA / ESB like support), and be able to perform parallel operations (ala Map Reduce) simply using our domain model.
+
+
+
+p. In such a scenario, our clients will either work in an embedded mode with our data/event grid, or work with it remotely and be able to perform all the operations on a single system image which is our grid (such as write and take objects from the gird, register for events, and so on). They could even create a running window over a subset of the data. This clients will probably be either RIA or fat clients.
+
+
+
+p. To wrap the story, it would be great if we can have the same, simple deployment model that application servers allow us, with the addition of smart relocation and service level definitions for different bundles.
+
+
+
+p. Though naturally this is not a perfect world, <a href="http://www.gigaspaces.com">GigaSpaces</a> is certainly heading in the right direction (in my neutral opinion ;) ). The latest release, with <a href="http://gigaspaces.com/wiki/display/GS6/Open+Spaces">OpenSpaces</a> (which your not so humble blogger was responsible for) and GigaSpaces core functionality, we are now very close at realizing such an architecture.
+
+
+
+p. There is no doubt, in my mind, that this type of architecture will be part of any future applications, as explained so eloquently in the devx article. I bet this is how Hibernate/TopLink/Kodo felt before JPA. A storm is coming...
+
+

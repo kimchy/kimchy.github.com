@@ -1,0 +1,7 @@
+---
+layout: post
+title: Tabs in Mac Terminal
+---
+
+p. What I am really missing in Mac is the ability to switch tabs using Apple+[Num Key]. I really miss it in Safari, and even more in Terminal now that it supports tabs. This is why I was really happy at finding this <a href="http://ciaranwal.sh/2007/12/10/tab-switching-in-terminal">wonderful extension</a> allowing to use it in Terminal.
+

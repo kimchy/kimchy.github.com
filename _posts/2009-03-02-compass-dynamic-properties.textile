@@ -1,0 +1,49 @@
+---
+layout: post
+title: Compass - Dynamic Properties
+---
+
+Upcoming Compass 2.2 (RC1) will have a new and exciting feature called dynamic properties. Dynamic properties allow to evaluate dynamically the Search Engine Resource Property Name as well as the Value.
+
+There are two ways to use the new dynamic properties. The first, and obvious one, is by marking a __java.util.Map__ type as a dynamic property. For example:
+
+{% highlight java %}
+@Searchable
+public class Book {
+
+    @SearchableDynamicProperty(value-format="0000")
+    Map<String, Integer> tags;
+}
+{% endhighlight %}
+
+Then, if we initialize the map for example with <"tag1", 12>, and <"tag2", 15>, we can now search for books using **tag1:0012**.
+
+The support for Map key and values is extensive, with support for a collection/array as the Map value type. There is also support for "complex" types as the Map Key and/or Map Value, and the ability to define which property will be used to extract the actual value from the "complex" type.
+
+The seconds support for dynamic properties is with "complex" types or user defined types. Here is an example:
+
+{% highlight java %}
+@Searchable
+public class Book {
+    
+    @SearchableDynamicProperty
+    List<Tag> tags;
+}
+
+public class Tag {
+
+    @SearchableDynamicName
+    String name;
+
+    @SearchableDynamicValue
+    String value;
+}
+{% endhighlight %}
+
+In this case, for example, if we have a Book with Tag(name : "type", value : "fiction"), we can then search for books with **type:fiction**.
+
+Same as in Map, the dynamic property can be a simple value, collection or array. The dynamic value can be an array or collection as well. Formatting can be defined both on the dynamic name as the dynamic value (as well as custom converters).
+
+Last, there are Compass generic features that will not work for dynamic properties. The main one is the fact that dynamic properties can not be unamrshalled back from the index (they will be null). Note, Resource still works of course. The dot path queries will not work as well (can't do book.tag.type) as well as setting specific analyzers just for the dynamic property.
+
+Enjoy!

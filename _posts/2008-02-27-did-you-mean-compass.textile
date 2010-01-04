@@ -1,0 +1,32 @@
+---
+layout: post
+title: Did You Mean - Compass?
+---
+
+p. Just finished adding support for spell checking in Compass (available in the nightly builds) which turned out a really cool and easy to use feature. In order to enable spell check in Compass, all that needs to be done is set the following property:
+
+
+
+p. <pre lang="properties" line="1">
+compass.engine.spellcheck.enable=true
+</pre>
+
+
+
+p. Next, in the code that performs the search, the following can be done:
+
+
+
+p. <pre lang="java" line="1">
+CompassQuery query = session.queryBuilder().queryString("fiv").toQuery();
+CompassHits hits = query.hits();
+System.out.println("Original Query: " + hits.getQuery());
+if (hits.getSuggestedQuery().isSuggested()) {
+    System.out.println("Did You Mean: " + hits.getSuggestedQuery());
+}
+</pre>
+
+
+
+p. Naturally, there are many ways to configure and control this feature, which are all explained in the reference docs, but this is the gist of it.
+

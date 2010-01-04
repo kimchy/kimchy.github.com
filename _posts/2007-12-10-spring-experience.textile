@@ -1,0 +1,11 @@
+---
+layout: post
+title: Spring Experience
+---
+
+p. This week I am heading to <a href="http://www.thespringexperience.com">The Spring Experience</a> at Sunny (hopefully) Florida. I will be presenting Compass and Nati is going to present GigaSpaces.
+
+
+
+p. If you wish to join up for some beers and talk about Compass/GigaSpaces or Search/Distributed Systems just drop me an line.
+

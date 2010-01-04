@@ -1,0 +1,15 @@
+---
+layout: post
+title: Compass Powered By
+---
+
+Compass <a href="http://wiki.compass-project.org">wiki</a> has been around for a long time, but never really maintained properly. Well, I gave it a total rehaul. Part of it was creating a new <a href="http://wiki.compass-project.org/display/CMPKB/Powered+By">Powered By</a> page. I **know** that there are a lot of projects out there using Compass, but other Compass users (both existing and potential) will find the list beneficial.
+
+So, either head over to the <a href="http://wiki.compass-project.org/display/CMPKB/Powered+By">Powered By</a> wiki page and add your project there, or send me an email and I will add it.
+
+Thanks in advance,
+Shay
+
+p.s.
+
+Not all companies allow to publish what they use (god knows I worked for some of them, yes, I am talking to you, banks in the city!), so consult your company regulations before doing it so you won't get into trouble!.

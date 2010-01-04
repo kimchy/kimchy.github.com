@@ -1,0 +1,38 @@
+---
+layout: post
+title: Resource (RSEM) Creation Refactoring
+---
+
+p. In Compass, currently, the way to create a Resource (usually when using RSEM) is using the CompassSesssion API. Here is a quick code example of how it is done:
+
+
+
+p. <pre lang="java" line="1">
+Resource resource = session.createResource("alias");
+resource.addProperty("id", 1);
+session.create(resource);
+</pre>
+
+
+
+p. This is a bit confusing, especially when it comes to resource creation. Some people confuse the __createResource__ method (which instantiates a resource) with the __create__ method which creates it in the search engine index.
+
+
+
+p. This is why, in version 2.0 (its committed on trunk), this has been abstracted to a __ResourceFactory__, which is accessible through the __Compass__ instance. Here is a revised example that makes use of it:
+
+
+
+p. <pre lang="java" line="1">
+Resource resource = compass.getResourceFactory().createResource("alias");
+resource.addProperty("id", 1);
+
+// open session, begin transaction
+session.create(resource);
+// commit transaction, close session
+</pre>
+
+
+
+p. This breaks backward compatibility at the expense of greater clarity. It is fairly simple to keep the old behavior as well, but it really cleans Compass up not supporting the old method. What do you say? If it really messes your application, just comment or send me an email.
+

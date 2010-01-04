@@ -1,0 +1,8 @@
+---
+layout: post
+title: 1000 Tests Mark for Compass
+---
+
+p. Compass just hit the 1000 tests which is quite a landmark by my not so biased opinion ;). Check out the bamboo test report <a href="http://build.compass-project.org/browse/CMPTRK-CI5/latest">here</a>, and the clover one <a href="http://build.compass-project.org/download/CMPTRK-CI5/artifacts/build-87/Clover/index.html">here</a>.
+
+p. p.s. Clover clearly indicates that there is some more work left to be done, but all in all, its pretty good.

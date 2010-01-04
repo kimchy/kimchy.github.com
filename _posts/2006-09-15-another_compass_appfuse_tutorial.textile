@@ -1,0 +1,6 @@
+---
+layout: post
+title: Another Compass & AppFuse Tutorial
+---
+
+Matt Raible <a href="http://raibledesigns.com/page/rd?entry=integrating_compass_with_appfuse_and">pointed out</a> a tutorial for integrating <a href="http://www.opensymphony.com/compass">Compass</a> with <a href="http://appfuse.dev.java.net">AppFuse</a>. Enjoy.

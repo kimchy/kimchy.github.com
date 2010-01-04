@@ -1,0 +1,94 @@
+---
+layout: post
+title: JSON Mappings with Compass
+---
+
+p. Upcoming Compass 2.1 M1 will support native JSON indexing (on top of Object, XML, and Resource). This means that using simple mappings, JSON strings can be indexed using Compass API as well as provide search capabilities over them.
+
+
+
+p. As an example, lets take the following simple JSON:
+
+
+
+p. <pre lang="json" line="1">
+{   
+    "id": 1,
+    "name": "Mary Lebow",
+    "address": {
+      "street": "5 Main Street"
+      "city": "San Diego, CA",
+      "zip": 91912,
+    },
+    "phoneNumbers": [
+      "619 332-3452",
+      "664 223-4667"
+    ]
+  }
+}
+</pre>
+
+
+
+p. We can then map using using the following (fully explicit) mappings:p. 
+
+p. <pre lang="xml" line="1">
+<root-json-object alias="addressbook">
+    <json-id name="id" />
+    <json-property name="name" />
+    <json-object name="address">
+        <json-property name="street" />
+        <json-property name="city" />
+        <json-property name="zip" index="un_tokenized" />
+        <json-array name="phoneNumbers" index-name="phoneNumber">
+            <json-property />
+        </json-array>
+    </json-object>
+</root-json-object>
+</pre>
+
+
+
+p. Or use the less explicit mapping and let Compass recursively add JSON elements to the index:
+
+
+
+p. <pre lang="xml" line="1">
+<root-json-object alias="addressbook" dynamic="true">
+    <json-id name="id" />
+</root-json-object>
+</pre>
+
+
+
+p. Once we mapped the JSON elements under a given alias, we can then index it and search on it. Here is an example:
+
+
+
+p. <pre lang="java" line="1">
+JsonObject jsonObject = new DefaultAliasedJSONObject("addressbook", "json string goes here");
+// this will index the provided JSON
+session.save(jsonObject);
+
+// now we can load the Resource that represents it
+Resource resource = session.loadResource("addressbook", 1);
+resource.getValue("name"); // will get Mary Lebow
+
+// we can also get back the JSON content and actual object when using content mapping (see later)
+jsonObject = (JsonObject) session.load("addressbook", 1);
+
+// Last, we can search
+CompassHits hits = session.find("mary");
+hits.lenght() // will print one
+resource = hits.resource(0);
+jsonObject = (JsonObject) hits.data(0);
+</pre>
+
+
+
+p. In terms of JSON object model implementations, Compass comes with a built in one based on <a href="http://www.json.org">json.org</a>. It also integrates with Grails and Jettison implementations of JSON object model. Other object models can be easily implemented as well (any you would like to see?)
+
+
+
+p. That was one of the main features I wanted to add to Compass 2.1, and am happy I manged to get it into Compass 2.1 first milestone release. 2.1 M1 will be released in the upcoming days.
+

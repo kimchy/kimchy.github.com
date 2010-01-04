@@ -1,0 +1,12 @@
+---
+layout: post
+title: Compass 2.2.0 RC2 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.2.0 RC2 released. The version fixes several bugs, including the two bugs described in the <a href="http://www.kimchy.org/compass-213-released/">2.1.3 post</a>.
+
+Full release notes can be found <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10181">here</a>.
+
+p. Enjoy!
+
+

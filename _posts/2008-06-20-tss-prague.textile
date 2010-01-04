@@ -1,0 +1,19 @@
+---
+layout: post
+title: TSS Prague
+---
+
+p. TSS at Prague was great. Great sessions, always great meeting up with people from all over the world. Sadly, I did not manage to get to too many sessions, had to work a bit on GigaSpaces upcoming 6.5 GA release, but the ones I went to were really good.
+
+
+
+p. I also did a tech talk with Jason Carriera. I was talking about next generation application servers and Jason was talking about his experience working with GigaSpaces (he is working on a really cool app, I won't spoil the surprise) and also about the <a href="http://www.openspaces.org">OpenSpaces</a> developer contest where he won the third place.
+
+
+
+p. I also gave a presentation titled "Beyond a Data Grid" where I try to talk about things that can be done with a DataGrid beyond your typical Cache#put and Cache#get mainly through examples. Here is the presentation (mostly pictures, but still ;) ):
+
+
+
+p. <div style="width:425px;text-align:left" id="__ss_477343"><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=tssbeyonddatagrid-1213970161495878-9"/><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=tssbeyonddatagrid-1213970161495878-9" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;"><a href="http://www.slideshare.net/?src=embed"><img src="http://static.slideshare.net/swf/logo_embd.png" style="border:0px none;margin-bottom:-5px" alt="SlideShare"/></a> | <a href="http://www.slideshare.net/kimchy/tss-beyond-data-grid?src=embed" title="View TSS - Beyond Data Grid on SlideShare">View</a> | <a href="http://www.slideshare.net/upload?src=embed">Upload your own</a></div></div>
+

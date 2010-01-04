@@ -1,0 +1,8 @@
+---
+layout: post
+title: Compass 2.2.0 M2 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.2.0 M2 released. There are several features including simplified transaction API and detached queries. Also, major refactoring has been done in the optimizers area (please refer to the upgrade guide), as well as in internal data structures in Compass.
+
+This is the last milestone release and the next release will be a Release Candidate (hopefully the only one). The aim is to try and get 2.2 out there as fast as possible.

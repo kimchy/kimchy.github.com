@@ -1,0 +1,17 @@
+---
+layout: post
+title: Compass 1.2 M1 Released
+---
+
+p. The <a href="http://www.opensymphony.com/compass">Compass</a> team is pleased to announce to release of <a href="http://www.opensymphony.com/compass/download.action">version 1.2 M1</a>. Major features include:
+
+
+
+p. <ul>
+    <li>**Support for Lucene 2.1**: Compass now supports Lucene 2.1. Main feature enabled by this is lockless commits.</li>
+    <li>**Better Glasshfish integration**: Improved Glassfish JTA integration (thanks to Julian Klappenbach)</li>
+    <li>**Improved performance**: Better performance when Compass stores internal information in the index.</li>
+    <li>**Omit norms support**: Lucene support for omit norms is now easily configured within Compass different mappings.</li>
+    <li>**Bug Fixes**: Several bug fixes and minor improvements as described in the <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10083">changelog</a>.
+</ul>
+

@@ -1,0 +1,19 @@
+---
+layout: post
+title: MS Paint Revolution And Java
+---
+
+p. This is just too funny:
+
+
+
+p. <object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/Hxx2KcPWWZg"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/Hxx2KcPWWZg" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+
+
+
+p. I really like the part where the girl asks "can we thin out the line?", and the other guy says dismissively: "No".
+
+
+
+p. This also got me thinking about similar projects in Javaland, JSF anyone :)? What is your MS Paint in Javaland?
+

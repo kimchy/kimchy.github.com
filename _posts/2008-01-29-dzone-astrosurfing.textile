@@ -1,0 +1,24 @@
+---
+layout: post
+title: DZone Astrosurfing
+---
+
+p. I was really happy when <a href="http://www.dzone.com">DZone</a> came out. I was missing something like <a href="http://www.digg.com">Digg</a> but with more focus on technology and development from (mostly) that Java point of view. So, here I was hoping that content that many people find interesting will filter its way into my RSS reader.
+
+p. Sadly, astrosurfing has found its way into DZone as well. What do I mean by Astrosurfing? I mean that content created by vendors will be pumped up by the vendor and be "regarded" as important news, even though the vendor did all the voting on the content.
+
+p. The most obvious example is <a href="http://www.jroller.com/nivanov/">Nikita Ivanov</a> blog, which its content is submitted to DZone. Lets take the following post (which I find pretty silly, but thats just me) which you can find <a href="http://www.dzone.com/links/rss/is_battery_an_achilles_heel_of_mobile_grid_comput.html">here</a>. If you look at the votes for the link you can find the following voters <a href="http://www.dzone.com/links/users/profile/241464.html">dsetrakyan</a>, <a href="http://www.dzone.com/links/users/profile/256320.html">mvandoornik</a>, <a href="http://www.dzone.com/links/users/profile/245756.html">skh</a>, <a href="http://www.dzone.com/links/users/profile/245756.html">sbob</a>, <a href="http://www.dzone.com/links/users/profile/241974.html">dkharlamov</a>, <a href="http://www.dzone.com/links/users/profile/170974.html">magdenko_alex</a> which strangely enough, always vote for GridGain, and somethings even **just** vote for GridGain. This can be validated by going to other posts made by Nikita and applying the same logic.
+
+p. Personally, I view this type of voting as spam. Naturally, other people (I wonder who ;) ) will disagree, but for me, the fact that a company finds **its** content interesting is irrelevant to the rest of the community.
+
+p. I guess that the main question is how to tackle this. Rick and Matt are doing a wonderful job, and it is not a simple problem to solve. One option, which they started recently, is creating specific zones such as <a href="http://groovy.dzone.com/">Groovy Zone</a> with expert people to moderate it.
+
+p. Another simple solution can be ignoring people who seem to be voting for the same person all the time, as well as reducing the voting power of new users. This is simple mechanism, though obviously can be circumvented, that should reduce this spam posts.
+
+p. I guess the main reason digg works well and dzone falls a bit short is the fact that there are so many people voting in digg. When you only display content that was voted a thousand times, then the fact that a company such as GridGain with its 5 developers won't be able to make such an impact. In this sense, the responsibility falls on our shoulders to vote (which I personally have not been doing as much as I should have).
+
+p. As for low voting sites it is a bit hard to spam out content (without moderation). For example, lets say we suggest voting on people and that will control the actual ranking of a certain story. You still get into the problem of who votes for this people. Other types of solution gets into this "chicken and the egg" problem.
+
+p. What do you say? Do you have a better solution for this problem? Does this content bothers you or do you even consider it as not spam?
+
+p. Rick, Matt and the rest of the DZone (and other) people. Thanks you for all your effort, and I hope we will manage to find a solution for this...

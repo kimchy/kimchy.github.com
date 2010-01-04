@@ -1,0 +1,11 @@
+---
+layout: post
+title: TSSJS Barcelona Compass Presentation
+---
+
+p. I have uploaded the <a href="https://compass.dev.java.net/files/documents/4669/36943/file_36943.dat?filename=Compass%20TSSJS%20Europe%20%30%36%2epdf">Compass presentation</a> that I gave on TSS Java Symposium at Barcelona.
+
+
+
+p. Any comments about the presentation are more then welcomed, since I hope this will be the baseline for other presentations I do about Compass, and I wish to refine it as much as possible. Also, what do you think, should I have started directly with Compass and Compass features, or should I stay with what I have?
+

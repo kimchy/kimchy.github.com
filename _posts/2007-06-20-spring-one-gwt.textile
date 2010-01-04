@@ -1,0 +1,34 @@
+---
+layout: post
+title: Spring One - GWT
+---
+
+Bram Smeets talks about Google GWT.
+
+Introduction to what Ajax is. Ajax = DHTML + Remoting (not necessary Javascript, it can be flash as well for example).
+
+Problems with typical Ajax development: JavaScript is not easy (and many times new), Browser incompatibilities (JavaScript/Dom manipulation, working in xml, XmlHttpRequest), Browser history.
+
+How do you overcome them? Use a framework. Another problem is that there are many frameworks out there. Many of them fix part of the problem. DWR for remoting, Dojo for widgets, ... .
+
+Introducing GWT, the holy grail for web development?. It is Googles answer. They develop web applications too and they try to answer how should a Java developer write a sexy, web application? The answer: **In Java**.
+
+What is it? An architecture for developing rich internet applications. Concept similar to Swing / SWT (but it is centered around HTML and CSS). Uses Java to Javascript compiler.
+
+Benefits: Quick responses to actions (Ajax), Browser compatibility, requires no browser plug-in or JVM (for example, Flex requires flash plugin), manages browser history, and keyboard navigation, one language for server and client side, used the power of Java IDE, OO code and UI components, really simple RPC, easily integrate with existing technologies (such as Spring, JSF, Script.aculo.us), Open Source (Apache 2), [Shay: and do the dishes for you while you watch the last Sopranos episode].
+
+GWT features: Has partial emulation of JRE for JavaScript (java.lang.*, java.util.*), Shell for debugging and testing UI code, UI widget library / DOM utilities, simple browser to server RPC mechanism, Native JavaScript support (JSNI).
+
+Bram is doing a demo of a simple application with a button and a label. All the code is in Java. You can run it within a hosted mode with a GWT console. You can debug your Java code very easily by running the GWT console in debug mode (Bram uses intelliJ, me like!).
+
+Browser to server RPC. Ajax calls wrapped as RPC styles calls (implemented for you in a similar manner to Spring remoting). Servlet / Spring based servers side. It is Asynchronous, so you use callbacks to get back the results. Uses proprietary wire format (for performance reasons), can use JSON as well. What can be serialized?: primitives, String/Date, and any Java type (as long as it is serializable).
+
+Some drawbacks: No Java 5 support on the client side. RPC services have to implement RemoteService tagging interface (the service layer is now dependent on GWT library). User defined types going over the wire have to implement IsSerializable tagging interface.
+
+Some solutions: Use GWT specific service facade. Use DTO and DTO converters ([Shay: not nice at all]).
+
+GWT 1.4 new features: Size and speed optimization, deployment enhancements (modularize RPC mechanism, just reference xxx-nocache.js, cross site scripting), Widgets and Library enhancements (New widgets - RichTextArea, SuggestBox, Splitters), Benchmarking subsystems, no need for IsSerializable, can just use Serializable, and much more... .
+
+Tips and tricks: Use a skeleton application to get started. Use an IDE plug-in to enhance productivity, use obfuscated as the output format (especially in production), create reusable components / widgets (look whether someone else already created one, use Composite base class to hide internals), Secure your server-side calls / URLs using Acegi, use Google Gears for offline applications, define your own AbstractAsyncCallback (for centralized error handling).
+
+Conclusion and benefits: Remain in Java domain (debugging, unit testing), browser anomalies abolished, cleans separation of (static) web content / dynamic GWT code and server side code, Open Source, aggressive caching, code optimization. Has a lot of momentum.

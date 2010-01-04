@@ -1,0 +1,36 @@
+---
+layout: post
+title: Compass 1.2 Released
+---
+
+p. I am pleased to announce the release of <a href="http://opensymphony.com/compass/download.action">Compass 1.2</a> version. Compass 1.2 is the formal release of version 1.2 and includes many improvements, bug fixes, and performance enhancements over version 1.1. The list of features is **very** long and includes features listed for <a href="http://www.kimchy.org/compass_1_2_m1_released/">1.2 M1</a>, <a href="http://www.kimchy.org/compass-12-m2-released/">1.2 M2</a>, <a href="http://www.kimchy.org/compass-12-m3-released/">1.2 M3</a> and <a href="http://www.kimchy.org/compass-12-rc1-released/">1.2 RC1</a>. Features included in the 1.2 GA release include (a complete list can be found <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10101">here</a>):
+
+
+
+h3. Null Value
+
+
+
+p. When mapping a property of a class, a null value can be defined on the mappings which will be saved in the index if the actual property value is null. This allows to simply search on properties that has no value.
+
+
+
+h3. Improved Property Managed Id
+
+
+
+p. When working with marshaling turned on, Compass will try and create an internal id (if required) in order to unmarshal the object correctly from the index. Now, there is an additional setting which instructs Compass not to create an internal id if all the mappings have store="no". The managed id setting can now be set on a specific property, as well as being set on class mappings and globally.
+
+
+
+h3. Improved No-Unmarshal Mode
+
+
+
+p. Compass can work in no unmarshal mode there is no need to get the Object constructed back from the index. In this mode Compass does not store additional information in the index and performs the indexing much faster. Now, by calling the appropriate method in order to get an Object back, Compass will return the Object with its ids set. This allows for simpler integration with ORM libraries where loading the object from the database using the ORM tool is needed.
+
+
+
+I will post later on the roadmap for Compass (both 1.3 and 2.0)...
+
+Enjoy!

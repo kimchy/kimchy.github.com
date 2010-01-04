@@ -1,0 +1,16 @@
+---
+layout: post
+title: Get your web sites ready...
+---
+
+I was watching Steve Jobs keynote and during the keynote Steve was showing off a new widget in the new Mac OS X Leopard version called Web Clip. Here is a video demonstrating it:
+
+<div style="text-align: center;"><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/C-r92pifQ-Y"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/C-r92pifQ-Y" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object></div>
+
+And then it hit me. Web sites (and as a result the developers) have been having a lot of problems with syndication (<a href="http://en.wikipedia.org/wiki/RSS_(file_format)">RSS</a>) causing difficulties both in terms of scalability and bandwidth for web sites that expose syndication (the refresh intervals on rss readers). Now, with Apple providing a web clip widget, and probably many other widget system will follow shortly after, our web sites are going to have to handle much more frequent and bigger load. Note, with RSS there are relatively simple solution, but with Web Clips there is no option to load only part of the web site, and every web clip refresh causes the whole web page to download. Also, different than RSS, there is no option to turn it off as <a href="http://radio.weblogs.com/0001011/2004/09/08.html#a8195">MSDN did with RSS</a>.
+
+Naturally, current JEE web sites won't be able to handle such load without caching. But as noted many times, just caching does solve the whole problem. With web clips (different than RSS), the rate of cache misses is going to be very high.
+
+So, when such web clips widgets are going to come out, web sites are better to get ready for it. The load on a typical web site is going to grow exponentially and developers will need to find a way to solve this (remember, there is no way to turn this off!). This is, in part, what we at <a href="http://www.gigaspaces.com">GigaSpaces</a> have been working on and thinking about with our latest release, especially with our <a href="http://gigaspaces.com/wiki/display/GS6/Open+Spaces">OpenSpaces</a> solution, but it should be on all of our minds how things like that are going to be handled and solved.
+
+p.s. And I am not even talking about the <a href="http://www.apple.com/iphone/internet/">iPhone</a> and what it brings to the table (in terms of more web enabled devices) or Ajax.

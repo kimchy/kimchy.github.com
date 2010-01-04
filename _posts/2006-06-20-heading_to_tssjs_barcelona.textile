@@ -1,0 +1,19 @@
+---
+layout: post
+title: Heading to TSSJS Barcelona
+---
+
+p. I am heading to Barcelona in a few hours for <a href="http://javasymposium-europe.techtarget.com/">TSSJS Europe</a>. This is really exciting, since it will be the first time that I will present <a href="http://www.opensymphony.com/compass">Compass</a> in a conference, and I will have a chance to meet people whom I have read/heard about through the Java world grapevine.
+
+
+
+p. The presentation is complete, and I think that it is a pretty good one. I was thinking long and hard about how the presentation is going to be structured, and went with a more beefed up presentation then your "Steve Jobs" style presentation of one sentence per slide. I did it because I wanted for people to be able to follow the presentation when they get back home, without my voiceover. Or, for people who did not go to the presentation, to have a high level 60 slides overview of why/what/how Compass, but one that make sense, with no one sentence slogans that does not say much. Of course, if you are going to attend the conference, I hope that you will get a bit more then just the presentation content.
+
+
+
+p. I also just found out that my <a hred="http://javasymposium-europe.techtarget.com/html/det_descriptions.htm#SBanonCompass">presentation</a> will be at the same time of a Spain match in the world cup, so it is going to be difficult to get the Spaniards to see it (I am talking about the game ;)). Though hopefully the fact that Spain already qualified to the second round, and almost certainly as group leaders, will mean that it won't be many of them. Trying to find the time between World cup matches and attending sessions is going to be difficult, but hey, who said life was simple?
+
+
+
+p. There are a lot of good sessions, and I hope to attend most of them. I will also try and take some notes and blog about the conference as much as I can. If you are attending the conference, see you there!
+

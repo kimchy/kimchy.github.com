@@ -1,0 +1,15 @@
+---
+layout: post
+title: Lakers Vs. Celtics
+---
+
+p. While waiting (yes, another sleepless night) for the second game in the Lakers Vs. Celtics NBA finals, I remembered one of my all time favorite arcade games that I played when I was a child. It was an NBA arcade game called <a href="http://en.wikipedia.org/wiki/Lakers_vs._Celtics_and_the_NBA_Playoffs">Lakers versus Celtics</a> and it was one of the main reasons for my love for the NBA (and the Lakers).
+
+
+
+<p align="center"><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/f20C8DiYk7o&hl=en"></param><embed src="http://www.youtube.com/v/f20C8DiYk7o&hl=en" type="application/x-shockwave-flash" width="425" height="344"></embed></object>
+
+
+
+p. So, while waiting for the game, I managed to run it on my macbook pro. Here is what I needed to do: First, download <a href="http://www.dosbox.com/">DOSBox</a>. Next, head over and download the game <a href="http://www.bestoldgames.net/eng/old-games/nba-lakers-vs-celtics.php">here</a>. Using DOSBox is pretty simple. You start it, and then __mount c ~/path/where/you/undzip/the/game__. So much fun!. Warcraft 2 anyone? :).
+

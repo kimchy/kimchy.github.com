@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass at NL-JUG J-FALL
+---
+
+p. Just found out that <a href="http://www.opensymphony.com/compass">Compass</a> is <a href="http://www.nljug.org/pages/events/content/jfall_2006/sessions/00015/">presented</a> at <a href="http://www.nljug.org/">NL-JUG</a> J-FALL. Looks like a very interesting session about Compass by <a href="http://uri.jteam.nl/">Uri Boness</a>.

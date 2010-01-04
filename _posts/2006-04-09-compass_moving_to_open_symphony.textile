@@ -1,0 +1,19 @@
+---
+layout: post
+title: Compass moving to Open Symphony
+---
+
+p. I am very proud to announce that Compass is moving to <a href="http://www.opensymphony.com">Open Symphony</a>. You can find the site <a href="http://www.opensymphony.com/compass">here</a>. For the past few months, I have been working on version 0.9, and the move to open symphony (with the help of Patrick) and now it is almost done. The only thing we have left is to merge the Jira instances, and the good people at <a href="http://www.contegix.com">Contegix</a> are working on it.
+
+
+
+p. As for version 0.9, it is almost ready. You can download a snapshot view (which is the latest SVN build). The only thing not working is the petclinic sample, since Compass now integrates with Spring 2, and it seems to break it.
+
+
+
+p. Major enhancement for 0.9 are refactoring of the converter framework, annotations, EJB3 JPA, simpler xml configuration (based on xml schema), and simplified OSEM definitions. Major changes are package name change (back to org.compass), DTD and Schema location changes, and DTD changes for converter settings. You can read the <a href="http://svn.opensymphony.com/fisheye/viewrep/~raw,r=221/compass/trunk/upgrade.txt">upgrade</a> information in the Compass distribution.
+
+
+
+p. In the next few posts I will write about what you need to do to upgrade to 0.9, and delve a bit more into 0.9 features.
+

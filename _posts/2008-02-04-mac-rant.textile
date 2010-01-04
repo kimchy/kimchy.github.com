@@ -1,0 +1,12 @@
+---
+layout: post
+title: Mac Rant
+---
+
+p. For the past few days, my mac has started to acting up. Kernel panics are happening all the time and I can't narrow down the cause for it. I have not installed any new software, did not do any hardware changes, and I am not using any external devices. Argghhhhh!.
+
+p. I followed everything that I can do. Reinstalled OS X, preset PRAM, Zero out format, and nothing helps. The most annoying part is the fact that it even fails during the configuration part that comes after the installation!.
+
+p. Must be a hardware issue that suddenly decided to creep its ugly head, for reasons waaaay beyond me. Though of course, hardware tests all seem to pass.
+
+p. So much time wasted on this....

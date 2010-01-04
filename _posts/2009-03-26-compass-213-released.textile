@@ -1,0 +1,14 @@
+---
+layout: post
+title: Compass 2.1.3 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1.3 released. The version fixes two important bugs. The first fixes a problem when using Compass support unmarshall flag set to false (OSEM) and using analyzer property controller or boost property controller (basically, it did not work...).
+
+The second one revolves around Compass integration with TopLink and EclipseLink. Basically, with complex hierarchy of mappings, objects would be created twice in the index. It boiled down to how TopLink and EclipseLink fire up events for such cases. An event on class B that extends A is also fired for A..., so Compass needs to take that into account when registering event listeners. Surprisingly, there was an extra fix required for EclipseLink, as the logic of firing events changed a bit between EclipseLink and TopLink.
+
+Full release notes can be found <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10180">here</a>.
+
+p. Enjoy!.
+
+

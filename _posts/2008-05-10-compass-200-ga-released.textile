@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 2.0.0 GA Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> 2.0.0 GA has just been released. This is the final release of 2.0 and another milestone in the Compass project. Nothing much changed from RC2, just fixing some bugs as indicated in the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10123">release notes</a>. More information regarding 2.0 release can be found in the <a href="http://www.kimchy.org/compass-20-m1-released/">M1</a>, <a href="http://www.kimchy.org/compass-200-m2-released/">M2</a>, <a href="http://www.kimchy.org/compass-200-m3-released/">M3</a>, <a href="http://www.kimchy.org/compass-200-rc1-released/">RC1</a> and <a href="http://www.kimchy.org/compass-200-rc2-released/">RC2</a> posts.
+

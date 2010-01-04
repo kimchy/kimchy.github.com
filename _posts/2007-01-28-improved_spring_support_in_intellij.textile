@@ -1,0 +1,11 @@
+---
+layout: post
+title: Improved Spring Support in IntelliJ Selena
+---
+
+p. The latest IntelliJ IDEA Selena EAP now comes with improved support for Spring, hurray! Here is a screenshot (click on it to view a full image):
+
+
+
+p. <a href='http://www.kimchy.org/wp-content/uploads/2007/06/selenaspring.png' title='Intellij Selena Spring Support' rel="lightbox"><img src='http://www.kimchy.org/wp-content/uploads/2007/06/selenaspring.thumbnail.png' alt='Intellij Selena Spring Support' /></a>
+

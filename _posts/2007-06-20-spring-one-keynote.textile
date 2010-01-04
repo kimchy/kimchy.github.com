@@ -1,0 +1,22 @@
+---
+layout: post
+title: Spring One - Keynote
+---
+
+Rod Johnson is on stage now. First talking about Spring .NET (in a fricking Java conference!) and brought up Mark Pollack on stage showing off Spring .NET simple usage with AOP, declarative transactions, web services. The demo went well though Rod thought that the demo was showing .NET and Java interoperability, but instead it was showing plain .NET default web service client.
+
+Rod talks about the recent VC investment in Interface21, describing it as an analogy of having a really strong cup of coffee ([Shay: does Interface21 needs more wakening to do?]).  Talks about what can you do with $10m?: Some examples: eradicate fire ants from Australia, buy chemical weapons detection and protective clothing in Canada, and some more obscure examples. So, with Interface21, the goal is ..., wait for it ..., invest in Spring and Spring portfolio.
+
+Rod states that Open Source is not about being free, but about providing quality software. Two key values in Spring is simplicity and power, and the mission is to continue and do just that. Spring won't go and get into areas that are perfectly ok, but will get into areas that are not easy/simple to use. ([Shay: anybody wish to venture a guess?).
+
+Rod now goes over how widely Spring is used. Very high job demand. He compares "spring and java" and "jboss and java" and shows that Spring has overtook JBoss.
+
+Spring has set the bar high, with Forrestar and some other source stating the quality of Spring. Rod thanked Jurgan Holler for this. So, where does $10m goes? Most of it will go into continue and maintain the quality of Spring. A dedicated development centers with dedicated developers investing time in different Spring components / portfolio. You will see x2 increase in Spring Web, x3 increase in Spring core.
+
+Rod talks about "The Eclipse Effect". Java IDE world has two solutions, Eclipse as the major one, and intelliJ IDEA where they keep innovating and keeping Eclipse honest ([Shay: let the Sun people start to cry about Netbeans]). He now compares IDE world in the past where there were several IDEs, but they were of low quality. And now with Eclipse IDE, which is dominant in the market, people who invest things in Eclipse immediately get into a wide market (for example by writing Eclipse plugins). Now the analogy to Spring, where Spring is becoming such an environment as Eclipse for third party development. 
+
+Major players are: BEA - use Spring internally within WebLogic10 where every EJB and other Java EE component is also a Spring bean. Oracle Fusion middleware is built on top of Spring (oc4j, Oracle Coherence, JDeveloper, ...). GigaSpaces - version 6 has "native" support for Spring pojo programming model ([Shay: I guess he talks about what I have been up to :)]). Rod talks about GigaSpaces OpenSpaces remoting which is based on Spring Remoting and provides exactly the same "look and feel" simply with exporting virtualized services (that can handle fail over and load balancing). [Shay: He seems to spend a lot of time on this, a bit of an ego boost since I wrote it :)]). IBM and certify Spring on WebSphere ([Shay: exactly what you would expect from WebSphere and the red tape way of thinking, certifications galore]).
+
+Now, my battery is dead which always reminds me of this scene from True Lies:
+
+<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/4dSo-egQFV0"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/4dSo-egQFV0" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>

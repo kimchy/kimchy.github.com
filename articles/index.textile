@@ -1,0 +1,9 @@
+--- 
+layout: page
+title: Articles
+---
+
+<ul class="posts">
+	<li><span>29 Nov 2006</span> &raquo; "Compass: Integrate Search into your apps":http://www.infoq.com/articles/compass-search-tutorial</li>
+	<li><span>27 Sep 2006</span> &raquo; "Compass: Simplifying and Extending Lucene to Provide Google-like Search":http://www.infoq.com/news/compass-11</li>
+</ul>

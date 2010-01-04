@@ -1,0 +1,15 @@
+---
+layout: post
+title: Holy Grail of Distributed Computing
+---
+
+This blog post is inspired by the monumental blog post Adrian Colyer posted about AOP and DI, with a twist about distributed computing. Well, the holy grail for distributed computing (for me) is: Data Grid, Collocation, and Event Driven.
+
+p. Lets start with the simplest one, Data Grid. We want to have fast access to our data. This usually mean we want to store our data in memory in a resilient and partitioned manner. It also usually means that we want our Data Grid to provide us with the ability to transparently partition our data. The Data Grid should also be able to be fault tolerant to any loss of a one or more nodes allowing us to retain a single system image with no data loss. It should also provide us with simple querying mechanism on the whole data grid.
+
+p. The next part is collocation. We want to be able to easily collocate work with its relevant data. This usually means that we want to be able to easily push work to where data resides (hopefully, in memory), execute it there, and return the result.
+
+p. Last is event driven. We want to be able to reacts to events in our system in an object oriented manner (an Order changed it status from NEW to VALIDATED), and have work be executed on that Order in an event driven and collected manner. This basically means that we want to be able to somehow "create" an event, in a collocated manner where the actual Order exists (in memory) as a result of the fact that it has changed its status.
+
+p. For me, these three simple rules allows us to create a simple, linearly scalable architecture. Of course, we can create very scalable solutions with only parts of the equation, for example, Google Map Reduce and GFS (or Hadoop), uses the first two, data grid and collocation, to achieve a scalable and fault tolerant architecture for certain scenarios. *But*, for truly scalable solutions, the event driven part should not be ignored as it forms the basis for a workflow type of applications while still maintaining collocation.
+

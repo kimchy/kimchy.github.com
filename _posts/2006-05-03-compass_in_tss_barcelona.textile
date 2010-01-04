@@ -1,0 +1,11 @@
+---
+layout: post
+title: Compass at TSS Barcelona
+---
+
+p. I am going to present Compass at <a href="http://javasymposium-europe.techtarget.com">TSS Symposium</a> in Barcelona. You can find the presentation abstract <a href="http://javasymposium-europe.techtarget.com/html/det_descriptions.htm#SBanonCompass">here</a>. I am really excited about it, and if you are using Compass (or use Java) it looks like it is going to be a great symposium.
+
+
+
+p. If you get to the presentation, and want to chat about Compass, just look me up. Drop a comment if you want to schedule something.
+

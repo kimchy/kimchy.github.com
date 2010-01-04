@@ -1,0 +1,59 @@
+---
+layout: post
+title: Mock Shmock
+---
+
+p. There have been <a href="http://beust.com/weblog/archives/000404.html">several</a> posts in past week regarding testing, basically trying to explain, that as with anything in software development, things should be taken and applied cautiously. One of the most horrible things that can be done to a software project is using mocks in the wrong way. Let me try and explain why:
+
+
+
+p. **Do we really need it?**
+
+
+
+p. First, lets start with why do we want to use mocks. On any given project, if someone tells me that they want to test a service implementation (assuming that it performs some dao calls, and some business logic) and mocking out the dao, I would ask them several times if it is really needed. At the end of the day, the most important part of the service layer is to expose a service API, and we would want to test this service API without knowing what is going on within it. It means, that our integration tests, and what I mean by integration here is an environment that works with other immediate external dependencies, like database or other frameworks/libraries, will have to be written in order to prove that our service layer is functional. You can not and **should not** rely only on your mock tests for it. Now, if we already have the integration tests, which have 100% coverage of all the different execution paths of the service, why would we want to complicate our code with mock tests?
+
+
+
+p. Many of you would then say that integration tests are slow, and mock tests are fast. But I say that if you are running your integration tests against an in memory HSQL instances, and rollback each transaction, it is fast enough.
+
+
+
+p. Another issue that people raise is the fact that if the test fails, we won't know immediately what went wrong. It might be our test data, transaction handling, or any other non business related aspect of the services tests. What people miss is that most of the time, this is not the case, and the problem is pretty evident. And let me remind you that you still need to run your integration tests, so you would need to solve this problem anyhow.
+
+
+
+p. **Test Code is part of your source code**
+
+
+
+p. Tests, let it be unit/integration/orwhatchamacolo tests, are part of your source code. When you refactor your main code base, you might need to refactor your test code base as well. Mock tests for the most part are intrusive in nature, they know things about how certain services are executed, how they are called, and the order of their internal execution plan. This means that when you refactor your code, you will need to spend time refactoring your mock tests as well, many times without the IDE help.
+
+
+
+p. From my experience, refactoring mock tests is a pain. Many times you extend the functionality of your service, without changing its API contract, and suddenly mock tests start dropping like flies. This is very noticeble when testing services.
+
+
+
+p. **The Danger Of Mocks**
+
+
+
+p. Like most things in software development, certain tools / methodologies can be very dangerous in the hands of people who abuse them. Writing proper mock testing is not simple, as well as the decision what to mock test and what not. On several projects that I have worked on, mocks were used as the golden hammer of testing. The projects had so many mock tests, many of them with such an obscure execution and coding, that trying to change existing functionality required changing so many tests. Suddenly a 1 hour feature became a full day work.
+
+
+
+p. The strange thing was that the developers on the project were all above average developers, which for me means that doing proper mock testing, without it being a hassle later on in the porject life is not a simple job, and requires a lot of decipline.
+
+
+
+p. This brings me back to my first point, we still had to write integration tests (and run them before any commit). This integration tests retested most of the mock tests, and we ended up with **test duplication**, which should be treated as bad as code duplication.
+
+
+
+p. **Last Words**
+
+
+
+p. I am not saying that mock tests should not be used. I am simply saying that we need to be vigilant in applying it within our code base. There are places where it makes perfect sense to write mocks, and they should be used in such cases. Also, many times, simple mock implementation of an interface (sometimes called stub) is simpler then using an existing mock library, and requires much less understanding or the knowledge of yet another library we use in our project.
+

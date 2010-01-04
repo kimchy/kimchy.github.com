@@ -1,0 +1,25 @@
+---
+layout: post
+title: Compass 2.2 Transaction Processors
+---
+
+Compass, since its inception of more than 3.5 years ago had the concept of transaction isolation. A transaction isolation was an interface that was responsible for processing transactions and providing search/read capabilities. Compass came with two isolations, the read_committed one and the lucene (formally known as batch_insert) one.
+
+p. In Compass 2.2 (trunk), there has been extensive work on making transaction isolations more pluggable and simpler to extend. The first refactoring done was renaming the transaction isolation to a more befitting name of transaction processor. So now, Compass read_committed and lucene are transaction processors and not transaction isolations.
+
+
+
+p. The next step was enhancing the current transaction processors. The main enhancement (which I am really excited about) is the fact that both read_committed and lucene transaction processors now perform destructive transaction operations (create/delete/update) **in the background** while **still maintaining** their respective transaction isolation behavior. If we take the common Compass scenario of integration with an ORM library, this means that mirroring operations will not wait for Compass to index the respective object, but will continue to process changes against the database, while changes against the search engine are done in the background (did someone say multi core? ;) ). Note, with async operations turned on, exceptions on certain destructive operations will be raised not as a result of the actual operation that caused them, but the exceptions will still cause transactions to roll back, just at a different stage of the processing. Also note, that if it is hard to pin point which operation failed, async operations can always be disabled.
+
+
+
+p. The next addition is the async transaction processor that performs the transactions in a completely asynchronous manner, which means that commit operations will not wait for indexing to finish. While a somewhat delicate transaction processor to use, there are cases where this transaction processor can be used.
+
+
+
+p. All changes are committed to trunk and I urge people to try and use it, I expect great performance benefits by just dropping the new Compass jars if defaults are used.
+
+
+
+p. More information can be found in the Compass reference documentation. More exciting transaction processors are yet to come... . Enjoy!
+

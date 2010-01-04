@@ -1,0 +1,58 @@
+---
+layout: post
+title: Hibernate Search/Lucene
+---
+
+<img src="http://www.kimchy.org/wp-content/uploads/2006/08/fight.jpeg" alt="fight" title="fight" width="131" height="90" class="alignleft size-full wp-image-300" /> It seems like Hibernate have upgraded the support for Lucene integration. The first go at support full text search was pretty basic, and it looks like the next upcoming version will have better support for it (Some more information can be found <a href="http://lists.jboss.org/pipermail/hibernate-dev/2006-November/000672.html">here</a>). Naturally, with Hibernate releasing such a library, the obvious question would be where does Compass fit into the picture. Let me first start with answering some of the arguments raised by Emmanuel Bernard on the <a href="http://mail-archives.apache.org/mod_mbox/lucene-java-user/200611.mbox/%3c455F1706.50905@hibernate.org%3e">Lucene mailing list</a>:
+
+p. [Emmanuel Bernard] __1. not Yet Another API to deal with your domain model. If you already use an ORM (JPA or Hibernate), you are familiar with those APIs. Using compass implies that you have to use a different set
+of API to play with the object lifecycle (CRUD).Hibernate Search is integrated with the org.hibernate.Query interface, and all the CUD operations on the index are triggered from the Hibernate CUD operations.__
+
+
+
+p. Compass, since version 0.5, have integrated with Hibernate lifecycle event mechanism. It actually supports Hibernate from version 3.0.x till 3.2.x . Compass support for it is done through Compass GPS infrastructure, and CUD operations are mirrored to the search engine automatically. As for read / search operations, personally, I really don't see the difference between using Compass API for searching (with the many benefits it gives) and Hibernate API (which is an extension on top of original Hibernate API).
+
+
+
+p. [Emmanuel Bernard] __2. Metadata are minimal and fit particularly well through annotations, so
+you don't have yet another XML representation of ther same domain model (Compass might now have annotations support, you'll have to check)__
+
+
+
+p. Compass have supported annotations since version 0.9, and they are as minimal as possible, even more simple than the Hibernate ones. With Compass, you can also use xml mapping definitions instead or in combination with the annotation support. Many developers do prefer the use of xml mappings and not annotations, with Compass they have this option.
+
+
+
+p. [Emmanuel Bernard] __3. it's all about managed objects (ie managed by the Session or the EntityManager)
+Hibernate Search gives you back objects managed by the Session, so any change made to them will (by default) be synchronized with the database, this is the normal behavior of an ORM, but is not what you have from a Compass search. This approach fits well with the JBoss Seam approach of having all the application around the domain model and EJB 3.0__
+
+
+
+p. Compass allows you to map your domain model to the search engine. You can easily get the objects back from the hit results, and load the respective object form the Hibernate Session or Entity Manager (this can easily be abstracted away and used throughout the application with a few lines of code). This is actually one of the main benefits of Compass over the current Hibernate implementation, you **don't hit the database** when searching and displaying search results. Moreover, you do not have to use object in order to display the results, but use Resources (which are Compass abstraction on top of Lucene Document).
+
+
+
+p. [Emmanuel Bernard] __4. Not too much abstraction. From what I've heard, Compass borrow a lot of its design / classnames from Hibernate/Spring/Lucene. Compass tries to abstract those 3 techlnologies (at least Hibernate and Lucene), by providing its own infrastructure. What am trying to do with Hibernate Search is to keep the abstraction as light as possible. For advanced Lucene query you'll have to use pure Lucene APIs, which is possible / natural with Hibernate Search__
+
+
+
+p. Compass main API does uses the same programming model as other ORM tools (Hibernate did not invent SessionFactory and Session afterall). The main drive behind using a similar API is the simplicity for users to adopt Compass (not necessarily used within an environment that uses ORM tool) and the applicability of it to Compass. Naturally, Compass does borrow a lot of Lucene semantics, but adds on top of them some enhancements (for example, Resource, which maps to Lucene Docuement, is also identifiable and is associated with an alias/mapping definition). As for abstracting Spring, Compass does not really abstract Spring, but integrate with it in order to simplify the development process when working within a Spring environment (similar to what Spring provides for Hibernate). Last, Compass allows the user to directly work with Lucene classes where needed (for example, getting IndexReaders and Searchers).
+
+
+
+p. [Emmanuel Bernard] __I do not think that all your object properties belongs to the Index, and some of them will be put in the index with information degradation (ie store year/month rather than the whole date). So I do not believe there is a bidirectional relationship between your domain model and your index documents (for size, efficiency and accuracy purpose). For that matter, Compass cannot really truly index your database backed domain model and give back the object to you. Hibernate Search can because it delegate the object hydration to Hibernate Core.__
+
+
+
+p. First, Compass can truly index your full domain model into the index, but I agree that many times this is not required. Compass allows full control over what gets saved into the index and what not, and in which format. Compass allows the user to work only with Resources when displaying search results, and allows to work in a pure mode where un-marshallign is not supported. But, many times the user would still like to work with the domain model, even though it is a degraded view of it, and Compass allows that by creating as much of the domain model as possible according to the mapping definitions.
+
+
+
+p. So, what are Compass features compared to Hibernate Lucene/Search? Actually, this is a difficult question to answer, since the Hibernate library has something like 5% out of all of Compass features. First and foremost, you can use Compass within an Hibernate managed environment, but you can also use Compass where Hibernate is not used, with different ORM tools (JPA, OJB, JDO), and as a standalone. If we focus on a scenario where Hibernate is used, here is a short and by no means complete list of features: Transactions and atomicity of transactions (get ready for index corruption with Hibernate), much more performant, automatic indexing of the domain model based on ORM mappings and Compass mappings, 'all' property, component mapping (allowing to index a related class into the same Resource/Document), sub index hashing, query builder and filter builder API, contract mappings, Lucene Analyzers granularity up to the Property/Field level, built in highlighter support, built in support for Lucene extended analyzers and custom analyzers, declarative configuration over all of Compass features and many of Lucene, extensive support for converters with dynamic languages support as well, XML and Resource level mappings (in combination with OSEM), Lucene caching support and many more (I probably need another blog post for this).
+
+
+
+p. At the end, I think this is good news. The fact that it has been realized that full text search makes a lot of sense in many applications, and we can see Hibernate responding. The response, I am guessing, came based on user demand, which means that users require it. Up until now, Compass has been almost on its own in simplifying full text support within applications and the publicity of Hibernate is only going to help Compass.
+
+
+

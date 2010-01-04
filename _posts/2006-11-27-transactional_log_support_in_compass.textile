@@ -1,0 +1,31 @@
+---
+layout: post
+title: Transactional Log Support In Compass
+---
+
+p. Up until now, Compass stored the transaction data for read committed transactions in memory. This allows for extremely fast transactions, but was bounded by the JVM memory size. Compass now supports file based transactional logs as well, allowing for bigger transactions to be executed in a read committed mode.
+
+
+
+p. This should not be confused with the batch insert transaction isolation. The batch insert transaction isolation allowed for transactions to be as big/long as required, but only supported create operation (which can cause duplicates) and did not support rollbacks. With the new transaction log implementation, longer transactions can be supported, though they are still bounded by the JVM memory (to a lesser degree than the memory based transaction log). More information on the file system transactional log support can be found in the reference documentation under the Search Engine chapter.
+
+
+
+p. An important additional feature that was added is support for session level settings. The first feature to support this is the transactional log feature, allowing to change the transaction log usage on the session level. Here is an example of how it can be used:
+
+
+
+p. <pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="background-color:#ffffff;">CompassSession session = compass.openSession();
+session.getSettings().setClassSetting(
+  RuntimeLuceneEnvironment.Transaction.TransLog.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">TYPE,</span>
+  <span style="background-color:#ffffff;">FSTransLog.</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">class</span><span style="background-color:#ffffff;">);
+</span></pre>
+
+
+
+p. The above code sets Compass to work in a file based transaction log mode. Note, this setting only applies on the Compass session that is going to start a Compass transaction, so if there is an already running Compass transaction, it will have no affect. If you are missing a Compass setting that should be set on the session level, please raise a Jira request for it to be supported (and it will be supported if possible). In the next version, more settings will start to be supported on the session level.
+
+
+
+p. Last, a note on 1.1 M3 version. Don't know if you noticed, but I sadly broke my one month cycle of releasing Compass versions. This happened mainly due to polymorphic relationship support in Compass which took much longer than I anticipated. 1.1 M3 is going to be released within this week, but it would be great if people downloaded it and played with it to give me feedback regarding backward compatibility with applications that already use Compass. M3 is going to be a huge step for Compass, especially in terms of OSEM completeness.
+

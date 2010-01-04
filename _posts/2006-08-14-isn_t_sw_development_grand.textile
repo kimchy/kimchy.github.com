@@ -1,0 +1,18 @@
+---
+layout: post
+title: Isn't sw development grand?
+---
+
+p. It starts with a funny story. When I was in high school, I basically majored in both electricity and software. When I wanted to go to university, what I basically did was flip a coin between the two, and it fell on software. When I got to one of the best universities in the world in both software and electricity majors, I was in shock. I was never the type of teenager that programmed on Atari or whatever, I spent most my time playing basketball and football. I joined the uni and found myself facing people who basically were born with a keyboard on their hands. I was there, typing single 3 seconds timed strokes on the keyboard, where most of my soon to be friends were typing their arse off burning the hell out of the computer. In this I was facing an interesting dilemma, have I chosen the right course? Can I ever match this craziness of knowledge and love for computers?
+
+
+
+
+p. As it turns out, I did (to some extent). I look back, and love the decision I made. Staying in software development is one of the smartness decision I made. Especially now, and here I get to the point I am trying to make. I have many friends, most of them are as smart as normal people should not be. A lot of them went and studied electronics or bio-informatics. Whenever I speak to them, they are flourishing with this splendid ideas (that I can hardly grasp), and are up to and want to take/change over the world.
+
+
+
+p. And here comes the interesting point, when I talk to this people, my friends, for them to implement and go forth and fulfill their ground breaking ideas, they stumble. Trying to create a new bio-machinery, for example, requires a lot of up front investments. Where someone with a good software related idea can simply sit down and hack his arse off for several weeks, and come up with youtube, digg, google, or anything similar, people in other fields can not take this course. This is what I like about software, it allows for the purist expression of art. Artists simply sit down and work it out, no need for investors, angels or VCs. You sit down and simply paint (or anything else). Same thing happens with software today (mostly different then what happened in the bubble). People, smart creative amazing people, sit down and write software. They are able to express their ideas with minimal investments, and have the Angels/VCs knock on their door. Isn't software development grand?.
+
+
+

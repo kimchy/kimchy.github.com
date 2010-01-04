@@ -1,0 +1,26 @@
+---
+layout: post
+title: Searchable Google AppEngine with Compass
+---
+
+Google App Engine was released yesterday for Java. It provides the ability to deploy Java based web applications onto the App Engine, and provides a data store service (with JPA and JDO on top of it), memcached, and others. 
+
+So, what I decided to do is try and get Compass integrated with Google App Engine to allow for easy full text search of Google App Engine apps (yea, the irony). Basically, it took me a couple of hours (most of them spent on <a href="http://groups.google.com/group/google-appengine-java/browse_thread/thread/ec8817ca69b6f498">this bug</a> in gae), and we have something ready to use. Here is a screencast showing how the Guestbook app can be made searchable easily (use full screen mode when code is shown):
+
+<embed src="http://blip.tv/play/g5EI+ZYzldkK" type="application/x-shockwave-flash" width="590" height="400" allowscriptaccess="always" allowfullscreen="true"></embed> 
+
+What are the steps needed?
+
+<ul>
+<li>Make your domain model searchable.</li>
+<li>Create a Compass instance. Configure it to store the index using GAE data store (there is also support for native Lucene applications). Configure it not to use threads.</li>
+<li>Create a Compass Gps, have it automatically mirror changes done using the JDO/JPA API to the search engine. Call index operation to completely reindex your application.</li>
+</ul>
+
+Thats it. Pretty simple no? Especially since these are the steps you use to enable any Java application with full text search using Compass :).
+
+Of course, there are some leftovers. The first is better support for JPA (built on top of Compass generic support for JPA). Another enhancement is to use memcache service to cache heavily used index portions.
+
+*Update: Questions regarding the integration are best asked on the <a href="http://forum.compass-project.org">Compass forums</a>. Its hard to have a conversation using the blog comments.*
+
+Enjoy!

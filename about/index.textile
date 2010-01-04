@@ -1,0 +1,6 @@
+--- 
+layout: page
+title: About Me
+---
+
+Write code, climb, read, be a good father, that sums it up...

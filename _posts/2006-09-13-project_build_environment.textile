@@ -1,0 +1,60 @@
+---
+layout: post
+title: Project Build Environment
+---
+
+p. Configuring a proper build environment for a project is never as simple as it first looks like. There are many factors one must take into account when configuring the build environment, including testing level, project complexity, QA involvement and many more. When I try to tackle the introduction of build systems into a project, I usually take the project and tailor a build environment specialized for it. Most times I end up identifying several build types that the project should have:
+
+
+
+p. **CI Buid**
+
+
+p. The CI build is usually your first tick in a list of boxes for "lets make my project Agile". Its characteristics usually revolve around the build system identifying changes made to your project Version Control System (VCS), building the project, and running its tests. Many times, the CI build includes tagging the VCS and creating a full distribution.
+
+
+
+p. This is actually the way Compass works. Compass unit and integration level testing takes less than 5 minutes to execute, and a whole distribution build is less than 10 minutes. What you end up with is a complete distribution ready to be used once a build succeeds after a commit.
+
+
+
+p. This is usually not the case for complex projects that takes a longer cycle time in order to create a complete distribution. There are many reasons why complex projects ends up with longer cycles, with the top one being excessive testing needed to be performed. Long running integration testing, tests that require manual execution (or partial manual execution), tests that needs to be executed on multiple platforms, all contribute for that dreaded "test hourglass". This is why in complex projects the Nightly Build project is introduced.
+
+
+
+p. **Nightly Build**
+
+
+p. First, once a project has a nightly build, we can ease up the life of our CI build. What I have found in projects with nightly builds is that there is no need to create a complete distribution or tag the VCS in your CI build. You rarely need it in your day to day job.
+
+
+
+p. Second, if a project has a nightly build, it does not mean that there are no tests to run in your CI build. All the unit level tests, and some of your integration tests should be run in the CI build. Choosing which tests to run is a work of art, since you want to get the test execution time into a window timeframe (usually no more than half an hour), but still be able to cover most of the cases when things break (note, this does not necessarily means that they cover more code than other tests that can run in the same amount of time).
+
+
+
+p. So, what does the Nightly build do? Very similar to what we said in the CI build for simple/moderate projects. Compile the code, create a distribution, tag VCS with something that denotes un-tested, run all the tests, and then change the tag into nightly tested. Note, that the distribution is created before the tests are run, which is mainly done since in the morning QA might want to take the distribution and investigate why it failed, a process that should not stop other people from committing code (most of the times you do not want to stop everything because the nightly failed).
+
+
+
+p. The tests may take several hours to run which is ok for a nightly build. When the project also has manual testing as part of its test cycle, QA (or that unlucky developer that drew the shortest straw) can perform it on the distribution created by the nightly build.
+
+
+
+p. Naturally, if the project is in the complexity level of landing a human mission on mars, a night might not be enough to run all the automated tests. It simply means that you introduce another build, maybe a weekly build (kindda like a Scrum of scrums). If your project does require a weekly build, investigate why you need it, your project or your tests really should not be this complex or not optimized. Remember, **the longer the cycle, the harder it is to pin point the offending code**.
+
+
+
+p. **Developer Build**
+
+
+p. Last, but definitely not least, is the build that a developer executes on the development machine before committing any code. The build must compile the system, and must execute some tests. If the project is simple, with only CI build with compile/test cycle of less than 10 minutes, the developer can run the same CI build. If the compile/test cycle takes longer than 10 minutes, more often than not, developers will simply stop executing the tests before they commit. This means that another set of test configuration needs to be set for developer level builds which covers as much as possible within a smaller timeframe than the CI build (again, not in terms of test code coverage, but in terms of things that usually break).
+
+
+
+p. **Final Thoughts**
+
+
+p. Many times, your project manager as part of "agelifying" the project would task you to configure or introduce a build environment into the project. This is not a simple task, and should be analyzed properly. The most common mistake I have seen with defining build environments is not recognizing the needs for different types. The fact that a developer needs to run tests that takes more than 10 minutes is unacceptable, and the same goes for long running CI builds. If your project needs several build types, don't be afraid to introduce them.
+
+

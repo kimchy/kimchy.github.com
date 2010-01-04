@@ -1,0 +1,15 @@
+---
+layout: post
+title: TSE Summary
+---
+
+p. The Spring Experience looked like an excellent show. Sadly, I ate something that didn't agree with me, and spent most of the time at the hotel room. I was hoping to talk and meet so many people, but did not manage to do almost anything. At one point I was concerned that I won't make it to my own presentation, but made it at the end and I think that it went well.
+
+
+
+p. The Compass session itself worked out nicely. The session started at 10 PM and went well into 11:30. It seems like people were really interested and the presentation itself went well with a working searchable Spring Petclinic sample up and running. The session did not go into main Compass API and programmatic usage, but rather went into how it can integrate simply with Spring Petclinic. The slides can be found <a href="https://compass.dev.java.net/files/documents/4669/46125/file_46125.dat?filename=Compass%20%2d%20SpringExperiance%2epdf">here</a>.
+
+
+
+p. At least one good think came out from the conference, a really cool Compass feature for parallel indexing (within the same JVM). I will blog about it more once it is wrapped up and committed. Well, there is always Spring One in Europe ...
+

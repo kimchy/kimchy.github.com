@@ -1,0 +1,19 @@
+---
+layout: post
+title: Announcing Compass 1.0
+---
+
+p. Well, the long road for version 1.0 has come to an end, and <a href="http://www.opensymphony.com/compass">Compass</a> 1.0 is out. I am really happy that version 1.0 is out, and feel comfortable with its stability for production use (this does not mean that there might not be 1.0.1 :)). I can't believe that almost two years ago, I sat down and wrote the first Compass line of code, a long time has passed since then, and Compass came a long way. That said, Compass future is really open, and there are numerous features that I wish to add. Major features include Compass crawler framework, Compass server, and a swarm directory - scaling out of index storage (this one if pretty complex, and pretty cool). The features mentioned are complex, and it will take some time to implement them (and developer power, so if you are up to it, join in).
+
+
+
+p. The main feature that went with this release is XSEM, the ability to map Xml data structures into the search engine. The mapping is done using xml mapping definitions, based on xpath expression, and the documentation for it can be found <a href="http://www.opensymphony.com/compass/versions/1.0.0/html/core-xsem.html">here</a>. During the implementation of the XSEM feature, I had a chance to perform some performance tests between several Xml parsers and DOM implementations, and I can definitely say, that no one should use the xml implementation that comes with JSE. <a href="http://www.dom4j.org">dom4j</a> with <a href="http://www.extreme.indiana.edu/xgws/xsoap/xpp/">XPP</a> is your best bet.
+
+
+
+p. Also, the implementation is pretty open, and new implementations of Compass <a href="http://www.opensymphony.com/compass/versions/1.0.0/api/org/compass/core/xml/XmlObject.html">XmlObject</a> and <a href="http://www.opensymphony.com/compass/versions/1.0.0/api/org/compass/core/converter/xsem/XmlContentConverter.html">XmlContentConverter</a> are pretty simple to implement, for example direct XPP and Jdom implementations. I guess that other implementations will find their way into Compass based on user demand.
+
+
+
+p. Compass 1.0 is out, let the games begin.
+

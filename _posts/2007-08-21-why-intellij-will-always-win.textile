@@ -1,0 +1,17 @@
+---
+layout: post
+title: Why IntelliJ will always win
+---
+
+p. Here is a great example why <a href="http://www.jetbrains.com/idea/nextversion/">IntelliJ</a> will always win. With the latest milestone, you can now find usages (references in Eclipse lingo) and see them as a context popup. Here is how it looks like: 
+
+
+
+p. <a href='http://www.kimchy.org/wp-content/uploads/2007/08/intellij.png' title='IntelliJ context find usages'><img src='http://www.kimchy.org/wp-content/uploads/2007/08/intellij.png' alt='IntelliJ context find usages' /></a>
+
+
+
+p. As someone who uses this feature all the time, this is an amazing time saver (instead of showing it in a different view). IntelliJ is simply swamped with such small features.
+
+
+

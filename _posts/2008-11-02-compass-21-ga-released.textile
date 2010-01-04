@@ -1,0 +1,12 @@
+---
+layout: post
+title: Compass 2.1 GA Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.1 GA released. Major feature since the RC release include the ability to configure Compass using JSON (both configuration and mappings). There are important fixes that are included, among them is the ability to work with Terracotta based index and Lucene 2.4. Full release notes can be found <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10137">here</a>.
+
+As always, feedback will be welcomed, and work on 2.2 M1 had already began :). Enjoy!
+
+p.s.
+
+   Posts with a breakdown of the most important features will be submitted to the usual suspects. For now, here are links to the previous releases: <a href="http://www.kimchy.org/compass-210-m1-released/">2.1.0 M1</a>, <a href="http://www.kimchy.org/compass-210-m2-released/">2.1.0 M2</a>, <a href="http://www.kimchy.org/compass-210-m3-released/">2.1.0 M3</a>, <a href="http://www.kimchy.org/compass-210-m4-released/">2.1.0 M4</a>, <a href="http://www.kimchy.org/compass-210-rc-released/">2.1.0 RC</a>.

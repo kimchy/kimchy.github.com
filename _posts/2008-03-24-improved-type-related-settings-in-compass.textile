@@ -1,0 +1,15 @@
+---
+layout: post
+title: Improved type related settings in Compass
+---
+
+p. It started with a <a href="http://forum.compass-project.org/thread.jspa?threadID=215179&tstart=0">thread in Compass forum</a>. This turned out to be a new feature request in Compass, allowing for Compass to automatically set the index setting for a property mapping based on the type (if it is not explicitly set). Compass tries to adhere to "Conventions over Configuration" (which I like to name: "COC" :) ), but I guess it can always do better.
+
+ 
+
+p. For example, most, if not all times, a number (such as int, float, ...), should be stored in UN_TOKENIZED form. By default in Compass, if not setting the "index", everything will be TOKENIZED. Now, with the latest Compass trunk, number types will be TOKENIZED. This also applies to Boolean, URI, URL types.
+
+
+
+p. Last but not least, for numeric types, a specific format has been added named: __sortable__. This means that if you put it in the format tag for specific mapping definition, it will be stored in an internal sortable format, which makes thing much simpler.
+

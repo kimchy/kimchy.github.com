@@ -1,0 +1,21 @@
+---
+layout: post
+title: Dynamic Mappings / Settings with Compass
+---
+
+p. One of the upcoming Compass 2.1 M1 features include a much requested feature by users which is the ability to dynamically remove and add mappings using the Compass instance. So, __Compass__ instance now allows to get its internal __ComapssConfiguration__ object and change it dynamically (not just mappings, but other settings as well). One changes, __Compass#rebuild()__ should be called in order to take the changes into account. Here is an example:
+
+
+
+p. <pre lang="java" line="1">
+Compass compass = // create the compass instance
+
+compass.getConfig().addClass(NewClass.class);
+compass.getConfig().removeMappingByClass(OldClass.class);
+compass.rebuild();
+</pre>
+
+
+
+p. From now on, any operations on the new Compass instance will use the updated mappings (and optional settings). Underneath, Compass shuts down the "old Compass instance" gracefully (waiting for current open sessions to be closed).
+

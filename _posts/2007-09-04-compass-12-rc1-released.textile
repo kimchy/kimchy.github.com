@@ -1,0 +1,8 @@
+---
+layout: post
+title: Compass 1.2 RC1 Released
+---
+
+p. The Compass team is pleased to announce the release of <a href="http://opensymphony.com/compass/download.action">Compass 1.2 RC1</a>. Compass 1.2 RC1 is a minor upgrade to 1.2 M3 and will (hopefully) be the last release of 1.2 before the GA. The biggest feature of this release is support for OpenJPA 1.0 and backward support for 0.9.x OpenJPA versions.
+
+

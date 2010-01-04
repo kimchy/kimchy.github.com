@@ -1,0 +1,14 @@
+---
+layout: post
+title: Contegix - You Rock
+---
+
+<a href="http://www.contegix.com/">Contegix</a>, the hosting company that host <a href="http://www.compass-project.org">Compass</a> and many other open source projects  and commercial companies simply rocks. The level of knowledge, the response time, and the readiness to always help, is simply amazing. 
+
+And to top that, this is what I got yesterday:
+
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/contegix1-300x225.jpg" alt="contegix1" title="contegix1" width="300" height="225" class="aligncenter size-medium wp-image-429" />
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/contegix2-300x225.jpg" alt="contegix2" title="contegix2" width="300" height="225" class="aligncenter size-medium wp-image-430" />
+
+
+Thanks!

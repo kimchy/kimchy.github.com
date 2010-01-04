@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 1.1.1 Released
+---
+
+<a href="http://www.opensymphony.com/compass">Compass</a> version 1.1.1 is released. This release fixes a major bug with Compass Jdbc directory support (the ability to store the index in a database) which caused entries that are marked to be deleted not to be actually deleted from the database (after the set delete window time).

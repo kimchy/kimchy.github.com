@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 1.2.1 Released
+---
+
+p. Compass version 1.2.1, a bug fix release over 1.2, is released. Download <a href="https://sourceforge.net/project/showfiles.php?group_id=121279&package_id=132331&release_id=570545">here</a>, and release notes are <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10110">here</a>.

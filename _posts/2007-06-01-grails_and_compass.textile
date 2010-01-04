@@ -1,0 +1,15 @@
+---
+layout: post
+title: Grails and Compass
+---
+
+p. Maurice Nicholson has been making amazing progress with Compass and Grails integration. The simplicity of adding search support for any Grails application has been simplified tremendously and it seems like more and more features are added each day.
+
+
+
+p. If you are interested, check out Grails <a href="http://docs.codehaus.org/display/GRAILS/Searchable+Plugin">Searchable Plugin</a>.
+
+
+
+p. As a side note, it seems like more and more users are starting to express interest in Compass Mapping domain model, and the ability to provide Compass with an already constructed mapping model that is built not necessarily using one of Compass mapping options. This has been added to the latest Compass 1.2 M2 SNAPSHOT.
+

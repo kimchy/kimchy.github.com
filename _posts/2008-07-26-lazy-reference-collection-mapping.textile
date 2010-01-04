@@ -1,0 +1,28 @@
+---
+layout: post
+title: Lazy Reference Collection Mapping
+---
+
+p. Upcoming Compass 2.1 M3 now has a new feature allowing for lazy loaded reference mapping in Compass when using it on top of collections. Reference mapping in Compass simply stores the relationship between one object and another (the ids), and many times there is no need to load all the references in advance while unmarshalling an object. Now, reference mappings on top of collections can be lazily loaded. Here is an example:
+
+
+
+p. <pre line="1" lang="JAVA">
+@Searchable
+public class Customer {
+
+    @SearchableId
+    private int id;
+
+    @SearchableReference(lazy = Lazy.TRUE)
+    private List<Order> orders;
+}
+
+@Searchable
+public class Order {
+
+    @SearchableId
+    private int id;
+}
+</pre>
+

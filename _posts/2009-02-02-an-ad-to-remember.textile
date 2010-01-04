@@ -1,0 +1,10 @@
+---
+layout: post
+title: An Ad to Remember
+---
+
+Its superbowl time, and there can be no superbowl without its famous <a href="http://commercial-archive.com/SuperBowlCommercials">commercials</a>. Every time I watch the superbowl during an economic downrown, I am reminded of the pets.com (the leading icon of the dot com bubble) famous commercial.
+
+p=. <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/nXHrlm5Nk5w&hl=en_US&fs=1&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/nXHrlm5Nk5w&hl=en_US&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+
+How symbolic.

@@ -1,0 +1,7 @@
+---
+layout: post
+title: Rethinking exclusion of alias from "all"
+---
+
+p. I asked a while back if Compass should include the alias within the all field or not. Here is <a hre="http://www.kimchy.org/exclude-alias-from-all-poll/">the question</a> and <a href="http://www.kimchy.org/alias-is-now-excluded-from-all-by-default/">the decision</a> was to remove it. After getting some emails and based on some recent forum posts, I am not sure that this is the best "out of the box" experience for Compass users. I am considering turning this back and currently leaning towards it. What do you say? I wish to nail this before 2.0 RC1.
+

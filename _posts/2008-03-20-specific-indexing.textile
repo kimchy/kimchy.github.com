@@ -1,0 +1,41 @@
+---
+layout: post
+title: Specific Indexing
+---
+
+p. Compass supports the ability to completely index external content (for example, a database mapped using an ORM) using very simple API:
+
+
+
+p. <pre lang="java" line="1">
+ComapssGps gps = // ...
+gps.index();
+</pre>
+
+
+
+p. This indexing process is a parallel indexing process (by default) based on the number of sub indexes, and will go and fetch all the data mapped using the ORM tool and index it using Compass. The old content of the index (for all types) will be replaced by the new content.
+
+
+
+p. Some Compass users have suggested a (very) valid feature request of being able to just index specific types. So now, this feature is available in trunk (todays nightly will have it). Here is what it looks like:
+
+
+
+p. <pre lang="java" line="1">
+ComapssGps gps = // ...
+gps.index(Person.class, Account.class);
+</pre>
+
+
+
+p. This will only index the Person class and Account class data (in parallel if possible) and replace only their respective sub indexes. The rest of the index will remain the same.
+
+
+
+p. Now, the only thing left is for the <a href="http://docs.codehaus.org/display/GRAILS/Searchable+Plugin">Grails Searchable Plugin</a> to enable it so people will be able to this: __Person.index()__ in groovy.
+
+
+
+p. Finally I can go to bed ;)
+

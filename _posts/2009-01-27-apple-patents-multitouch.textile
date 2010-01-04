@@ -1,0 +1,16 @@
+---
+layout: post
+title: Apple Patents MultiTouch
+---
+
+Well, it seems like apple managed to get the <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=multi-touch&s2=multitouch&OS=multi-touch+AND+multitouch&RS=multi-touch+AND+multitouch">patent</a> for multi touch (at least the way I read it). I am an avid Apple products user, but this is amazingly a bad move for Apple. 
+
+There are several reasons for that. First, the obvious one. This hinders innovation. Does that mean that we won't see multi touch on <a href="http://code.google.com/android/">Google Andriod</a>? What about Microsoft surface and many other products that use multi touch? Is that what stands (partially) behind the rumored lawsuit Apple is preparing against <a href="http://www.palm.com/us/products/phones/pre/index.html">Palm Pre</a>?
+
+It looks like multi touch is slowly forming the basis for the next level of human to computer interaction, and though Apple are great at innovation, there is nothing to drive innovation better than competition (check out Palm Pre and understand why). For example, I would love Apple to incorporate some of Windows 7 taskbar into the (aging) Dock.
+
+The second thing that I don't understand at all (I am no patent expert) is that it looks like <a href="http://www.cs.nyu.edu/~jhan/">Jeff Hann</a> has done this way before Apple even started to think about it. Here is the famous TED talk where he demonstrated it:
+
+[youtube]http://www.youtube.com/watch?v=UcKqyn-gUbY[/youtube]
+ 
+Disappointed if this turns out to be what I am afraid it might be... .

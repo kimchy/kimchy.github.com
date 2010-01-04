@@ -1,0 +1,27 @@
+---
+layout: post
+title: I Love GigaSpaces Startup Program
+---
+
+p. <a href="http://www.gigaspaces.com">GigaSpaces</a> announced a week ago that it started its <a href="http://www.gigaspaces.com/startup">Startup Program</a>. It basically allows  individuals and start-up companies (which we define as companies with less than US $5 million in revenues) to use the GigaSpaces products for any purpose, including production, indefinitely - for free. There are no time, functionality or CPU limitations to this program.
+
+
+
+p. This is a revolutionary move for a commercial product. GigaSpaces has been doing really well (we had, by far, out best year ever, and the year is not over yet...), especially within markets that can afford us. What we realized was that there is a big portion of innovative market that can't afford us, but would still love to use our product, namely - statups. So, we decided to share our wealth with startups, allowing them to get the product for free, and once they get to a stage where they actually make money, and only then, pay us back.
+
+
+
+p. I really think the following post at this <A href="http://www.theserverside.com/news/thread.tss?thread_id=47511">TSS thread</a> nails it:
+
+
+
+p. bq. This is a good move. I don't mind paying for a product ... the problem is paying upfront (when you have zero revenue and don't know if you will ever have some).
+
+If one day I have revenues, I think it is logical to share the wealth generated in part thanks to the software used.
+
+I think that many startups used free/open source products because of the cost. If you get a great product and only pay license fees if you make enough $$$ I think that many people will focus on choosing the best product (not only the best product among free/open source products).
+
+
+
+p. This move is going (actually already) to have many startup companies (and I hope each and every one of them is successful) to be able to use GigaSpaces. This, together with our ongoing effort of integrating with popular Open Source projects (Spring, Hibernate) is going to make us a very viable solution to such startups. On that front, we are hard at work at having <a href="http://mule.mulesource.org/display/MULE/Home">Mule</a> integration within our <a href="http://www.gigaspaces.com/wiki/display/GS6/Open+Spaces">OpenSpaces</a> effort (at the same level of our Spring integration). And I have been working (as a side project) at having GigaSpaces integrated with <a href="http://opensymphony.com/compass">Compass</a> and <a href="http://lucene.apache.org">Lucene</a>, allowing to store Lucene index within GigaSpaces distributed grid (and integrated with Compass) as well as having the ability to automatically index objects stored in the grid indexed and searched upon (using Compass OSEM support). This effort is at a rough beta stages, but if you are interested in it, drop me a line.
+

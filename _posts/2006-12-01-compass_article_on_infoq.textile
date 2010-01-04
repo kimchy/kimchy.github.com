@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass Article on InfoQ
+---
+
+<a href="http://www.infoq.com">InfoQ</a> ran a <a href="http://www.infoq.com/news/2006/11/compass-1-1-m3">story</a> about Compass 1.1 M3 release. There is also an <a href="http://www.infoq.com/articles/compass-search-tutorial">article</a> about Compass basic concepts and API there.

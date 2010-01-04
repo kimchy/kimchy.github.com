@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 2.0.2 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.0.2 released. This is a bug fix released for Compass 2.0 and is recommended for all Compass users. Full change log can be found <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10134">here</a>.

@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 2.0.0 M3 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> version 2.0.0 M3 has just been released. This release includes several major features, among them are: <a href="http://www.kimchy.org/improved-boosting-with-all-property">boosting with all property</a>, <a href="http://www.kimchy.org/did-you-mean-compass">spell check support</a> as well as many bug fixes and improvements. For a complete list, please check the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10120">release notes</a>. Enjoy!
+

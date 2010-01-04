@@ -1,0 +1,62 @@
+---
+layout: post
+title: @Searchable and Compass
+---
+
+p. One of the nicest features in the new <a href="http://www.opensymphony.com/compass">Compass</a> version is support for annotations. Making your domain model searchable could not be simpler now if you are working with Java 5. Just how simple it is? Here is what you need to do:
+
+
+
+p. First, let us assume that you have a class called Book. The book has a title, author and content. Here is the class with Compass searchable annotations:
+<pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="color:#808000;background-color:#ffffff;">@Searchable
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">public</span><span style="color:#000000;background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">class</span><span style="color:#000000;background-color:#ffffff;"> Book {
+
+    </span><span style="color:#808000;background-color:#ffffff;">@SearchableId
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="color:#000000;background-color:#ffffff;"> Long </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">id;
+
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#808000;background-color:#ffffff;">@SearchableProperty
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="color:#000000;background-color:#ffffff;"> String </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">title;
+
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#808000;background-color:#ffffff;">@SearchableProperty
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="color:#000000;background-color:#ffffff;"> String </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">author;
+
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#808000;background-color:#ffffff;">@SearchableProperty
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="color:#000000;background-color:#ffffff;"> String </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">content;
+
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#808080;background-color:#ffffff;font-style:italic;">// rest of class
+</span><span style="color:#000000;background-color:#ffffff;">}</span></pre>
+
+
+
+p. 
+When designing annotations support in Compass, one of the main goals was not to create annotations clutter. As you can see, the annotations have sensible defaults, and try to be short and to the point.
+
+
+
+
+p. Now, adding the class to Compass could not be simpler. You can either use the xml based configuration file:
+<pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="color:#000000;background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass</span><span style="color:#000000;background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">name=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"default"</span><span style="color:#000000;background-color:#efefef;">>
+
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#000000;background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">connection</span><span style="color:#000000;background-color:#efefef;">>
+</span><span style="color:#000000;background-color:#ffffff;">        </span><span style="color:#000000;background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">file</span><span style="color:#000000;background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">path=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"target/test-index"</span><span style="color:#000000;background-color:#efefef;"> />
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#000000;background-color:#efefef;"></</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">connection</span><span style="color:#000000;background-color:#efefef;">>
+</span><span style="color:#000000;background-color:#ffffff;">
+    </span><span style="color:#000000;background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">mappings</span><span style="color:#000000;background-color:#efefef;">>
+</span><span style="color:#000000;background-color:#ffffff;">        </span><span style="color:#000000;background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">class</span><span style="color:#000000;background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">name=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"Book"</span><span style="color:#000000;background-color:#efefef;"> />
+</span><span style="color:#000000;background-color:#ffffff;">    </span><span style="color:#000000;background-color:#efefef;"></</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">mappings</span><span style="color:#000000;background-color:#efefef;">>
+</</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass</span><span style="color:#000000;background-color:#efefef;">>
+</span></pre>
+
+
+
+
+p. Or, add it programmatically to Compass Configuration:
+<pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="color:#000000;background-color:#ffffff;">CompassConfiguration conf = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="color:#000000;background-color:#ffffff;"> CompassAnnotationsConfiguration()
+        .addClass(Book.</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">class</span><span style="color:#000000;background-color:#ffffff;">);
+</span></pre>
+
+
+
+
+p. That is it. You can now use the usual Compass API in order to use the Book object.
+

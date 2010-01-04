@@ -1,0 +1,14 @@
+---
+layout: post
+title: Compass 2.2.0 M1 Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.2.0 M1 released. Major features include:
+<ul> 
+<li><a href="http://www.kimchy.org/compass-22-transaction-processors/">New and improved transaction processors</a>.</li>
+<li><a href="http://www.kimchy.org/compass-mapping-builder-api/">Mapping Builder API</a>.</li>
+<li><a href="http://www.kimchy.org/terracotta-transaction-processor/">Terracotta Transaction Processor</a> (and <a href="http://www.kimchy.org/improved-terracotta-performance-with-compasslucene/">improved performance</a>).</li>
+<li>Many more bug fixes and small improvements listed in the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10160">release notes</a>.</li>
+</ul>
+
+Enjoy!

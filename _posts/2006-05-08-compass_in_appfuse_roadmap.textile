@@ -1,0 +1,15 @@
+---
+layout: post
+title: Compass in AppFuse Roadmap
+---
+
+p. Just saw <a href="https://appfuse.dev.java.net/">AppFuse</a> <a href="http://raibledesigns.com/wiki/Wiki.jsp?page=AppFuseRoadmap">roadmap</a>, and it looks like <a href="http://www.opensymphony.com/compass">Compass</a> is planned to be part of App Fuse version 2.1. This is really exciting news for Compass, App Fuse is one of the well known open source projects, and used by many projects as the starting point for new applications. It will also mean that Compass will get much more recognition, which by my biased opinion, it sure as hell deserves ;).
+
+
+
+p. As far as features, I think that Compass is very close to make the integration with App Fuse very simple. Surely the part that uses Spring MVC. It would be nice to add to Compass support for Tapestry, WebWork, and the rest of the web frameworks that App Fuse is going to support for version 2.0. Another interesting thing to add to Compass is some AJAX support on top of the web frameworks.
+
+
+
+p. So, if you are interested in developing it for Compass, just drop me an email, or start a thread in the developer forums.
+

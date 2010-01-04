@@ -1,0 +1,8 @@
+---
+layout: post
+title: Compass on The Java Posse
+---
+
+p. Compass 1.0 release just got mentioned in <a href="http://javaposse.com/">The Java Posse</a>, here is what is written on the site: "Compass 1.0 - born from the Open Symphony java workflow project - has been released". Now, I am pretty sure that I am not mistaken, but I don't think Compass was born out of <a href="http://www.opensymphony.com/osworkflow/">OSWorkflow</a> (which I think is the one they meant to) :). I wonder where they got that info from..., sure as hell not from <a href="http://jroller.com/page/kimchy/Weblog/the_birth_of_compass">here</a> ;)
+
+

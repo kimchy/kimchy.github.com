@@ -1,0 +1,8 @@
+--- 
+layout: page
+title: Projects
+---
+
+p. "Compass":http://compass-project.org : [<span class="meta">Founder</span>] Compass is an open source project built on top of Lucene aiming at simplifying the integration of search into any Java application.
+
+p. "GigaSpaces":http://gigaspaces.com : [<span class="meta">Technical Director / Coder</span>] GigaSpaces eXtreme Application Platform (XAP) is a high-end application server with the world's leading in-memory data grid built-in.

@@ -1,0 +1,66 @@
+---
+layout: post
+title: Spring One - Code Organization
+---
+
+Juergen Hoeller is talking about code organization:
+
+h2. Packages
+
+
+
+Defining packages is surprisingly not simple. The first cut is always trivial, the problem starts when new unexpected new requirements, and how do you fit it into existing structure. The JDK is a mess in terms of dependencies: java.lang, java.util, and java.io. It does not make a sense now, but you can see how it happen if you take the JDK history into account.
+
+A typical scenario: package B uses things from package A. Now, you identify a piece of code that you could reuse in package B from package A. Now, suddenly, you introduced a cycle dependency. It is very simple to introduce such cyclic dependencies since it is hard to notice when working within the same compilation unit.
+
+There is a central rule here: Packages should have (at most) one-way dependencies between each other!. It means that you have a clear architecture and in particular no circular dependencies. Good example is java.lang and java.util, another one is Hibernate with lots of cyclic dependencies between packages. A counter example: Spring does not contain a single package cycle.
+
+Why are one-way dependencies so important? Once the code evolves and more and more cyclic dependencies happen (usually a slow process) you get to a code base that is very hard to maintain. Small changes can very easily propagate to the entire system. You can also not very easily reuse it anymore, for example by taking the package out into a separate build module.
+
+A simple rule of thumb: avoid cyclic dependencies. Many times requires creative refactoring. Usually it is simple the refactor out a common utility into a separate package. Some times you have to create a more fuller package that both A and B uses, like a core package.
+
+h2. Module
+
+
+
+Assembly of packages into conceptual modules. The creation of modules is a creative process with no clear hard engineering guidelines on how to do so. Generally, modules follow some consistent guidelines, such as multi-tier separation (often unnatural since it does not match conceptual boundaries). This is not what we are talking about here, we are talking about conceptual boundaries such as account management and not web tier. Another option is isolation of specific dependencies into their own modules (JDK 5, Hibernate), this is still not is called conceptual guidelines.
+
+Desirable characteristics of a modules are low coupling (to other modules) and high cohesion (within the module). Modules are conceptual unit as much as a source management & deployment unit.
+
+Modules should not have cyclic dependencies as well. Layering is essentially a logical view on the package structure. The essence: Establish natural conceptual boundaries in your code base!. Very challenging and more of an art then science. Breaking down to high level modules is simple, the medium level modules are the hard ones.
+
+h2. Moving Forward ... 
+
+
+
+The hardest challenge is evolving the code as well as the architecture over time.., without letting the code deteriorate. It is very easy to let the code deteriorate, which is the main reason why many times a code is thrown away and written from scratch.
+
+Once a need for refactoring shows up, make sure you refactor it as soon as possible. It will get harder and harder to refactor it as time passes. This becomes really hard with large code base and large developer base. Make sure you enforce refactoring rules so people will do them.
+
+You should have closely related modules under the same source tree. This allows for much simpler refactoring (no need to change build process, ...). And when things that are easy, developers will tend to do them mode willingly.
+
+Tradeoff between backward compatibility and architectural quality. Many times there is no option to perform refactoring as it will break backward compatibility. Backward compatibility is not always just APIs, it is also semantics that a module exposes. A strict 100% backward compatibility will probably mean that it will not allow for sustaining architectural quality level. Nevertheless, there is (almost) always a better solution than compromising on architectural quality (for example, a creative internal refactoring that allows to preserve compatibility as well as well defined package dependencies).
+
+Of course, some things cannot change easily: package names in the public API. Try hard to get those right upfront!. If you cannot find another clean way out, do not be afraid of deprecation, or even breakage of backward compatibility in some corners!. A good example is Hibernate for example with its Session interface which is a "god interface" that basically do everything. Spring does not have a god interface, and is a decomposed system. 
+
+h2. Example: The evolution of Spring
+
+
+
+Origins data back to 2001. First public release as download on Wrox website in late 2002. First public release as open source project in mid 2003. Went 1.0 final in early 2004, implying backward compatibility guarantees.
+
+The original code base had core (bean factory), MVC, and Jdbc. In the process several significant sub system were introduced such as: AOP, ORM, ... . Over the course of time significant changes had been done within the sub packages, but up to 1.2 there was hardly any backward compatibility breakage.
+
+Spring code base has been increasing a lot during releases. Faces many code evolution challenges: broad public API, used by applications. Sophisticated SPI, used by advanced applications as well as sister products and third-party frameworks. Even within internal code Spring strives for backward support.
+
+Loosely coupled packages with well-defined interdependencies: org.sf.util, org.sf.core, org.sf.beans, org.sf.aop. No cycles allowed. This is why you have Bean Post Processor for example. Internal decomposition proved useful as it became very useful for external users as well.
+
+A special challenge: global configuration. Low coupling through dependency injection. Spring 2.0 XML namespaces: namespaces discovery at runtime. This has been done so the core container won't know about aop and other aspects. This also proved useful for external extensions with specific namespaces.
+
+Another problem is third party libraries: Hibernate 2.1 -> 3.0 -> 3.1 - > 3.2 evolution. Many changes between each releases and within Spring it tries to work will all versions. So in Spring 2.0 there is support for 3.0, 3.1 and 3.2. Mainly uses reflection checks to verify the Hibernate version.
+
+How do you make sure that there is no architectural violation. Manual analysis only gets you very far, so Spring uses several tools. The main one, since 2003, JDepend. Now, starting to use more richer tools such as SonarJ (commercial).
+
+An example of SonarJ is performed. Analyzing original Spring source with zero cyclic dependency. Now, changes one of the core beans classes to check for AOP from the aop package. Once this is done, SonarJ identifies it and shows an error for cyclic dependency. 
+
+An analysis of Hibernate is done now :). Roughly the same lines of code. Hibernate has crazy numbers. Any random class you take in Hibernate will depend on 730 other classes where in Spring the number is 52. What it tells you is that Hibernate is one big module with extreme high cohesion.

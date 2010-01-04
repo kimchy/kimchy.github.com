@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass On InfoQ
+---
+
+p. <a href="http://www.infoq.com/news/compass-11">Here</a> is an interview I did for <a href="http://www.infoq.com">InfoQ</a> about <a href="http://www.opensymphony.com/compass">Compass</a>.
+

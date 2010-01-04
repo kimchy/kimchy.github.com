@@ -1,0 +1,184 @@
+---
+layout: post
+title: j.u.c ExecutorService gotcha
+---
+
+java.util.concurrent ExecutorService allows for a simple way of using a thread pool within a java application. I have seen the following happens in more than one place (including some quite known open source projects) that I thought it make sense to blog about it.
+
+p. One of the most common scenarios of using a thread pool is creating an unbounded thread pool with minimum and maximum number of threads. With the executor service, you can create the following quite simply:
+
+
+
+p. A fixed size thread pool with unbounded queue. Problematic in our case since we want to set the minimum and maximum thread pool size.
+
+
+
+p. <pre lang="java" line="1">
+// similar to j.u.c.Executors.newFixedThreadPool(int nThreads)
+new ThreadPoolExecutor(nThreads, nThreads,
+                                  0L, TimeUnit.MILLISECONDS,
+                                  new LinkedBlockingQueue<Runnable>())
+</pre>
+
+
+
+p. A cached thread pool that creates threads as needed and reuses threads when possible (problematic with bounded maximum threads so can't be used in our case):
+
+
+
+p. <pre lang="java" line="1">
+// similar to j.u.c.Executors.newCachedThreadPool()
+new ThreadPoolExecutor(0, Integer.MAX_VALUE,
+                                      60L, TimeUnit.SECONDS,
+                                      new SynchronousQueue<Runnable>());
+</pre>
+
+
+
+p. The problem starts when one needs to create an unbounded thread pool with minimum and maximum threads. What most people do is the following:
+
+
+
+p. <pre lang="java" line="1">
+// similar to j.u.c.Executors.newCachedThreadPool()
+new ThreadPoolExecutor(coreThreads, maximumThreads,
+                                      60L, TimeUnit.SECONDS,
+                                      new LinkedBlockingQueue<Runnable>());
+</pre>
+
+
+
+p. This construction of thread pool will simply not work as expected. This is due to the logic within the ThreadPoolExecutor where new threads are added if there is a **failure** to offer a task to the queue. In our case, we use an unbounded LinkedBlockingQueue, where we can always offer a task to the queue. It effectively means that we will never grow above the core pool size and up to the maximum pool size.
+
+
+
+p. OK, so this **does not work**, lets try and build one that works. The first thing that we want to do is create a blocking queue that is aware of the ThreadPoolExecutor:
+
+
+
+p. <pre lang="java" line="1">
+public class ScalingQueue<E> extends LinkedBlockingQueue<E> {
+
+    /**
+     * The executor this Queue belongs to
+     */
+    private ThreadPoolExecutor executor;
+
+    /**
+     * Creates a <tt>TaskQueue</tt> with a capacity of
+     * {@link Integer#MAX_VALUE}.
+     */
+    public ScalingQueue() {
+        super();
+    }
+
+    /**
+     * Creates a <tt>TaskQueue</tt> with the given (fixed) capacity.
+     *
+     * @param capacity the capacity of this queue.
+     */
+    public ScalingQueue(int capacity) {
+        super(capacity);
+    }
+
+    /**
+     * Sets the executor this queue belongs to.
+     */
+    public void setThreadPoolExecutor(ThreadPoolExecutor executor) {
+        this.executor = executor;
+    }
+
+    /**
+     * Inserts the specified element at the tail of this queue if there is at
+     * least one available thread to run the current task. If all pool threads
+     * are actively busy, it rejects the offer.
+     *
+     * @param o the element to add.
+     * @return <tt>true</tt> if it was possible to add the element to this
+     *         queue, else <tt>false</tt>
+     * @see ThreadPoolExecutor#execute(Runnable)
+     */
+    @Override
+    public boolean offer(E o) {
+        int allWorkingThreads = executor.getActiveCount() + super.size();
+        return allWorkingThreads < executor.getPoolSize() && super.offer(o);
+    }
+}
+</pre>
+
+
+
+p. As you can see, we are going to reject the addition of a new task if there are no threads to handle it. This will cause the thread pool executor to try and allocate a new thread (up to the maximum threads). If there are no threads, the task will be rejected. In our case, if the task is rejected, we would like to put it back to the queue. This is a simple thing to do with ThreadPoolExecutor since we can implement our own RejectedExecutionHandler:
+
+
+
+p. <pre lang="java" line="1">
+public class ForceQueuePolicy implements RejectedExecutionHandler {
+    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+        try {
+            executor.getQueue().put(r);
+        } catch (InterruptedException e) {
+            //should never happen since we never wait
+            throw new RejectedExecutionException(e);
+        }
+    }
+}
+</pre>
+
+
+
+p. Last, as a way to increase performance of additions of tasks to the queue, we can enhance the built in getActiveCount method in ThreadPoolExecutor to be faster (by default it obtains a lock and runs on the current workers):
+
+
+
+p. <pre lang="java" line="1">
+public class ScalingThreadPoolExecutor extends ThreadPoolExecutor {
+    
+    /**
+     * number of threads that are actively executing tasks
+     */
+    private final AtomicInteger activeCount = new AtomicInteger();
+
+    public ScalingThreadPoolExecutor(int corePoolSize, int maximumPoolSize,
+                                     long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
+        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
+    }
+
+    @Override
+    public int getActiveCount() {
+        return activeCount.get();
+    }
+
+    @Override
+    protected void beforeExecute(Thread t, Runnable r) {
+        activeCount.incrementAndGet();
+    }
+
+    @Override
+    protected void afterExecute(Runnable r, Throwable t) {
+        activeCount.decrementAndGet();
+    }
+}
+</pre>
+
+
+
+p. That is it. Now, we can construct our thread pool (a simple factory method is provided here):
+
+
+
+p. <pre lang="java" line="1">
+public static ExecutorService newScalingThreadPool(int min, int max,
+                                                   long keepAliveTime) {
+    ScalingQueue<Runnable> queue = new ScalingQueue<Runnable>();
+    ThreadPoolExecutor executor = new ScalingThreadPoolExecutor(min, max, keepAliveTime, TimeUnit.MILLISECONDS, queue);
+    executor.setRejectedExecutionHandler(new ForceQueuePolicy());
+    queue.setThreadPoolExecutor(executor);
+    return executor;
+}
+</pre>
+
+
+
+p. Comments are welcomed, Enjoy!
+

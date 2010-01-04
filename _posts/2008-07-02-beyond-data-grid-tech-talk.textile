@@ -1,0 +1,7 @@
+---
+layout: post
+title: Beyond Data Grid - Tech Talk
+---
+
+p. The tech talk I did with Jason Carriera talking about data grids and beyond is online. Check it out <a href="http://theserversidecom.bitpipe.com/detail/RES/1214583692_720.html?src=wc_atssc_sitepost_06_26_08_c&li=126639">here</a>.
+

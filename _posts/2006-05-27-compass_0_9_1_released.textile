@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass 0.9.1 Released
+---
+
+<a href="http://www.opensymphony.com">OpenSymphony</a> and the <a href="http://www.opensymphony.com/compass">Compass</a> (a Java Search Engine Framework) team are proud to announce the minor release of version 0.9.1. The release includes several bug fixes and minor enhancements, as well as enhanced support for <a href="http://www.oracle.com/technology/products/ias/toplink/jpa/">TopLink essentials</a> (<a href="https://glassfish.dev.java.net/">Glassfish</a>) JPA implementation as searchable content.

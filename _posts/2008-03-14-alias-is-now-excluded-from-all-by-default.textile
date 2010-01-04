@@ -1,0 +1,7 @@
+---
+layout: post
+title: Alias is now excluded from all by default
+---
+
+p. It seems like most people prefer that the alias will not be included in the "all" property by default. As of latest 2.0 M3 builds, it is not. Check <a href="http://issues.compass-project.org/browse/CMP-580">CMP-580</a> for more information.
+

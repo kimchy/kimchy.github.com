@@ -1,0 +1,7 @@
+---
+layout: post
+title: NewsFire is now Free
+---
+
+p. <a href="http://www.newsfirerss.com/">NewsFire</a>, my favorite RSS reader for Mac is now free.
+

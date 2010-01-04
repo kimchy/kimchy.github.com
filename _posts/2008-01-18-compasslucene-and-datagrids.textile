@@ -1,0 +1,77 @@
+---
+layout: post
+title: Compass/Lucene and DataGrids
+---
+
+p. The upcoming Compass release (2.0 M1) now has integration with both <a href="http://www.gigaspaces.com">GigaSpaces</a> and <a href="http://www.oracle.com/technology/products/coherence/">Coherence</a>. There is the obvious integration with Lucene/Compass of storing the Lucene index on a DataGrid and a very interesting one. So read along:
+
+h3. Lucene Directory
+
+
+
+<img src="http://www.kimchy.org/wp-content/uploads/2008/01/compass-datagrid.png" alt="compass-datagrid" title="compass-datagrid" width="600" class="aligncenter size-full wp-image-309" />
+
+p. Compass has an implementation of Lucene <a href="http://lucene.apache.org/java/2_2_0/api/org/apache/lucene/store/Directory.html">Directory</a> for both GigaSpaces and Coherence. Here is an example of using it with GigaSpaces:
+
+<pre lang="java" line="1">
+IJSpace space = SpaceFinder.find("jini://*/*/space", "test");
+Directory dir = new GigaSpaceDirectory(space);
+// use the Directory to open IndexWriter and Searcher
+</pre>
+
+p. The Lucene index will now be stored on the DataGrid, allowing to utilize advance DataGrid features such as partitioning and local cache support. The topology of the DataGrid is abstracted (by GigaSpaces/Coherence).
+
+p. This pure implementation means that you can (and should :) ), use this feature with Compass (read along on how to do it), but it can also be used with Hibernate Search, Solr, or any other Lucene based framework.
+
+h3. Compass Index Store
+
+
+
+p. Compass has specific support for both GigaSpaces and Coherence specific directories. Here is an example of how to configure Compass to work with a GigaSpaces based Directory:
+
+<pre lang="java" line="1">
+CompassConfiguration conf = CompassConfigurationFactory.newConfiguration();
+conf.setConnection("space://test:jini://*/*/space");
+Comapss compass = conf.buildCompass();
+
+// now we can use it
+CompassSession session = compass.openSession();
+CompassTransaction tr = session.beginTransaction();
+session.save(new Author(1, "Jack London"));
+tr.commit();
+session.close();
+</pre>
+
+p. The above code will connect to the Space (DataGrid) and index the content of the Author object into it. Note, is such a case, as in the pure Lucene mode, switching from file system directory (for example) is **just a matter of configuration**. Here is how it can be configured with Compass xml based configuration:
+
+<pre lang="xml" line="1">
+<compass name="default">
+  <connection>
+      <space indexName="test" url="jini://*/*/mySpace"/>
+  </connection>
+</compass>
+</pre>
+
+h3. Automatically Index/Mirror the Data Grid
+
+
+
+<img src="http://www.kimchy.org/wp-content/uploads/2008/01/compass-writebehind.png" alt="compass-writebehind" title="compass-writebehind" width="600" class="aligncenter size-full wp-image-311" />
+
+p. DataGrids allow to store POJOs and Compass allows to index POJOs to a Search Engine. Using DataGrid features such as Write Behind (GigaSpaces Mirror support and Coherence CacheStore) we can integrate the two and have the ability of automatically mirror changes that happen in the DataGrid to the Search Engine using Compass. This ability basically allows us to index the content of the DataGrid and the ability to perform "Google like" search queries on it.
+
+p. Compass comes with a CompassDataSource for GigaSpaces and CompassCacheStore for Coherence allowing to do it. A quick note in this regard: Since GigaSpaces work with pure POJOs, it is as simple as just annotating the classes with the @Searchable annotation. Coherence are built using the Map API, and the remove operation from CacheStore only accepts the keys of the Map. This means that in such a case, the key should be / hold the ids of the searchable values.
+
+p. Naturally, this support is irrelevant to where you store the index. So basically, you can end up with a DataGrid holding your business data. Mirror changes done (create/update/delete operations) to the search engine using Compass. And have Compass store the content of Lucene index in another DataGrid :).
+
+p. This is where Compass generic support for Object to Search Engine Mappings really shines. Any object can be mapped to the Search Engine which opens up a windows of possibilities then just to more typical ORM integration.
+
+p. For more information head over to Compass reference documentation for 2.0 M1 (will be released shortly).
+
+h3. Final Notes
+
+
+
+p. As some of you may know, I am a GigaSpaces employee. I, as well as my company, strongly believe that a product should be chosen based on its merits. This is why this feature integrates with the two most popular and production ready DataGrids available today (with ObjectGrid coming soon). In our software world, it is all about choice, and Compass users have it.
+
+p. Last note regarding Coherence. Currently, the license does not allow to include the Coherence jar files within Compass distribution or SVN. This means that SNAPSHOT builds (as is the state of 2.0 M1 now) does not include the compiled version of Coherence support. If you want to get it, it is just a matter of downloading Coherence jars and building Compass (simple thing to do with pure Compass distribution). A formal release will include this support built in (as I am the one that builds it). With GigaSpaces the matter was simpler as it has a community edition.

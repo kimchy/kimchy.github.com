@@ -1,0 +1,28 @@
+---
+layout: post
+title: Embedded Hibernate with Compass
+---
+
+p. Up until now, the integration of <a href="http://www.compass-project.org/docs/1.2.1/reference/html/gps-hibernate.html">Compass with Hibernate</a> was nice, but not as nice as it should be. With the latest 2.0 M1 release, Compass now supports embedded mode with Hibernate, similar to the integration it has with <a href="http://www.compass-project.org/docs/1.2.1/reference/html/gps-embeddedopenjpa.html">OpenJPA</a>.
+
+p. So, how does it work? Very simply. Within the hibernate configuration, simply add a single property pointing to where Compass will store the index:
+
+<pre lang="xml" line="1">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Other hibernate mappings and proeprties -->      
+  
+        <property name="compass.engine.connection">target/test-index</property>
+    </session-factory>
+</hibernate-configuration>
+</pre>
+
+This will cause Compass to start within Hibernate, automatically add all the searchable Hibernate mapped classes, and start mirroring Hibernate changes to the search engine.
+
+Now, in order to a Compass instance in order to perform searches, you can simply get it from the Hibernate session factory:
+
+<pre lang="java" line="1">
+Compass compass = HibernateHelper.getCompass(sessionFactory);
+</pre>
+
+That simplifies things, no? :). For full reference documentation, read <a href="http://www.compass-project.org/docs/2.0M1/reference/html/gps-embeddedhibernate.html">here</a>.

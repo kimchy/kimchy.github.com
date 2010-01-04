@@ -1,0 +1,55 @@
+---
+layout: post
+title: @CompassContext and Spring
+---
+
+p. The most common usage of Compass is within a <a href="http://www.springframework.org">Spring</a> enabled application. If the application uses a Compass within a Spring bean, and Java 5, you can now use @CompassContext in order to inject either a Compass or a CompassSession instance.
+
+
+
+p. The following simple dao uses the @CompassContext annotation:
+
+
+
+p. <pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="color:#000080;background-color:#ffffff;font-weight:bold;">public</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">class</span><span style="background-color:#ffffff;"> CompassContextDao {
+
+    </span><span style="color:#808000;background-color:#ffffff;">@CompassContext
+    </span><span style="background-color:#ffffff;">Compass </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">compass;
+
+</span><span style="background-color:#ffffff;">    CompassSession </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">session;
+
+</span><span style="background-color:#ffffff;">    </span><span style="color:#808000;background-color:#ffffff;">@CompassContext
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">protected</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">void</span><span style="background-color:#ffffff;"> setCompassSession(CompassSession session) {
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">this</span><span style="background-color:#ffffff;">.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">session </span><span style="background-color:#ffffff;">= session;
+    }
+}
+</span></pre>
+
+
+
+p. The dao uses both Compass and CompassSession and shows how the annotations can be used (both on field and setter method). Note, when the dao already uses Spring declarative transactions for its  operations (or has a service layer that has it), one can inject the CompassSession and just use it, without worrying about Compass transaction management (see previous blog entry).
+
+
+
+p. Compass uses spring bean post processor and it must be configured within Spring configuration in order to enable this feature. Here is an example of Spring configuration file:
+
+
+
+p. <pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">bean</span><span style="background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">class=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"org.compass.spring.support.CompassContextBeanPostProcessor"</span><span style="background-color:#efefef;">/>
+
+<</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:compass</span><span style="background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">name=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"compass"</span><span style="background-color:#efefef;">>
+</span><span style="background-color:#ffffff;">    </span><span style="background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:connection</span><span style="background-color:#efefef;">>
+</span><span style="background-color:#ffffff;">        </span><span style="background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:file</span><span style="background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">path=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"target/test-index"</span><span style="background-color:#efefef;"> />
+</span><span style="background-color:#ffffff;">    </span><span style="background-color:#efefef;"></</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:connection</span><span style="background-color:#efefef;">>
+</span><span style="background-color:#ffffff;">    </span><span style="background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:mappings</span><span style="background-color:#efefef;">>
+</span><span style="background-color:#ffffff;">        </span><span style="background-color:#efefef;"><</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:class</span><span style="background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">name=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"org.compass.spring.test.context.A"</span><span style="background-color:#efefef;"> />
+</span><span style="background-color:#ffffff;">    </span><span style="background-color:#efefef;"></</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:mappings</span><span style="background-color:#efefef;">>
+</</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">compass:compass</span><span style="background-color:#efefef;">>
+
+<</span><span style="color:#000080;background-color:#efefef;font-weight:bold;">bean</span><span style="background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">id=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"dao"</span><span style="background-color:#efefef;"> </span><span style="color:#0000ff;background-color:#efefef;font-weight:bold;">class=</span><span style="color:#008000;background-color:#efefef;font-weight:bold;">"org.compass.spring.test.context.CompassContextDao"</span><span style="background-color:#efefef;"> />
+</span></pre>
+
+
+
+p. This feature is part of 1.1 M2 SNAPSHOT and beyond. Enjoy!
+

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Norway JUGs - GigaSpaces SBA
+---
+
+p. I am at Norway this following couple of days. I am going to talk tonight at the Bergen JUG and tomorrow at the <a href="http://www4.java.no/web/show.do?page=42;7&appmode=/showReply&articleid=5052">Oslo JUG<a/> about GigaSpaces and its innovative <a href="http://www.gigaspacesblog.com/2006/12/09/sbas-general-principles/">Space Based Architecture<a/>.
+
+
+
+p. If you are interested in attending I guess you already know who to contact :). We will probably go for beers afterwards, so if you are using Compass, we can chat about it over a nice Norwegian beer...
+
+
+

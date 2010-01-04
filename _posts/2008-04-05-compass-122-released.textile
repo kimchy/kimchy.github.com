@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 1.2.2 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> 1.2.2 maintenance version has just been released fixing major bug when working with a Jdbc directory as well as adding minor features. Check out the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10111">release notes</a> for more information.
+

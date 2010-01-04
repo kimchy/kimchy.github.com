@@ -1,0 +1,22 @@
+---
+layout: post
+title: X# - Don't Run With Scissors
+---
+
+Well, just came along the <a href="http://www.xsharp.org/">X#</a> programming language. You would have thought that we learned the lesson with <a href="http://commons.apache.org/jelly/">jelly</a>. Do you want to go back to Maven 1 __maven.xml__? (Mojos are not that better, IMO)
+
+<a href="http://macstrac.blogspot.com/">James</a> has a lot to go for, Groovy, ActiveMQ, and tons of other projects. Maybe jelly was a good project to help prove, ones and for all, that xml should not be used as a programming language (and maybe acted as the instigator for Groovy?).
+
+Here is a code sample taken directly from the site, oh, the horror:
+
+<pre lang="xml" line="1">
+<xsp:append-child target="document('xdbc:mysql://192.168.1.27:3306/maindb')/oil_news">  
+    <xsp:for-each select="(document('http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml')/text() >> /library/xml/pi('import'))/channel/item[contains(title,'oil')]">  
+        <row>  
+            <title><xsp:text value="{title}"/></title>  
+            <description><xsp:text value="{description}"/></description>  
+            <link><xsp:text value="{link}"/></link>  
+        </row>  
+    </xsp:for-each>  
+</xsp:append-child>  
+</pre>

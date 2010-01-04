@@ -1,0 +1,31 @@
+---
+layout: post
+title: Detached Queries in Compass
+---
+
+In order to create queries and use them in Compass, one needed to create and use them within a Compass Session. For example:
+
+{% highlight java %}
+// compass is the global Compass instance
+CompassSession session = compass.openSession();
+// CompassTransaction management removed ...
+CompassQuery query = session.queryBuilder().queryString("author.name:jack").toQuery();
+int count = query.count();
+
+session.close();
+{% endhighlight %}
+
+The above works nicely, but there are cases where the CompassQuery should be reused (not so much for performance reasons, but for code simplicity). In the upcoming 2.2 M2 release, it is now possible to create both CompassQuery and CompassQueryFilter using the Compass instance and not the CompassSession. Queries created in such a manner must be attached to a session in order to be used. The solution is of-course, thread safe. Here is an example:
+
+{% highlight java %}
+// compass is the global Compass instance
+CompassQuery query = compass.queryBuilder().queryString("author.name:jack");
+
+CompassSession session = compass.openSession();
+// CompassTransaction management removed ...
+int count = query.attach(session).count();
+
+session.close();
+{% endhighlight %}
+
+All thanks to Kenny Macleod for raising <a href="http://issues.compass-project.org/browse/CMP-816">the feature</a> request in Compass Jira, and "pushing" me into implementing it.

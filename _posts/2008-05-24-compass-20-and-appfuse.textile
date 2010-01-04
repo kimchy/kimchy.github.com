@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 2.0 and AppFuse
+---
+
+p. Matt <a href="http://raibledesigns.com/rd/entry/integrating_compass_2_0_into">pointed out</a> an integration between Compass and AppFuse. Cool.
+

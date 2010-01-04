@@ -1,0 +1,15 @@
+---
+layout: post
+title: Cascades And Compass
+---
+
+p. Have not blogged for some time, but it does not mean that stabilizing and adding new features to Compass stopped. One of the new features in Compass is support for cascading operations. When using OSEM, Compass can now cascade create/save/delete operations to both reference and component mappings.
+
+
+
+p. In the mapping definitions (either xml or annotations) one can configure which operations will be cascaded. An interesting side-effect of the cascading feature is the ability to perform operation on non-root objects. If previously Compass threw an exception when a non-root object was being created/saved/deleted in Compass, Compass will now throw an exception if it is non root *and* has no cascading relationships. This means that operations on non root objects with cascading mapping can be performed.
+
+
+
+p. For a concrete example, if we have a Person and Address class, we might want to cascade operation performed on the Address class to the relevant Person (Address is probably defined as root=false in Compass). Note, this will mean that Address should have a reference to Person (otherwise Compass won't know how to fetch the applicable Person). This is very relevant in cases where Compass integrates with ORM tools where Person and Address might be stored on two different tables, and changes to Address won't trigger a change to Person (thus not performing the operation using Compass injected ORM event listeners).
+

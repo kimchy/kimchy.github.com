@@ -1,0 +1,349 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  font: 13.34px helvetica, arial, clean, sans-serif;
+  *font-size: small;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: #00a;
+}
+
+a:hover {
+  color: black;
+}
+
+a:visited {
+  color: #a0a;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+  ul.posts li {
+    line-height: 1.75em;
+  }
+
+  ul.posts span {
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+  }
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 110%;
+  text-align: justify;
+  width: 42em;
+  margin: 3em auto 2em auto;
+  line-height: 1.5em;
+}
+
+.title {
+  color: #a00;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+  .site .title a {
+    color: #a00;
+    text-decoration: none;
+  }
+  
+  .site .title a:hover {
+    color: black;
+  }
+
+  .site .title a.extra {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 1em;
+  }
+  
+  .site .title a.extra:hover {
+    color: black;
+  }
+
+  .site .meta {
+    color: #aaa;
+  }
+
+  .site .footer {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+  
+  .site .twitter {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+  
+    .site .footer .contact {
+      float: left;
+      margin-right: 3em;
+    }
+    
+      .site .footer .contact a {
+        color: #8085C1;
+      }
+    
+    .site .footer .rss {
+      margin-top: 1.1em;
+      margin-right: -.2em;
+      float: right;
+    }
+    
+      .site .footer .rss img {
+        border: 0;
+      }
+    
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+#post {
+  
+}
+
+  /* standard */
+
+ #post pre {
+   overflow:auto;
+   font-size: 80%;
+   background-color: #eef;
+   padding: 1em 1em;
+   border-top:1px dashed #939393;
+   border-left:1px dashed #939393;
+   border-right:1px dashed #939393;
+   border-bottom:1px dashed #939393;  
+  }
+  
+  #post code {
+    border: 1px solid #ddd;
+    background-color: #eef;
+    font-size: 95%;
+    padding: 0 .2em;
+  }
+  
+    #post pre code {
+      border: none;
+    }
+    
+  /* terminal */
+  
+  #post pre.terminal {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+  }
+  
+  #post pre.terminal code {
+    background-color: #333;
+  }
+
+#related {
+  margin-top: 2em;
+}
+
+  #related h2 {
+    margin-bottom: 1em;
+  }
+  
+  
+  /* Widgets */
+ 
+.widget {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+ 
+.widget-content {
+    position: relative;
+    margin: 5px 0 20px;
+}
+ 
+.widget-list,
+.archive-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+.widget-list .widget-list {
+    margin-left: 15px;
+}
+ 
+.widget-list-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ 
+.widget-tag-cloud .widget-list {
+    margin-right: 0;
+    margin-left: 0;
+}
+ 
+.widget-tag-cloud .widget-list-item {
+    display: inline;
+    margin: 0 5px 0 0;
+    padding: 0;
+    line-height: 1.2;
+    background: none;
+}
+ 
+.widget-tag-cloud .rank-1 { font-size: 1.75em; }
+.widget-tag-cloud .rank-2 { font-size: 1.75em; }
+.widget-tag-cloud .rank-3 { font-size: 1.625em; }
+.widget-tag-cloud .rank-4 { font-size: 1.5em; }
+.widget-tag-cloud .rank-5 { font-size: 1.375em; }
+.widget-tag-cloud .rank-6 { font-size: 1.25em; }
+.widget-tag-cloud .rank-7 { font-size: 1.125em; }
+.widget-tag-cloud .rank-8 { font-size: 1em; }
+.widget-tag-cloud .rank-9 { font-size: 0.95em; }
+.widget-tag-cloud .rank-10 { font-size: 0.9em; }
+ 
+#footer .widget-content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ 
+.widget-recent-assets .widget-content .widget-list {
+    overflow: auto;
+    margin-right: 0;
+}
+ 
+.item {
+    display: inline;
+    float: left;
+    margin: 0pt 5px 8px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+}
+ 
+.widget-search ul,
+.widget-syndication ul {
+    margin-left: 0;
+    list-style: none;
+}
+ 
+.widget-search li,
+.widget-syndication li {
+    margin: 5px 0;
+}
+ 
+
+/* Navigation ----------------------------------------------------------------- */
+ 
+#main-navigation {
+    background: #eee url(nav-bg.gif) repeat-x 0 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 100%;
+}
+ 
+#main-navigation-inner {
+    position: relative;
+}
+ 
+#main-navigation ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style: none;
+}
+ 
+#main-navigation ul li {
+    float: left;
+    padding-top: 2px;
+}
+ 
+#main-navigation ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 7px 15px 7px 16px;
+    border-left: 1px solid #ccc;
+}
+ 
+#main-navigation ul li a:hover {
+    text-decoration: underline;
+}
+ 
+#main-navigation ul li.on a {
+    color: #000;
+    background: #fff url(nav-arrow-on.gif) no-repeat 50% bottom;
+}
+ 
+#main-navigation ul li.last {
+    border-right: 1px solid #ccc;
+}
+ 
+/* Custom */
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+.alignleft { float: left; }
+.alignright { float: right; }
+
+.blogimage {
+	float: left;
+	padding: 1px 1px 1px 1px;
+}

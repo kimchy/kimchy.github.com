@@ -1,0 +1,20 @@
+---
+layout: post
+title: Arrived At The Spring Experience
+---
+
+p. I have just arrived at <a href="http://www.thespringexperience.com/">The Spring Experience</a> and thinks are looking good :).
+
+
+
+p. <a href='http://www.kimchy.org/wp-content/uploads/2007/06/tse1.jpg' title='The Spring Experience - View' rel="lightbox"><img src='http://www.kimchy.org/wp-content/uploads/2007/06/tse1.thumbnail.jpg' alt='The Spring Experience - View' /></a>
+
+
+
+p. (the picture was taken by leaning of the balcony and using Photo Booth, almost dropped my mac down the pool ;))
+
+
+
+p. Naturally, things did not go smooth (our luggage got lost). But all in all, it looks like it is going to be a great conference. I will try and attend as many sessions as I can, and blog about them, so stay tuned. Of course, whoever is attending the conference is more than welcomed to attend <a href="http://www.thespringexperience.com/speaker_topic_view.jsp?topicId=287">my session</a> of how to googlify Spring's petclinic sample using <a href="http://www.opensymphony.com/compass">Compass</a>. It looks like there are going to be really interesting sessions in my track, I wonder how many people are going to show up, especially with Terracota <a href="http://terracottatech.com/press_12_04_06_oss.shtml">going open source</a>, and <a href="http://raibledesigns.com/page/rd?entry=in_boise_heading_to_florida">Matt<a/> trying to arrange some free bear (both session are on the same time as mine).
+
+

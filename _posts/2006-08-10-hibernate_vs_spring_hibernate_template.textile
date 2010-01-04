@@ -1,0 +1,111 @@
+---
+layout: post
+title: Hibernate Vs. Spring - Hibernate Template
+---
+
+<img src="http://www.kimchy.org/wp-content/uploads/2006/08/fight.jpeg" alt="fight" title="fight" width="131" height="90" class="alignleft size-full wp-image-300" />Here we <a href="http://blog.hibernate.org/cgi-bin/blosxom.cgi/Emmanuel%20Bernard/abstractionframeworks.html">GO</a> again. On one side we have Hibernate/Spring yelling "I pity the fool", and on the other side, we have Spring/Hibernate shouting "Adriaaaaan" (I will leave you to guess which one is which). Again, talking about the famous <a href="http://www.springframework.org/docs/api/org/springframework/orm/hibernate/HibernateTemplate.html">HibernateTemplate</a>.
+
+p. First, let me say that **now**, I hardly see the point of using HibernateTemplate (or JpaTemplate or that matter). I agree with the above hibernate blog statement that it should generally not be used. <a href="http://blog.interface21.com/main/2006/08/07/using-jpa-in-spring-without-referencing-spring/">Here</a> is a really nice tutorial on how to use Jpa in Spring without JpaTemplate, which also applies to direct Hibernate usage (replace Jpa with Hibernate). The problem that I have is the other subtle statement made: HibernateTemplate=Very stupid thing to use=I can't believe Spring did something like that!.
+
+
+
+p. **In the beginning...**
+
+
+
+p. In the beginning, there was Hibernate 2.x. Hibernate 2.x used checked exceptions, did not come with advance Jdbc exception translation, and recommended on using its own transaction abstraction. Most of it is perfectly ok, and here is how Hibernate recommended coding Hibernate Session aware code:
+
+
+
+p. <pre lang="java" line="1">
+Session sess = factory.openSession();
+Transaction tx;
+try {
+    tx = sess.beginTransaction();
+    //do some work
+    ...
+    tx.commit();
+}
+catch (Exception e) {
+    if (tx!=null) tx.rollback();
+    throw e;
+}
+finally {
+    sess.close();
+}
+</pre>
+
+
+
+p. Then Spring came along, and backed the <a href="http://static.springframework.org/spring/docs/2.0.x/reference/orm.html#d0e13388">template design pattern</a> in order to handle code of such nature. Now, nobody says anything about the <a href="http://static.springframework.org/spring/docs/2.0.x/reference/jdbc.html">Spring Jdbc</a> module, and all agree that it really simplifies your code when working with pure Jdbc code in terms of resource management. The same applied for Hibernate 2.x. Usage of un-checked exceptions, externalization of your resource management code, and proper exception handling were a big win when using Spring and Hibernate 2.
+
+
+
+p. Moreover, Spring came with a really nice class, called SessionFactoryUtils. Basically, using it with Spring transaction abstraction, allowed you to write code that looked like this:
+
+
+
+p. <pre lang="java" line="1">
+Session sess = SessionFactoryUtils.getSession(getSessionFactory(), false);
+//do some work, without worrying about transactions
+...
+</pre>
+
+
+
+p. If you did not mind the checked exceptions in Hibernate 2.x (which would eventually obscure your code), you could have used Hibernate without HibernateTemplate back then (it also integrated with Spring transaciton management, so no need for that also).
+
+
+
+p. **And then there was ... Hibernate 3**
+
+
+
+p. Hibernate 3 came with several major changes: the move from checked to un-check exceptions, and better Jdbc exception translation (just focusing on the features relevant for this discussion). Hibernate 3.0.1 moved forward, and allowed for what they call <a href="http://blog.hibernate.org/cgi-bin/blosxom.cgi/2005/04/12#current-session">Current (Contextual) Sessions</a>, and Hibernate 3.1 moved even further with <a href="http://blog.hibernate.org/cgi-bin/blosxom.cgi/2005/09/30#sessioncontext">Pluggable Session management</a>. This features basically boiled down your typical Hibernate code to (that is cross transaction management strategies):
+
+
+
+p. <pre lang="java" line="1">
+Session s = HibernateUtil.getSessionFactory().getCurrentSession();
+s.beginTransaction();
+
+s.save(item); // or
+HibernateUtil.getSessionFactory().getCurrentSession().save(item);
+
+s.getTransaction().commit();
+
+ThreadLocalSessionContext.unbind().close(); // Only needed for non-JTA
+</pre>
+
+
+
+p. Spring on the other hand, first needed to support the new Hibernate 3 (with its package name change). There was already plenty of code out there that used Spring Hibernate 2 support, and the goal for the Hibernate 3 support was to make it as easy and backward compatible as possible. This meant that existing code that used HibernateTemplate should still compile and run (with only a package name change). Note also that proper session handling still took some time to happen, and is getting there in Hibernate 3.2.
+
+
+
+p. But still, with the above example we still have code that should not really be there: the handling of transactions, and session context for non JTA code. When using Spring, the above code boils down to:
+
+
+
+p. <pre lang="java" line="1">
+Session s = getSessionFactory().getCurrentSession();
+s.save(item);
+</pre>
+
+
+
+p. Where SessionFactory is one that is created using Spring LocalSessionFactoryBean. Spring would go and proxy Hibernate SessionFactory, allowing the getCurrentSession method to integrate with its transaction and Hibernate session management (internally uses the same SessionFactoryUtils). The same code naturally could be used without Spring when using JTA and CMT, but it will not be cross transaction management strategies.
+
+
+
+p. **In the end ... **
+
+
+
+p. In the end, Spring simplifies the usage of Hibernate. Especially in Hibernate 2.x, and even in Hibernate 3.x. I agree that most of the time, you would not go and change your ORM framework, but this isn't really the case here. I am sure that Spring support caused Hibernate to simplify the session/resource management, and I am thankful for that. Spring did much more than just that, why do you think we have <a href="http://www.jboss.com/products/jbossmc">JBoss Microcontainer</a>?
+
+
+
+p. It is perfectly ok to learn from others, and apply best practices in your own product. Hell, this is what I expect from any company to do. If something works, copy it and enhance it. If I am using your product, I do not want to look over the fence at my neighbor's grass with envy. The fact that Hibernate/JBoss did just that is great, but don't try and put a spin on it. Peace.
+
+

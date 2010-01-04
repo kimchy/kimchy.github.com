@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass mentioned at 10 reasons to move to Grails
+---
+
+p. It seems like <a href="http://raincitysoftware.blogspot.com/2007/12/10-reasons-to-switch-from-rails-to.html">this blog entry</a> is making some noise around the web. The last reason mentioned there is: "Search operations are based on Lucene (with a plugin)". The <a href="http://grails.codehaus.org/Searchable+Plugin">Searchable plugin</a> is really cool, and I am going to use it to start learning Grails and maybe start helping out there.
+

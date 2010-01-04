@@ -1,0 +1,6 @@
+---
+layout: post
+title: IntelliJ now has background VCS Commit/Update
+---
+
+I have been waiting for this one for ages. The latest IntelliJ IDEA 6.0 (Demetra) builds now come with Version Control Update/Commit operations performed in the background. Finally!

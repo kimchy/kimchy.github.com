@@ -1,0 +1,6 @@
+---
+layout: post
+title: Compass Slides From NL-JUG J-FALL
+---
+
+Just saw that the <a href="http://www.nljug.org/pages/events/content/jfall_2006/sessions/00015/slides/">slides</a> from the session Uri Boness gave about Compass at NL-JUG J-FALL are available. Looks like it was a very good presentation and it even includes features from the upcoming 1.1 M3 release (@CompassContext).

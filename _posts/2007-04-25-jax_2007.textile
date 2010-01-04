@@ -1,0 +1,11 @@
+---
+layout: post
+title: JAX 2007
+---
+
+p. I am at <a href="http://jax.de/">JAX</a> in Germany and going to present a <a href="http://jax.de/konferenzen/jax07/overview_sessions_eng.php?track=2&_language=de#session-sw16">session</a> about GigaSpaces. All of this was a last minute call, and if I knew about it in advance I would have submitted a Compass session as well...
+
+
+
+p. If you are attending the conference and would like to talk about GigaSpaces and/or Compass, I will be at the GigaSpaces booth, so just drop by...
+

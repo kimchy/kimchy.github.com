@@ -1,0 +1,16 @@
+---
+layout: post
+title: No Software Is Free
+---
+
+This blog post relates to this <a href="http://linuxlock.blogspot.com/2008/12/linux-stop-holding-our-kids-back.html">story</a>.
+
+A middle school teacher in the US saw an assembly of students. In the center there was a student that was showing everybody his laptop and was handing out copies of the operating system his laptop was running on. When the teacher asked about it, the student explained that he is handing out a free operating system. In response, the teacher confiscated all the operating system copies.
+
+Why did she do that? Because, based on an angry letter she wrote to Ken Starks, the founder of <a href="http://www.heliosinitiative.org/">HeliOS</a> (the operating system in question), she said __"No software is free and spreading that misconception is harmful"__. Some more pearls include: __"I am not sure what you are doing is legal"__, __" I will research this as time allows and I want to assure you, if you are doing anything illegal, I will pursue charges as the law allows."__, and the best one: __"I am sure if you contacted Microsoft, they would be more than happy to supply you with copies of an older verison of Windows and that way, your computers would actually be of service to those receiving them..."!__.
+
+So what do we have here? A child, probably quite intelligent since he is running Linux ;), showing his Linux laptop to his friends. The friends, instead of beating up the Linux geek, actually show interest in it (a miracle of the highest order). The child hands over Linux copies, a free and legal operating system, and his teacher is responding by confiscating it.
+
+<img src="http://www.kimchy.org/wp-content/uploads/2009/01/weeds.jpeg" alt="weeds" title="weeds" width="104" height="130" class="alignleft size-full wp-image-456" /> And not just confiscating it, but also shows a level of ignorance that is hard to describe. In her letter she states that she tried Linux in college, as if it was light drugs or one of the other things that american college students tend to do, and thats why she knows that Starks claims are based on lies. Lets leave the fact that Linux has progressed tremendously over the past few years, and go over something else: She tried Linux in college, and she does not know that there is such a thing as free software in the world? Has she ever connected to the Internet? And if so, did she pay for her browser? Not to mention all the other free software that exists out there... .
+
+Ridiculous.

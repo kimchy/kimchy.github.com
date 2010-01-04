@@ -1,0 +1,109 @@
+---
+layout: post
+title: Configuring Compass using JSON
+---
+
+p. The time between RC and GA in Compass was always time for nice to have features that I always wanted to get in but got out of the way for more important ones. One of these features is the ability to configure Compass using JSON.
+
+
+
+p. Compass itself can be configured using properties/settings based configuration. On top of that, Compass can also be configured using schema based xml configuration. On top of the properties based configuration, Compass can now be configured using JSON. Here is the same JSON configuration:
+
+
+
+p. <pre lang="json" line="1">
+{
+    compass : {
+        engine : {
+            connection : "test-index"
+        },
+
+        event : {
+            preCreate : {
+                event1 : {
+                    type : "test.MyEvent1"
+                },
+                "event2.type" : "test.MyEvent2"
+            }
+        }
+    }
+}</pre>
+
+
+
+p. Compass mappings (RSEM, XSEM, OSEM and JSEM) can now be configured using JSON as well (on top of xml based configuration). Here is an OSEM example:
+
+
+
+p. <pre lang="json" line="1">
+{
+    "compass-core-mapping" : {
+        package : "org.compass.core.test.simple",
+        class : {
+            name : "A",
+            alias : "A",
+            id : {
+                name : "id"
+            },
+            property : [
+                {
+                    name : "value",
+                    "meta-data" : {
+                        name : "value"
+                    }
+                },
+                {
+                    name : "otherValue",
+                    "meta-data" : {
+                        name : "other-value"
+                    }
+                }
+            ]
+        }
+    }
+}
+</pre>
+
+
+
+p. And here is a JSEM example:
+
+
+
+p. <pre lang="json" line="1">
+{
+    "compass-core-mapping" : {
+        "root-json-object" : [
+            {
+                alias : "test",
+                id : {
+                    name : "id"
+                },
+                property : [
+                    {
+                        name : "int",
+                        "value-converter" : "int",
+                        format : "0000"
+                    },
+                    {
+                        name : "float",
+                        "value-converter" : "float",
+                        format : "0000.00",
+                        store : "compress"
+                    }],
+                content : {
+                    name : "content"
+                }
+            }
+     }
+}
+</pre>
+
+
+
+p. Enjoy!
+
+
+
+
+

@@ -1,0 +1,6 @@
+---
+layout: post
+title: Acquisition Day
+---
+
+p. Sun just <a href="http://www.businesswire.com/portal/site/google/index.jsp?ndmViewId=news_view&newsId=20080116005349&newsLang=en">bought</a> MySQL, and Oracle just <a href="http://money.cnn.com/2008/01/16/news/companies/oracle/?postversion=2008011608">bought</a> BEA. Interesting times ..., what do you say?

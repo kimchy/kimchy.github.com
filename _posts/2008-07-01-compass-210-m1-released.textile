@@ -1,0 +1,7 @@
+---
+layout: post
+title: Compass 2.1.0 M1 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> version 2.1.0 M1 released. The release includes several features including a much improved XSEM support (namespace xpath, better stax integration, jdom integration), <a href="http://www.kimchy.org/dynamic-mappings-settings-with-compass/">Dynamic mappings removal and additions</a>, <a href="http://www.kimchy.org/json-mappings-with-compass/">JSEM - JSON to Search Engine Mapping</a> support, and <a href="http://www.kimchy.org/collocated-indexing-and-distributed-search-with-gigaspaces/">Collocated integration and distributed search with GigaSpaces</a>. It also includes several bug fixes (with the important ones backported to 2.0 branch). Enjoy!.
+

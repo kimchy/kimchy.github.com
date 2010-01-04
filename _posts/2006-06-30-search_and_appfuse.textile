@@ -1,0 +1,11 @@
+---
+layout: post
+title: Search And AppFuse
+---
+
+p. Integrating Compass with <a href="http://appfuse.dev.java.net">AppFuse</a> in order to add search functionality is suppose to be simple. Compass already integrates nicely with Spring and Hibernate, and AppFuse is built on top of this two frameworks. Also, if your AppFuse app is built on top of Spring MVC, things are again much simpler since Compass comes with a Spring MVC search controller.
+
+
+
+p. Just how simple it is? Chris Barham <a href="https://appfuse.dev.java.net/servlets/ReadMsg?list=users&msgNo=15731">posted</a> some notes in AppFuse user mailing list, and also asked for <a href="http://forums.opensymphony.com/thread.jspa?threadID=35452&tstart=0">tech review</a> on Compass forum. Enjoy!
+

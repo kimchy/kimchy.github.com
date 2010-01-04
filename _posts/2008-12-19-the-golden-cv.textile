@@ -1,0 +1,17 @@
+---
+layout: post
+title: The Golden CV
+---
+
+Well, I was talking to a friend of mine who is looking for a job (one of the best developers out there, which just shows you that things are not great), and he said that a recruiter called him and asked if he had SOA and if he can put it on his CV. Of course, this types of things depress me tremendously, but still, I thought that maybe, instead of fighting it, he should write a CV that passes the 99.9% stupidity we real developers have to deal with out there. Here is my suggestion for a CV:
+
+bq. I was working on product that was rebuilt to use SOA. The product was rebuilt (by my team) to be built using services that were oriented to form an architecture. The product also included EDA, where the product had events drive its architecture to invoke other services in an object oriented manner.
+
+p. Services within the product communicated in a web service manner providing REST interface allowing for autonomous upgrade of different modules within the product with no downtime. OSGi was used to create soft dependencies between hard wired components of a single module allowing for easy interoperability of different component versions within a single running system.
+
+p. The development team practiced agile methodologies to increase the predictability of release phases of our product and enhance customer involvement. We developed the product in sprints and the customer drove a backlog that consisted of an excel file that an 8 gig double quad core machine could load. User stories were told around a camp fire sessions to be implemented by peer coding using 3 keyboards, 2.5 screens, and 1.5 mouse. This allowed us to easily adapt to changes in the market making our product more agile and resilient to changes while maintaining high quality of code by having 99.78% code coverage of tests with automated build process running every 3.29 minutes providing us with instant feedback of failed tests within the product codebase.
+
+p. The product was also build to be cloud computing ready. The product can be deployed on the cloud allowing it to be cloudable in a such a way to achieve greater scalability. It also allowed us to reduce TCO by moving from a private cloud to a public cloud on demand automatically and completely solving any possible Digg effects (though the product is intended for private lan envs).
+
+
+p. Arghhh, annoying!, Shay.

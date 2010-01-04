@@ -1,0 +1,18 @@
+---
+layout: post
+title: Compass 1.2 M2 Released
+---
+
+The <a href="http://www.opensymphony.com/compass">Compass</a> team is pleased to announce to release of version 1.2 M1. Major features include:
+
+<ul>
+	<li>Lucene 2.2 Support.</li>
+	<li>Improved OpenJPA support, now works with xml mappings as well.</li>
+	<li>Several improved in the mappings API, allowing to get specific property mapping. This simplifies external libraries integration and usability (will blog about it more later).</li>
+	<li>Pluggable Lucene LockFactory implementation is supported. People can now use the NativeLockFactory just by changing Compass configuration.</li>
+	<li>Dynamic boost property: The ability to map a property and have it as the boost value of the Resource/Document stored in the index</li>
+	<li>Several bug fixes and minor enhancements, read more <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10090">here</a>.
+</ul>
+
+
+

@@ -1,0 +1,7 @@
+---
+layout: post
+title: Nice Compass Integration
+---
+
+p. Mathieu <a href="http://forum.compass-project.org/thread.jspa?threadID=215295">posted</a> that he created a really nice Compass server based on a set of libraries he developed and has it working with php. Check it out <a href="http://blog.garambrogne.net/index.php?post/2008/03/11/Using-Compass-without-dirtying-its-hands-with-java">here</a>.
+

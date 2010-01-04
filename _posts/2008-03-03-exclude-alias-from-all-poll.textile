@@ -1,0 +1,38 @@
+---
+layout: post
+title: Exclude Alias From All Poll
+---
+
+p. Myself and Maurice (the mind behind the <a href="http://grails.org/Searchable+Plugin">Grails searchable plugin</a>) are having an interesting <a href="http://jira.codehaus.org/browse/GRAILSPLUGINS-251">discussion</a> if Compass should, by default, include the alias in the all property.
+
+
+
+p. Currently Compass includes the alias in the all property. And in version 2.0, one can configure if it should be excluded globally or on a per class mapping.
+
+
+
+p. So, I am asking you Compass users, what do you think? Should it be included by default or not?
+
+
+
+p. [Update:] Here is a short example of what I describe here:
+
+
+
+p. Lets assume you have the following POJO:
+
+
+
+p. <pre lang="java" line="1">
+@Searchable(alias = "customer")
+public class Customer {
+
+   // ... customer properties
+
+}
+</pre>
+
+
+
+p. When alias is **not excluded** from the all property, then a search for __customer__ will return all the customers. If it is **excluded**, then a search for __customer__ will not return anything (assuming that you don't have the token customer on any other property).
+

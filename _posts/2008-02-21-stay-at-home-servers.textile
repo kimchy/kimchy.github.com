@@ -1,0 +1,7 @@
+---
+layout: post
+title: Stay At Home Servers
+---
+
+p. I really thought that <a href="http://www.stayathomeserver.com/">this</a> was a prank. Turns out there is a <a href="http://microsoft.com/windowshomeserver">real product</a> behind it. Funny. 
+

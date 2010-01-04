@@ -1,0 +1,19 @@
+---
+layout: post
+title: Apple Buys GigaSpaces
+---
+
+p. I am happy to say that <a href="http://www.gigaspaces.com">GigaSpaces</a>, the company I work for, was just bought by <a href="http://www.apple.com">Apple</a>. Apple are going to use GigaSpaces product as part of their <a href="http://www.apple.com/server/macosx/features/xgrid.html">Xgrid</a> product line in order to provide similar online services such as Amazon <a href="http://aws.amazon.com/ec2">EC2</a> and <a href="http://aws.amazon.com/s3">S3</a>.
+
+
+
+p. While there were rumors Apple were going to buy or better integrate a proper Java application server, they quickly found out that GigaSpaces provides a simpler platform (yea, we gave them a taste of our <a href="http://jroller.com/page/kimchy?entry=spring_gigaspaces_what_i_have">upcoming next version</a>) for next generation application (not only high end computing!) and decided to include GigaSpaces as part of their <a href="http://www.apple.com/server/macosx/">Mac OS X Server</a> distribution as well.
+
+
+
+p. Personally I am really excited about working for Apple. I will be moving to Copertino in a couple of months and the first task on my list is make Steve (hey I am an employe, so I can call him by his first name) <a href="http://blogs.zdnet.com/Burnette/?p=238">love Java again</a>.
+
+
+
+p. [Update]: This was an April Fools Joke, don't take me seriously :).
+

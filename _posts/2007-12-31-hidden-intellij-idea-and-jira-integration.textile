@@ -1,0 +1,7 @@
+---
+layout: post
+title: Hidden (?) IntelliJ IDEA and Jira integration
+---
+
+p. Well, just found out about a built in integration between IntelliJ IDEA and Jira which is really cool. Head over to your project Version Control settings, go to Issue Navigation, and over there, add your Jira instance url. Cool!
+

@@ -1,0 +1,21 @@
+---
+layout: post
+title: Simulate @CompassContext in JEE
+---
+
+p. @CompassContext is a great feature when using Spring. It allows for simplification when using Compass API within a transactional context (like Spring managed transactions). If your application uses a different managed environment, like JEE, the @CompassContext session injection can still be simulated.
+
+
+
+p. If we take JEE environment as an example, usually the Compass instance would be registered under JNDI. In order to create a CompassSession that will simplify its usage under managed environment, all that needs to be done is:
+
+
+
+p. <pre>
+compassSession = CompassSessionTransactionalProxy.newProxy(compass);
+</pre>
+
+
+
+p. Where compassSession is probably a class level instance (since it does not make sense to proxy CompassSession each time). Note, it is perfectly fine for CompassSession to be a class level instance, and the proxy will take cate of creating ones correctly based on the transaction context.
+

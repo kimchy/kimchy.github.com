@@ -1,0 +1,121 @@
+---
+layout: post
+title: before/after TestCase with JUnit 3.x
+---
+
+p. With <a href="http://www.junit.org">Junit</a> 4.x or <a href="http://www.testng.org">TestNG</a>, one can define a before/after class callback which will be called before/after the tests within the test class execute. For those of us stuck with JUnit 3.x I have written a simple extension to JUnit TestCase that allows for it.
+
+
+
+p. It is a very simple implementation, counting the number of tests within the test case, and using the information in order to call the beforeTestCase and afterTestCase callbacks. Note, that if running just a single test within the TestCase (as often done with an IDE), the afterTestCase will not be called (which is often ok, since the JVM will shut down). Here is the code:
+
+
+
+p. 
+<pre style="line-height: 100%;font-family:monospace;background-color:#ffffff; border-width:0.01mm; border-color:#000000; border-style:solid; padding:4px;"><span style="color:#808080;background-color:#ffffff;font-style:italic;">/**
+ * A simple extension to Junit </span><span style="color:#808080;background-color:#e2ffe2;font-style:italic;">@</span><span style="color:#808080;background-color:#ffffff;font-style:italic;">TestCase</span><span style="color:#808080;background-color:#e2ffe2;font-style:italic;">@</span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> allowing for
+ * {</span><span style="text-decoration:underline;color:#808080"><span style="color:#808080;background-color:#ffffff;font-weight:bold;font-style:italic;">@link</span></span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> #beforeTestCase()} and {</span><span style="text-decoration:underline;color:#808080"><span style="color:#808080;background-color:#ffffff;font-weight:bold;font-style:italic;">@link</span></span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> #afterTestCase()} callbacks.
+ * </span><span style="color:#808080;background-color:#e2ffe2;font-style:italic;"><p/>
+</span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> * Note, the callbacks will only work if running the whole test case
+ * and not just one test.
+ *
+ * </span><span style="text-decoration:underline;color:#808080"><span style="color:#808080;background-color:#ffffff;font-weight:bold;font-style:italic;">@author</span></span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> kimchy
+ */
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">public</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">class</span><span style="background-color:#ffffff;"> ExtendedTestCase </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">extends</span><span style="background-color:#ffffff;"> TestCase {
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">static</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">int</span><span style="background-color:#ffffff;"> </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">testCount </span><span style="background-color:#ffffff;">= </span><span style="color:#0000ff;background-color:#ffffff;">0</span><span style="background-color:#ffffff;">;
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">static</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">int</span><span style="background-color:#ffffff;"> </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">totalTestCount </span><span style="background-color:#ffffff;">= -</span><span style="color:#0000ff;background-color:#ffffff;">1</span><span style="background-color:#ffffff;">;
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">static</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">boolean</span><span style="background-color:#ffffff;"> </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">disableAfterTestCase </span><span style="background-color:#ffffff;">= </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">false</span><span style="background-color:#ffffff;">;
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">protected</span><span style="background-color:#ffffff;"> ExtendedTestCase() {
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">super</span><span style="background-color:#ffffff;">();
+    }
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">protected</span><span style="background-color:#ffffff;"> ExtendedTestCase(String name) {
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">super</span><span style="background-color:#ffffff;">(name);
+    }
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">public</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">void</span><span style="background-color:#ffffff;"> runBare() </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">throws</span><span style="background-color:#ffffff;"> Throwable {
+        Throwable exception = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">null</span><span style="background-color:#ffffff;">;
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">totalTestCount </span><span style="background-color:#ffffff;">== -</span><span style="color:#0000ff;background-color:#ffffff;">1</span><span style="background-color:#ffffff;">) {
+            </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">totalTestCount </span><span style="background-color:#ffffff;">= countTotalTests();
+        }
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">testCount </span><span style="background-color:#ffffff;">== </span><span style="color:#0000ff;background-color:#ffffff;">0</span><span style="background-color:#ffffff;">) {
+            beforeTestCase();
+        }
+        </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">testCount++</span><span style="background-color:#ffffff;">;
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">try</span><span style="background-color:#ffffff;"> {
+            </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">super</span><span style="background-color:#ffffff;">.runBare();
+        } </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">catch</span><span style="background-color:#ffffff;"> (Throwable running) {
+            exception = running;
+        }
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">testCount </span><span style="background-color:#ffffff;">== </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">totalTestCount)</span><span style="background-color:#ffffff;"> {
+            </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">totalTestCount </span><span style="background-color:#ffffff;">= -</span><span style="color:#0000ff;background-color:#ffffff;">1</span><span style="background-color:#ffffff;">;
+            </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">testCount </span><span style="background-color:#ffffff;">= </span><span style="color:#0000ff;background-color:#ffffff;">0</span><span style="background-color:#ffffff;">;
+            </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (!</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">disableAfterTestCase)</span><span style="background-color:#ffffff;"> {
+                </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">try</span><span style="background-color:#ffffff;"> {
+                    afterTestCase();
+                } </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">catch</span><span style="background-color:#ffffff;"> (Exception afterTestCase) {
+                    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (exception == </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">null</span><span style="background-color:#ffffff;">) exception = afterTestCase;
+                }
+            } </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">else</span><span style="background-color:#ffffff;"> {
+                </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">disableAfterTestCase </span><span style="background-color:#ffffff;">= </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">false</span><span style="background-color:#ffffff;">;
+            }
+        }
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (exception != </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">null</span><span style="background-color:#ffffff;">) </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">throw</span><span style="background-color:#ffffff;"> exception;
+    }
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">protected</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">static</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">void</span><span style="background-color:#ffffff;"> disableAfterTestCase() {
+        </span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">disableAfterTestCase </span><span style="background-color:#ffffff;">= </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">true</span><span style="background-color:#ffffff;">;
+    }
+
+    </span><span style="color:#808080;background-color:#ffffff;font-style:italic;">/**
+     * Called before any tests within this test case.
+     *
+     * </span><span style="text-decoration:underline;color:#808080"><span style="color:#808080;background-color:#ffffff;font-weight:bold;font-style:italic;">@throws</span></span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> Exception
+     */
+</span><span style="background-color:#ffffff;">    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">protected</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">void</span><span style="background-color:#ffffff;"> beforeTestCase() </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">throws</span><span style="background-color:#ffffff;"> Exception {
+
+    }
+
+    </span><span style="color:#808080;background-color:#ffffff;font-style:italic;">/**
+     * Called after all the tests within the test case
+     * have executed.
+     *
+     * </span><span style="text-decoration:underline;color:#808080"><span style="color:#808080;background-color:#ffffff;font-weight:bold;font-style:italic;">@throws</span></span><span style="color:#808080;background-color:#ffffff;font-style:italic;"> Exception
+     */
+</span><span style="background-color:#ffffff;">    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">protected</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">void</span><span style="background-color:#ffffff;"> afterTestCase() </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">throws</span><span style="background-color:#ffffff;"> Exception {
+
+    }
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">int</span><span style="background-color:#ffffff;"> countTotalTests() {
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">int</span><span style="background-color:#ffffff;"> count = </span><span style="color:#0000ff;background-color:#ffffff;">0</span><span style="background-color:#ffffff;">;
+        Class superClass = getClass();
+        Vector<String> names = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> Vector<String>();
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">while</span><span style="background-color:#ffffff;"> (Test.</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">class</span><span style="background-color:#ffffff;">.isAssignableFrom(superClass)) {
+            Method[] methods = superClass.getDeclaredMethods();
+            </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">for</span><span style="background-color:#ffffff;"> (Method method : methods) {
+                String name = method.getName();
+                </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (names.contains(name))
+                    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">continue</span><span style="background-color:#ffffff;">;
+                names.addElement(name);
+                </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">if</span><span style="background-color:#ffffff;"> (isTestMethod(method)) {
+                    count++;
+                }
+            }
+            superClass = superClass.getSuperclass();
+        }
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">return</span><span style="background-color:#ffffff;"> count;
+    }
+
+    </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">private</span><span style="background-color:#ffffff;"> </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">boolean</span><span style="background-color:#ffffff;"> isTestMethod(Method m) {
+        String name = m.getName();
+        Class[] parameters = m.getParameterTypes();
+        Class returnType = m.getReturnType();
+        </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">return</span><span style="background-color:#ffffff;"> parameters.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;">length </span><span style="background-color:#ffffff;">== </span><span style="color:#0000ff;background-color:#ffffff;">0</span><span style="background-color:#ffffff;"> && name.startsWith(</span><span style="color:#008000;background-color:#ffffff;font-weight:bold;">"test"</span><span style="background-color:#ffffff;">) && returnType.equals(Void.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">TYPE)</span><span style="background-color:#ffffff;">;
+    }
+
+}</span></pre>
+

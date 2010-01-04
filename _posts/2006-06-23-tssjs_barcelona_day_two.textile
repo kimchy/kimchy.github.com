@@ -1,0 +1,30 @@
+---
+layout: post
+title: TSSJS Barcelona Day Two
+---
+
+p. The second day of TSS Barcelona started with Simon Phipps talking about The Zen of Free. Simon is a very good presenter, and it seems like Open Source is very close to his heart. His session was already covered on <a href="http://www.theserverside.com/news/thread.tss?thread_id=41047">TSS</a>, so I won't get into details, but I guess that the one thing missing was **how** Sun plans to handle Java and open source. I have no strong view on it, and am happy with how Java is right now. What people need to remember when they say that Sun should do this and that, is that there is always a possibility that things won't turn the way we want them to. Just be careful when you talk to someone who says "You must do that, and all will be good and dandy".
+
+
+
+p. The next session was by <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#TNeward">Ted Neward</a> about Messaging. Ted is a great presenter, and he puts on a show and really engages the audience, though sometimes he can scare them a bit :). Ted went through why you would want to use messaging under certain scenarios, and how you would go about and do it. The one thing that I noted from Ted presentation, was that he was talking about messaging in a much broader sense, whereabouts making an RPC call that is document centric (i.e. xml) can be considered messaging as oppose to exposing a strongly typed interface. Of course, he also explained the benefits of Asynchronous vs. Synchronous messaging.
+
+
+
+p. Another session was by <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#BSnyder">Bruce Snyder</a> about JBI and ServiceMix. I was hoping to get a little bit more details about how ServiceMix works, and not explanation of why SOA is good and try to explain again what it means to have SOA. I think that in terms of sessions, Mule won with the presentation yesterday, since I understood what it takes to use Mule. Also, from the brief overview of ServiceMix, it feels like Mule is more mature (I know that Mule has been around longer, but many times something new comes out and it is already much more mature then other existing solutions.)
+
+
+
+p. I skipped several session afterwards to watch the world cup games (Italy and Ghana qualified, Ghana is a big surprise here). And then went to the BOF sessions.<p/>
+
+p. The first BOF session was by Rod Johnson and <a href="http://javasymposium-europe.techtarget.com/html/det_speakers.htm#NShalom">Nati Shalom</a>, and the title was The End of Tier Based Architecture. The room was packed, with people sitting on the floor, and the topic is a very interesting one. Current idioms of how one goes about and develop a highly transactional, clustered, and performant systems usually don't fit naturally, and people have to work really hard in order to achieve it. The concept of JavaSpace is so simple, and yet so powerful, that it makes a lot of sense to use it. The problem, I guess, that people were having was having conceptual connections to tangible things that they are already familiar with. GigaSpaces already does that by exposing the Space as a JMS provider, and Jdbc provider, but Spring is Spring is Spring and now it has support for Java Spaces, where one would go about and use JavaSpaces using the same tools that you use for any other dao related module in Spring. JavaSpaces are much more then just that, and I will try and blog about it a bit more in a different post.
+
+
+
+p. The next BOF session was by Ross Mason and Nati Shalom, and explained how Mule and JavaSpaces (GigaSpaces) can be a great combination in order to provide a scalable ESB solution. If you think about it, it makes sense in terms of Mule. Mule already comes with a breadth of connectivity to different external sources (messaging, web services, ...), and having JavaSpaces as one one of them fits in naturally. The nice thing that I learned in this session, was that my Mule application can be managed by GigaSpaces, so if I have a 1000 machines cluster, I can simply deploy my Mule enabled application into the cluster using GigaSpaces.
+
+
+
+p. That was the end of the sessions, and it got pretty late. I did some sightseeing in the evening, ... Barcelona is such a beautiful city. Went back and managed the see the Aussies playing Croatia. The game was nerve breaking, with the Australian team managing to barely qualify at the end of the match, and the referee loosing control of the match.
+
+

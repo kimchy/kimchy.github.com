@@ -1,0 +1,11 @@
+---
+layout: post
+title: Compass & GigaSpaces at SpringOne
+---
+
+p. It looks like <a href="http://www.bejug.org/regs107/registration/start.htm">SpringOne</a> is going to be really exciting this year.
+
+
+
+p. I will be presenting <a href="http://www.springone.com/display/SpringOne07/Compass%2C+Building+Search+with+Spring">Compass</a> and also be around Nati <a href="http://www.springone.com/display/SpringOne07/Gigaspaces+presents..+scalability+made+simple+as+Spring">GigaSpaces session</a>. With Compass, we will see how simply we can add Google like search to any Spring based application. With GigaSpaces, we will be showing off our next version which one of its main feature, Open Spaces, I have been responsible for. Open Spaces is really exciting (the early access will be out very soon), based on Spring, and is going to evolve and simplify the way people do high performance computing or any typical EDA(+DataGrid) applications. Personally I believe that we are doing to EDA/DataGrid what Spring did to parts of J2EE, so come over to our booth/session and take an early peek.
+

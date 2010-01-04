@@ -1,0 +1,8 @@
+---
+layout: post
+title: Compass and Lucene 2.3
+---
+
+p. Latest nightly builds of Compass (2.0 M2) now supports the latest Lucene 2.3 version. 2.0 M2 will be release soon, but it would be great if people can start playing with it for early feedback. <a href="http://www.kimchy.org/nightly-builds-for-compass/">Here</a> is an explanation on how to get them.
+
+p. As a side note, there have been many enhancements built into this Compass version, revolving around Lucene 2.3. I will blog about each of them later.

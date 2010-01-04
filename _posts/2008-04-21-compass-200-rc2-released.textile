@@ -1,0 +1,11 @@
+---
+layout: post
+title: Compass 2.0.0 RC2 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> version 2.0.0 RC2 has been released. The release include minor bug fixes and improved support for polymorphic operations both in the API and the query string level. Check out the <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10122">release notes</a> for more information.
+
+
+
+p. Ohh, and one last thing for all you <a href="http://maven.apache.org">Maven</a> lovers out there, Compass now has a maven repository at <a href="http://repo.compass-project.org">repo.compass-project.org</a> hosting both 1.2.2 and 2.0.0 RC2 versions. Hopefully later on it will get synced with maven central repository.
+

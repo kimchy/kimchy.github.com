@@ -1,0 +1,10 @@
+---
+layout: post
+title: New Compass Site
+---
+
+p. I am happy to announce that Compass now has its own site and services. Check it out at: <a href="http://www.compass-project.org">compass-project.org</a>. Some bits and pieces are still missing such as the very important overview section, and proper wiki structure, but I hope that all in all Compass users will find it useful.
+
+p. This has required some hard work, but I hope it will pay off. Special thanks go to the amazing <a href="http://www.contegix.com">Contegix</a> people for donating a server, setting everything up, and managing it. Also, the usual suspects/sponsors such as Atlassian and Jetbrains, require special thanks as well.
+
+p. Well, back to watching the Super Bowl and hacking Compass :)

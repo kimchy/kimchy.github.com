@@ -1,0 +1,37 @@
+---
+layout: post
+title: Improved Boosting with "all" Property
+---
+
+p. Well, I just finished implementing a really cool feature in Compass supporting specific boosting for terms in the all property. This is best shown with an example:
+
+
+
+p. <pre lang="java" line="1">
+@Searchable
+public class Article {
+
+    @SearchableProperty(boost = 5.0f)
+    String title;
+
+    @SearchableProperty
+    String content;
+}
+</pre>
+
+
+
+p. In this case we mark the title to be more "important" than content. This means that if Article **a** title has the token __london__, and Article **b** content has a token __london__, then if we do the following search: __title:london OR content:london__, **a** will rank higher than **b**.
+
+
+
+p. This is really nice, but, when searching, people usually search on the all field of Compass. The all field in Compass is a special field that actually allows to search on all the different fields of Article (its performance has much improved in 2.0). The main problem with the all field (up until now) is the fact that it did not take boosting into account. Well, now it does :).
+
+
+
+p. What does it means? If we take current Compass versions (without the new all boost feature), if we search for __london__, **a** Article and **b** Article will rank the same. Now, with the new all boost feature, **a** will rank much higher than **b**.
+
+
+
+p. This feature is available in Compass 2.0 M3. Take the nightlies for a spin.
+

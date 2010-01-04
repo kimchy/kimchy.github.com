@@ -1,0 +1,7 @@
+---
+layout: post
+title: Update your RSS readers
+---
+
+p. I added this blog feed to feedburner so update your rss readers to <a href="http://feeds.feedburner.com/kimchyblog">this link</a>
+

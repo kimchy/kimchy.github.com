@@ -1,0 +1,12 @@
+---
+layout: post
+title: Compass 2.2.0 GA Released
+---
+
+<a href="http://www.compass-project.org">Compass</a> version 2.2.0 GA released. There are many features included in the release which I covered in the different milestone and release candidates announcements. Here is a link to the <a href="http://groups.google.com/group/compass-project-user/browse_thread/thread/9c9be09b7cccdbd0">user group announcement</a>.
+
+I already have several things lined up for Compass 3.0, with the first thing on the plan is a complete restructuring of the codebase to a more modular one (should not be a breaking change, maybe some package renaming, will try to keep that to a minimum). Compass integrates with many libraries now, and its time to make the structure/build more modular (it is already mostly modular internally). Will report back on how it goes.
+
+Enjoy!
+
+p.s. Compass is now on maven repo central, all maven lovers rejoice!.

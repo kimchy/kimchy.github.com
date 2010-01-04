@@ -1,0 +1,10 @@
+---
+layout: post
+title: Compass 2.0 M1 Released
+---
+
+p. I am very pleased to announce the release of Compass 2.0 M1. Release notes can be found <a href="http://jira.compassframework.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10102">here</a>, and download is <a href="https://sourceforge.net/project/showfiles.php?group_id=121279&package_id=132331&release_id=571297">here</a>.
+
+p. A lot of work has gone into this release and it includes a many of new features. Main ones include: <a href="http://www.kimchy.org/compasslucene-and-datagrids/">Integration with DataGrids</a>, support for EclipseLink, embedded support for Hibernate, Toplink and EclipseLink (similar to the current OpenJPA one) allowing to embed Compass within this ORMs, improved query string parsing, much improved all support (performance and functionality).
+
+p. I will blog more mainly about the improved integration with ORM frameworks in later blogs. Enjoy!.

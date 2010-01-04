@@ -1,0 +1,23 @@
+---
+layout: post
+title: To Groovy Or JRuby
+---
+
+p. This is something that I have been thinking about, to Groovy or (J)Ruby. All of us, developers, would like to learn a scripting language. And when I say learn, I mean to be proficient in it.
+
+
+
+p. Currently, in the Java world, we have two main scripting languages, Groovy and JRuby. The questions that we ask ourself is what should we learn. First, let me explain what it means to learn a new language. Learning the syntax is usually the simple task, but it is important to understand that it does not end there. In order to really know how to use the language, we need to know all the different popular frameworks that comes with it, idioms on how to use it, and so on. If we take the Java world as an example, it is not enough to learn Java as a language, developers need to be familiar with Java design patterns, core Java concepts and design patterns, JEE, Spring and many others...
+
+
+
+p. So, to the question presented in this title, what should a developer learn? Should it be Groovy or JRuby? Both have a very active community and very interesting frameworks that come with them - Grails in Groovy and Ruby on Rails in JRuby/ruby.
+
+
+
+p. The question is an open question to the community, and I would love to hear your views on it. The main thing that I currently think about is this: with Groovy, moving from Java to Groovy seems to feel more natural, Groovy grew out of Java, which gives it a big boost in terms of learning curve (Grails feels like that as well). On the other hand, ruby is really picking up, and if someone chooses to learn ruby (and ruby on rails), it can be used both on the Java world using JRuby, and in future possible projects that will use only ruby, basically making anyone learning ruby more sexy in terms of future jobs.
+
+
+
+p. I don't know the answer, maybe you can help?
+

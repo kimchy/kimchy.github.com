@@ -1,0 +1,73 @@
+---
+layout: post
+title: Compass Mapping Builder API
+---
+
+Compass has several ways that mappings can be configured for it. With JSEM, XSEM, RSEM, and OSEM, an xml or json based configuration can be used. For OSEM, Java 5 annotations can also be used to defined mappings. In the upcoming Compass 2.2 M1 there is another way to configure mappings in Compass, the Mapping Builder API.
+
+p. The idea behind the mapping builder API is to provide a simple programmatic manner to configure mapping definitions in Compass. This allows for simpler embedability of Compass in other frameworks or libraries, as well as provide an (almost) statically typed manner to configure mappings in Compass.
+
+
+
+p. Here are some example:
+
+
+
+p. <pre lang="java" line="1">
+import static org.compass.core.mapping.osem.builder.OSEM.*;
+
+conf.addMapping(
+         searchable(Author.class).alias("author")
+             .add(id("id"))
+             .add(property("name").add(metadata("name"))
+             .add(property("age").add(metadata("age").format("000")))
+             .add(component("address")
+);
+</pre>
+
+
+
+p. <pre lang="java" line="1">
+import static org.compass.core.mapping.jsem.builder.JSEM.*;
+
+conf.addMapping(
+         json("a")
+             .add(id("id"))
+             .add(property("value1"))
+             .add(property("value2").store(Property.Store.YES).index(Property.Index.ANALYZED))
+);
+</pre>
+
+
+
+p. <pre lang="java" line="1">
+import static org.compass.core.mapping.xsem.builder.XSEM.*;
+
+conf.addMapping(
+     xml("a")
+         .add(id("/xml-fragment/data/id/@value").indexName("id"))
+         .add(property("/xml-fragment/data/data1/@value"))
+         .add(property("/xml-fragment/data/data1").indexName("eleText"))
+);
+</pre>
+
+
+
+p. <pre lang="java" line="1">
+import static org.compass.core.mapping.rsem.builder.RSEM.*;
+
+conf.addMapping(
+         resource("a")
+             .add(id("id"))
+             .add(property("value1"))
+             .add(property("value2").store(Property.Store.YES).index(Property.Index.ANALYZED))
+             .add(property("value3").store(Property.Store.COMPRESS).index(Property.Index.ANALYZED))
+             .add(property("value4").store(Property.Store.YES).index(Property.Index.NOT_ANALYZED))
+             .add(property("value5").store(Property.Store.YES).converter("mydate"))
+);
+</pre>
+
+
+
+p. The above examples shows builders for RSEM, XSEM, JSEM, and OSEM. Enjoy!
+

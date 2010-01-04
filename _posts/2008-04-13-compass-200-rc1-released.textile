@@ -1,0 +1,11 @@
+---
+layout: post
+title: Compass 2.0.0 RC1 Released
+---
+
+p. <a href="http://www.compass-project.org">Compass</a> version 2.0.0 RC1 has just been released. The release includes several major features including: <a href="http://www.kimchy.org/compasslucene-terracotta-integration/">Terracotta integration</a>, <a href="http://www.kimchy.org/specific-indexing/">Specific Gps indexing</a>, <a href="http://www.kimchy.org/automatic-mapping-scanning-with-compass/">Automatic scanning for mappings</a>, and <a href="http://issues.compass-project.org/secure/ReleaseNote.jspa?projectId=10000&styleName=Html&version=10121">many many more</a>.
+
+
+
+p. This version will be the final one where major features will get into the 2.0.0 release train. The current plan is to release 2.0.0 RC2 in a week or two, and soon after (a week) release 2.0.0 GA. Both releases will only include bug fixes. This has been a long road, and 2.0.0 has become a really nice release. So please, if you are using old Compass version, take the time to upgrade to 2.0.0 RC1 and give us feedback (make sure you read the upgrade.txt file).
+
