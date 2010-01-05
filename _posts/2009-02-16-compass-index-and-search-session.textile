@@ -3,7 +3,7 @@ layout: post
 title: Compass - Index and Search Session
 ---
 
-<img src="http://www.kimchy.org/wp-content/uploads/2009/02/two-face.jpeg" alt="two-face" title="two-face" width="116" height="128" class="alignleft size-full wp-image-534" /> Compass has the concept of a __CompassSession__, which is created using the __Compass__ instance and then used to perform indexing operation (create/save/delete) and search/read operations. In the upcoming 2.2 M2, two sub types of the __CompassSession__ can now be used. The __CompassIndexSession__ for indexing purposes, and the __CompassSearchSesssion__ for search/read purposes. This can simplify a bit the usage of different sessions (less code complete clutter) , as well as allow for some optimizations to be made when choosing a specific session.
+Compass has the concept of a __CompassSession__, which is created using the __Compass__ instance and then used to perform indexing operation (create/save/delete) and search/read operations. In the upcoming 2.2 M2, two sub types of the __CompassSession__ can now be used. The __CompassIndexSession__ for indexing purposes, and the __CompassSearchSesssion__ for search/read purposes. This can simplify a bit the usage of different sessions (less code complete clutter) , as well as allow for some optimizations to be made when choosing a specific session.
 
 
 Here is how the indexing session can be used:

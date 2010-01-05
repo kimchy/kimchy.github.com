@@ -3,4 +3,4 @@ layout: post
 title: Java 6 on Mac, Finally...
 ---
 
-<img src="http://www.kimchy.org/wp-content/uploads/2008/04/hallelujah.jpeg" alt="hallelujah" title="hallelujah" width="137" height="103" class="alignleft size-full wp-image-472" /> <a href="http://www.macrumors.com/2008/04/29/apple-adds-java-se-6-to-leopard/">ITS ABOUT TIME!</a>
+<a href="http://www.macrumors.com/2008/04/29/apple-adds-java-se-6-to-leopard/">ITS ABOUT TIME!</a>

@@ -3,7 +3,7 @@ layout: post
 title: Compass/Lucene Terracotta Integration
 ---
 
-<img src="http://www.kimchy.org/wp-content/uploads/2008/12/terracotta.png" alt="terracotta" title="terracotta" width="220" height="27" class="alignleft size-full wp-image-316" /> I am happy to announce that <a href="http://www.compass-project.org">Compass</a> now supports integration with <a href="http://www.terracotta.org">Terracotta</a>. This integration allows for applications that use Compass or pure Lucene to store the index in an optimized, memory based storage, that uses Terracotta as a "network attached memory".
+I am happy to announce that <a href="http://www.compass-project.org">Compass</a> now supports integration with <a href="http://www.terracotta.org">Terracotta</a>. This integration allows for applications that use Compass or pure Lucene to store the index in an optimized, memory based storage, that uses Terracotta as a "network attached memory".
 
 p. The latest <a href="http://build.compass-project.org/browse/CMPTRK-NIGHTLY/latest">nightly build</a> supports it. The Artifacts tab allows to download the nightly build as well as view the terracotta integration documentation.
 

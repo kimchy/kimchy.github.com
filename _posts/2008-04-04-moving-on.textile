@@ -3,7 +3,7 @@ layout: post
 title: Moving On
 ---
 
-<img src="http://www.kimchy.org/wp-content/uploads/2008/04/new-road.jpeg" alt="new-road" title="new-road" width="135" height="90" class="alignleft size-full wp-image-448" /> Well, its time for me to move on. I am leaving <a href="http://www.gigaspaces.com">GigaSpaces</a> and joining <a href="http://www.delver.com">Delver</a> to help in creating the best socially connected search engine out there.
+Well, its time for me to move on. I am leaving <a href="http://www.gigaspaces.com">GigaSpaces</a> and joining <a href="http://www.delver.com">Delver</a> to help in creating the best socially connected search engine out there.
 
 p. This has not been a simple decision, and I think my "leaving GigaSpaces email" describes it best:
 

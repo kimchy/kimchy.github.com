@@ -7,4 +7,4 @@ title: The Clown Has Left The Building
 
 A great loss to all things comedy, you will me missed...
 
-[youtube]http://www.youtube.com/watch?v=dxkpm7bH7j4[/youtube] 
+p=. <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/dxkpm7bH7j4&hl=en_US&fs=1&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/dxkpm7bH7j4&hl=en_US&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>

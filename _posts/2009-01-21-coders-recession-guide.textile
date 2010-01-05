@@ -11,9 +11,7 @@ So, here are my suggestions for the (currently) unemployed coder:
 
 h1. Learn a New Language
 
-
-
-<img src="http://www.kimchy.org/wp-content/uploads/2009/01/language.jpeg" alt="language" title="language" width="96" height="135" class="alignleft size-full wp-image-345" /> I can't emphasis how important this is. Learning a new software language expands a coders imagination and breaks him free from the constrain of just thinking in one language. 
+I can't emphasis how important this is. Learning a new software language expands a coders imagination and breaks him free from the constrain of just thinking in one language. 
 
 Some of the languages I would recommend include:
 
@@ -29,9 +27,7 @@ Some of the languages I would recommend include:
 
 h1. Learn and Read New Library/Framework
 
-
-
-<img src="http://www.kimchy.org/wp-content/uploads/2009/01/library.jpeg" alt="library" title="library" width="130" height="103" class="alignleft size-full wp-image-348" /> Now is the time to learn new libraries that you always wanted to learn but never had the time. When I was in London, it was time for me to learn <a href="http://springframework.org/">Spring</a>, <a href="http://www.hibernate.org">Hibernate</a>, and <a href="http://lucene.apache.org">Lucene</a>. I not only learned how to use them, but I also read their code. Great libraries have great coders behind them, and Open Source allows us to tap into their mind easily.
+Now is the time to learn new libraries that you always wanted to learn but never had the time. When I was in London, it was time for me to learn <a href="http://springframework.org/">Spring</a>, <a href="http://www.hibernate.org">Hibernate</a>, and <a href="http://lucene.apache.org">Lucene</a>. I not only learned how to use them, but I also read their code. Great libraries have great coders behind them, and Open Source allows us to tap into their mind easily.
 
 Some of my recommendations are (coming from Java background):
 
@@ -52,14 +48,10 @@ Of course there are many others, especially oldies like Spring, but the above li
 
 h1. Read, Read, Read
 
-
-
-<img src="http://www.kimchy.org/wp-content/uploads/2009/01/books.jpeg" alt="books" title="books" width="104" height="121" class="alignleft size-full wp-image-354" /> Pick up a technology book of interest, or a business book that revolves around technology (we all want to start a startup one time, no?), and just read it. The list of books that I can recommend runs very long, and actually, it is quite hard to compile such a list, but I am sure that Amazon can help here, finding the book is not that difficult.
+Pick up a technology book of interest, or a business book that revolves around technology (we all want to start a startup one time, no?), and just read it. The list of books that I can recommend runs very long, and actually, it is quite hard to compile such a list, but I am sure that Amazon can help here, finding the book is not that difficult.
 
 **Just Read...**
 
 h1. Wildfire
 
-
-
-<img src="http://www.kimchy.org/wp-content/uploads/2009/01/forest-fire.jpeg" alt="forest-fire" title="forest-fire" width="140" height="86" class="alignleft size-full wp-image-355" /> Its funny how the technology world is similar to a forest. Every once in a while, a wildfire is required for the forest to rejuvenate itself so it can survive. The same things happen now, really bad coders are being weeded out (a company "must" do some layoffs, just to be on the safe side, no?), and current coders gets a chance to upgrade themselves. But don't worry, it will pass.
+Its funny how the technology world is similar to a forest. Every once in a while, a wildfire is required for the forest to rejuvenate itself so it can survive. The same things happen now, really bad coders are being weeded out (a company "must" do some layoffs, just to be on the safe side, no?), and current coders gets a chance to upgrade themselves. But don't worry, it will pass.
