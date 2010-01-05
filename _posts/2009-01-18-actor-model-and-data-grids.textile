@@ -31,7 +31,7 @@ Last, we should be able to make the Actor highly concurrent and thread safe. If 
 
 Up until now, I tried to explain how Data Grids fits very nicely with the Actor Model. Let me finish with a simple example based on GigaSpaces APIs to show how all of the above can be achieved.
 
-<div align="center"><img src="http://www.kimchy.org/wp-content/uploads/2009/01/polling_container_basicjpg.jpeg" alt="GigaSpaces Polling Container" title="GigaSpaces Polling Container" width="192" height="232" class="alignnone size-full wp-image-266" /></div>
+<div align="center"><img src="/images/posts/polling_container_basicjpg.jpeg" alt="GigaSpaces Polling Container" title="GigaSpaces Polling Container" width="192" height="232" class="alignncenter" /></div>
 
 The above is a diagram of a simple simple polling container that wraps a service (Actor, the Order service in our example). The polling container takes (removes) events (Data), process them, and writes back Data to the collocated Space (Data Grid) it is running with. Here is an example of how a service like that can be coded:
 

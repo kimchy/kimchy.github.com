@@ -7,8 +7,8 @@ One of quantum physics' crazier notions is that two particles seem to communicat
 
 The great man may have been wrong. A series of recent mind-bending laboratory experiments has given scientists an unprecedented peek behind the quantum veil, confirming that this realm is as mysterious as imagined.
 
-<img src="http://www.kimchy.org/wp-content/uploads/2009/05/quantum1.jpeg" alt="quantum1" title="quantum1" width="359" height="239" class="aligncenter size-full wp-image-604" />
-<img src="http://www.kimchy.org/wp-content/uploads/2009/05/quantum2.jpeg" alt="quantum2" title="quantum2" width="359" height="239" class="aligncenter size-full wp-image-605" />
+<img src="/images/posts/quantum1.jpeg" alt="quantum1" title="quantum1" width="359" height="239" class="aligncenter size-full wp-image-604" />
+<img src="/images/posts/quantum2.jpeg" alt="quantum2" title="quantum2" width="359" height="239" class="aligncenter size-full wp-image-605" />
 
 Based off this theory, there has been several computer science related experiments, especially revolving around <a href="http://en.wikipedia.org/wiki/Quantum_computing">Quantum Computer</a> and different encryption algorithms that I won't get into in this blog post. What I would like to suggest is how Quantum Physics can revolutionize the area of (In Memory ;) ) Data Grids.
 
