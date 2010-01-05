@@ -3,8 +3,6 @@ layout: post
 title: Lucene and Amazon S3
 ---
 
-<img src="http://www.kimchy.org/wp-content/uploads/2007/11/aws-s3.jpeg" alt="aws-s3" title="aws-s3" width="100%" class="aligncenter size-full wp-image-313" />
-
 p. I spent some time trying to have the ability to store Lucene index on <a href="http://aws.amazon.com/s3">Amazon S3</a> service. Amazon S3 is a really cool idea, and having the ability to store Lucene index on top of it will provide a simple way to allow storing Lucene index in a distributed environment supporting HA. It will also make a lot of sense for applications deployed on <a href="http://aws.amazon.com/ec2">Amazon EC2</a>, since working with S3 from EC2 is free.
 
 

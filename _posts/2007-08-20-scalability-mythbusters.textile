@@ -3,7 +3,7 @@ layout: post
 title: Scalability Mythbusters
 ---
 
-<img src="http://www.kimchy.org/wp-content/uploads/2007/08/mythbusters.jpeg" alt="mythbusters" title="mythbusters" width="130" height="130" class="alignleft size-full wp-image-305" />Just read an excellent article over at devx called <a href="http://www.devx.com/Java/Article/35087">Multi-core Mythbusters</a>. The article is very good at explaining in layman's terms the need for scalability. The article title is a bit misleading as it even talks about scaling out an application across machines (or for that purpose, JVM instances). What really hit the mark for me is this:
+Just read an excellent article over at devx called <a href="http://www.devx.com/Java/Article/35087">Multi-core Mythbusters</a>. The article is very good at explaining in layman's terms the need for scalability. The article title is a bit misleading as it even talks about scaling out an application across machines (or for that purpose, JVM instances). What really hit the mark for me is this:
 
 p. bq. Although it is true that Java app servers provide a degree of concurrency, many Java developers are under the mistaken impression that the app server will simply take care of all of their scalability needs.
 

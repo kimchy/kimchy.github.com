@@ -7,8 +7,6 @@ p. The upcoming Compass release (2.0 M1) now has integration with both <a href="
 
 h3. Lucene Directory
 
-
-
 <img src="http://www.kimchy.org/wp-content/uploads/2008/01/compass-datagrid.png" alt="compass-datagrid" title="compass-datagrid" width="600" class="aligncenter size-full wp-image-309" />
 
 p. Compass has an implementation of Lucene <a href="http://lucene.apache.org/java/2_2_0/api/org/apache/lucene/store/Directory.html">Directory</a> for both GigaSpaces and Coherence. Here is an example of using it with GigaSpaces:
