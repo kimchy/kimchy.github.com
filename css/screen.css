@@ -347,3 +347,35 @@ ul.posts {
 	float: left;
 	padding: 1px 1px 1px 1px;
 }
+
+/* Search ---------------------------------------------------------------- */
+ 
+.widget-search {
+    float: right;
+    width: 300px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    text-align: right;
+}
+ 
+.widget-search h3 {
+    display: none;
+}
+ 
+#search {
+    border: 1px solid #ccc;
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    padding: 1px;
+}
+ 
+#search-submit {
+    border: 1px solid #036;
+    border-top: 1px solid #80b3cc;
+    border-left: 1px solid #80b3cc;
+    background: #069;
+    color: #fff;
+    padding: 0px 5px 1px 5px;
+    font-size: 11px;
+}

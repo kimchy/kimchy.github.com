@@ -9,11 +9,22 @@
         </style>
     </head>
     <body>
-    <div class="center">
-      <p>Woops! The page you want isn't here.</p>
-      <p>You can either return to the <a href="/">main page</a>,<br/>
-      	 browse the <a href="/archives">archives</a>
-   	  </p>
-    </div>
+        <div class="center">
+          <p>Woops! The page you want isn't here.</p>
+          <p>You can either return to the <a href="/">main page</a>,<br/>
+          	 browse the <a href="/archives">archives</a>,<br/>
+          	 or do a search:
+       	  </p>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="015916330381434336403:umqixwychog" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="31" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+        </div>
+
     </body>
 </html>
