@@ -163,14 +163,16 @@ ul.posts {
   /* standard */
 
  #post pre {
+   font-family: monospace;
    overflow:auto;
-   font-size: 80%;
+   font-size: 90%;
    background-color: white;
    padding: 1em 1em;
    border-top:1px dashed #939393;
    border-left:1px dashed #939393;
    border-right:1px dashed #939393;
    border-bottom:1px dashed #939393;  
+   line-height: 1.2em;
   }
   
   #post code {

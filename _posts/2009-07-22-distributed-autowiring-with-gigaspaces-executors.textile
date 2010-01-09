@@ -7,7 +7,7 @@ With the <a href="http://www.gigaspaces.com/newsletter/GigaSpaces-XAP-7.0-Releas
 
 In essence, GigaSpaces executor support allows to define custom Tasks that will be executed within GigaSpaces in a collocated manner with data. Aside from collocation, one of the nice feature of it is the fact that the code does not have to be predefined within the GigaSpaces cluster, but instead it is loaded on demand. Here is an example of such a simple task:
 
-{% highlight java %}
+<pre class="prettyprint">
 public static class TradeValueTask implements Task<Float> {
 
     private long tradeId;
@@ -29,7 +29,7 @@ public static class TradeValueTask implements Task<Float> {
         return trade.getValue();
     }
 }
-{% endhighlight %}
+</pre>
 
 The above task allows one to actually get *just* the trade value for a given trade id, instead of reading the whole trade and extracting the value from it on the client side.
 
@@ -37,21 +37,21 @@ The execution will be directed to the same partition that trade exists on (assum
 
 Here is an example of how it can be executed:
 
-{% highlight java %}
+<pre class="prettyprint">
 // gigaSpace here is a clustered proxy of the whole cluster
 AsyncFuture<Float> result = gigaSpace.execute(new TradeValueTask(1));
 float value = result.get();
-{% endhighlight %}
+</pre>
 
 Now, lets assume that calculating the trade value is complex and we already have a service that knows how to configure it in the Processing Unit descriptor file:
 
-{% highlight xml %}
+<pre class="prettyprint">
 <bean id="traveValueCalulator" class="eg.TradeValueCalulator" />
-{% endhighlight %}
+</pre>
 
 We would love to be able to use it in order to calculate the trade value from within the processing unit. What we actually want to do is be able to get a handle to the TradeValueCalculator from within our class. There are several ways to do so, but one of the nicest is to actually use Spring autowiring capabilities to inject it, which we can easily do:
 
-{% highlight java %}
+<pre class="prettyprint">
 @AutowiredTask
 public static class TradeValueTask implements Task<Float> {
 
@@ -77,7 +77,7 @@ public static class TradeValueTask implements Task<Float> {
         return tradeValueCalculator.calculate(trade);
     }
 }
-{% endhighlight %}
+</pre>
 
 By marking the class with the @AutowiredTask annotation, it will automatically get autowired with the beans defined within the processing unit. Pretty cool, no?
 
@@ -87,7 +87,7 @@ So we can autowire beans into a Task executed using GigaSpaces. One last thing b
 
 Lets assume that we now want to calculate the sum of several trades by their ids. We could have gone ahead and execute each task, wait on all the futures, and sum the results. But, why work hard when we (GigaSpaceians) can work hard for you (my personal motto):
 
-{% highlight java %}
+<pre class="prettyprint">
 AsyncFuture<Float> result = 
           gigaSpace.executorBuilder(new SumReducer<Float, Float>(Float.class))
                                  .add(new TradeValueTask(1)) 
@@ -95,7 +95,7 @@ AsyncFuture<Float> result =
                                  .add(new TradeValueTask(3))
                                  .execute(); 
 float value = result.get();
-{% endhighlight %}
+</pre>
 
 All three tasks will be executed in parallel, in a none blocking mode, each on its respective partition, and the results will be automatically reduced using our built in SumReducer.
 

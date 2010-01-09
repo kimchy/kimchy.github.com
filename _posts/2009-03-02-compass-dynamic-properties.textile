@@ -7,14 +7,14 @@ Upcoming Compass 2.2 (RC1) will have a new and exciting feature called dynamic p
 
 There are two ways to use the new dynamic properties. The first, and obvious one, is by marking a __java.util.Map__ type as a dynamic property. For example:
 
-{% highlight java %}
+<pre class="prettyprint">
 @Searchable
 public class Book {
 
     @SearchableDynamicProperty(value-format="0000")
     Map<String, Integer> tags;
 }
-{% endhighlight %}
+</pre>
 
 Then, if we initialize the map for example with <"tag1", 12>, and <"tag2", 15>, we can now search for books using **tag1:0012**.
 
@@ -22,7 +22,7 @@ The support for Map key and values is extensive, with support for a collection/a
 
 The seconds support for dynamic properties is with "complex" types or user defined types. Here is an example:
 
-{% highlight java %}
+<pre class="prettyprint">
 @Searchable
 public class Book {
     
@@ -38,7 +38,7 @@ public class Tag {
     @SearchableDynamicValue
     String value;
 }
-{% endhighlight %}
+</pre>
 
 In this case, for example, if we have a Book with Tag(name : "type", value : "fiction"), we can then search for books with **type:fiction**.
 

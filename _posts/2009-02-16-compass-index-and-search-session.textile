@@ -8,7 +8,7 @@ Compass has the concept of a __CompassSession__, which is created using the __Co
 
 Here is how the indexing session can be used:
 
-{% highlight java %}
+<pre class="prettyprint">
 CompassIndexSession session = compass.openIndexSession();
 try {
     session.save(author);
@@ -18,11 +18,11 @@ try {
 } catch (Exception e) {
     session.rollback();
 }
-{% endhighlight %}
+</pre>
 
 And here is how the search session can be used:
 
-{% highlight java %}
+<pre class="prettyprint">
 CompassSearchSession session = compass.openSearchSession();
 try {
     CompassHits hits = session.find("jack london");
@@ -30,6 +30,6 @@ try {
 } finally {
     session.close();
 }
-{% endhighlight %}
+</pre>
 
 Enjoy!.

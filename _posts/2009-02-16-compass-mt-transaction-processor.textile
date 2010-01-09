@@ -17,18 +17,18 @@ As a side note, driven by this new transaction processor, Compass now automatica
 
 Here is an example of how this can be configured (by setting the mt transaction processor to be the default one):
 
-{% highlight xml %}
+<pre class="prettyprint">
 <compass name="default">
   <connection>
       <file path="target/test-index" />
   </connection>
   <transaction processor="mt" />
 </compass>
-{% endhighlight %}
+</pre>
 
 And here is how it can be set in runtime:
 
-<pre lang="java" line="1">
+<pre class="prettyprint">
 CompassSession session = compass.openSession();
 // The above can also use the index session
 session.getSettings().setSetting(LuceneEnvironment.Transaction.Processor.TYPE, 
