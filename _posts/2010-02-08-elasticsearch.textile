@@ -1,0 +1,10 @@
+---
+layout: post
+title: ElasticSearch
+---
+
+p. Well, the gig is out. What I have been working on for the past several months is now alive. "ElasticSearch":http://elasticsearch.com is an open source, distributed, RESTful search engine. More info about it can be found in the "\"You Know, for Search\" blog post":http://www.elasticsearch.com/blog/2010/02/08/youknowforsearch.html. There is also a nice "overview page":http://www.elasticsearch.com/products/elasticsearch/.
+
+p. How does that relates to Compass? Good question, which deserves a proper blog post. I will be maintaining another "blog":http://www.elasticsearch.com/blog just for ElasticSearch, and also there is a "twitter user":http://twitter.com/elasticsearch, you should follow.
+
+p. Enjoy!
