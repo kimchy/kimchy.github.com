@@ -11,6 +11,6 @@ p. Am I missing something here? Why doesn't WebSockets send method have the noti
 
 p. On top of that, it seems like (and correct me if I'm wrong here) you register a listener that accepts all responses. If we want to simulate an async request response scenario, the client needs to create a unique request id, and the server must send it back so the client will correlate a response to a specific request.
 
-p. If all the above holds, it means that each type people will reinvent what both REST and async request response communication does and probably not in a uniform manner. Do we now need a REST over WebSockets specification?
+p. If all the above holds, it means that people will reinvent what both REST and async request response communication does and probably not in a uniform manner. Do we now need a REST over WebSockets specification?
 
 p. p.s. I understand the benefits of WebSockets for comet style, long polling HTTP requests, just want to use it for typical *async* RESTful request response type instead of HTTP.
