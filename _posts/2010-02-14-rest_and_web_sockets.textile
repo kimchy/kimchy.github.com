@@ -1,0 +1,12 @@
+---
+layout: post
+title: REST and Web Sockets?
+---
+
+p. I must be missing something here... . I went ahead and looked at "Web Sockets":http://en.wikipedia.org/wiki/Web_Sockets since it sounded like a great solution to improve the communication from client to server instead of HTTP. It seems like the WebSockets send API only allows to send either binary data or a text string. And this got me wondering, how the frack do you implement "REST":http://en.wikipedia.org/wiki/Representational_State_Transfer over WebSockets in a uniform way?
+
+p. First and foremost, how do you represent a URI? Second, how do you represent the HTTP methods (GET, PUT, POST, ...)? And last, how do you represent HTTP uri parameters and headers? It seems like maybe a solution for this is to built some sort of schema into the content that goes into that text string. Something like a JSON string that has a "uri" field, and "params" and so on. But thats annoying, since with HTTP, you can create very simple gateways that simply use the headers or parameters without needing to parse the body...
+
+p. Am I missing something here? Why doesn't WebSockets send method have the notion of a URI and headers (which can be passed in optimized binary format for fast parsing)? It seems like REST has taken a beating with WebSockets...
+
+p. p.s. I understand the benefits of WebSockets for comet style, long polling HTTP requests, just want to use it for typical *async* requests.
