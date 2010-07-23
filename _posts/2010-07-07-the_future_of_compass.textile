@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Future of Compass & ElasticSearch
+title: The Future of Compass &amp; ElasticSearch
 ---
 
 p. Its been a long time since I blogged about Compass, and I guess its about time to discuss "Compass":http://www.compass-project.org, "ElasticSearch":http://www.elasticsearch.com, and how they relate to one another.
