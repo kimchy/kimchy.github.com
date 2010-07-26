@@ -4,5 +4,6 @@ title: Talks
 ---
 
 <ul class="posts">
+	<li><span>07 Jun 2010</span> &raquo; "Berlin Buzzwords: ElasticSearch - You Know, for Search":http://berlinbuzzwords.blip.tv/file/3812491/ ("slides":http://www.slideshare.net/elasticsearch/elasticsearch-at-berlinbuzzwords-2010)</li> 
 	<li><span>23 Jun 2007</span> &raquo; "Compass, Building Search with Spring":http://parleys.com/display/PARLEYS/Home#slide=1;title=Compass%2C%20Building%20Search%20with%20Spring;talk=3047430</li>
 </ul>
